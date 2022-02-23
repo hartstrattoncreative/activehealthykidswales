@@ -72,13 +72,13 @@ const AppLayout: React.FC = (props) => {
           <div className="menuContent">
             <div className="column navColumn">
               <Link href="/cy/home">
-                <a> Hafan </a>
+                <a>Hafan</a>
               </Link>
               <Link href="/cy/home">
-                <a> Cardiau Cofnodi </a>
+                <a>Cardiau Cofnodi</a>
               </Link>
               <Link href="/cy/about">
-                <a> Amdanom Ni </a>
+                <a>Amdanom Ni</a>
               </Link>
             </div>
             <div className="column mapColumn">
