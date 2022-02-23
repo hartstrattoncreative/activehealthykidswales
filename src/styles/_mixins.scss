@@ -306,7 +306,7 @@
 @mixin profilePic($members...) {
   @each $member in $members {
     &##{$member} {
-      background: url(/media/images/#{$member}.jpg);
+      background: url(/images/#{$member}.jpg);
       background-position: center;
       background-repeat: no-repeat;
       background-size: contain;
