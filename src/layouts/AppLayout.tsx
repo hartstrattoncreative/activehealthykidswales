@@ -1,3 +1,4 @@
+import Link from "next/link";
 import * as React from "react";
 
 const AppLayout: React.FC = (props) => {
@@ -56,6 +57,42 @@ const AppLayout: React.FC = (props) => {
           </div>
         </header>
         <main>{children}</main>
+        <div className="wide">
+          <a
+            href="https://twitter.com/hashtag/AHKWales?src=hash"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <div className="twitterHashtag teal">
+              <h6 className="lower light teal">&#35;AHKWales</h6>
+            </div>
+          </a>
+        </div>
+        <div className="preFooter-nav wide">
+          <div className="menuContent">
+            <div className="column navColumn">
+              <Link href="/cy/home">
+                <a> Hafan </a>
+              </Link>
+              <Link href="/cy/home">
+                <a> Cardiau Cofnodi </a>
+              </Link>
+              <Link href="/cy/about">
+                <a> Amdanom Ni </a>
+              </Link>
+            </div>
+            <div className="column mapColumn">
+              <a href="/maps/swanlinx/home" target="_blank">
+                {" "}
+                Swanlinx Map{" "}
+              </a>
+              <a href="/maps/dc/home" target="_blank">
+                {" "}
+                Dragon Challenge Map{" "}
+              </a>
+            </div>
+          </div>
+        </div>
         <footer className="wide">
           <div className="footerInfo">
             <i className="fa fa-copyright" aria-hidden="true"></i>

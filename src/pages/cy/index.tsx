@@ -434,37 +434,6 @@ const Home: NextPage = () => {
           </div>
         </a>
       </div>
-
-      <div className="wide">
-        <a
-          href="https://twitter.com/hashtag/AHKWales?src=hash"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <div className="twitterHashtag teal">
-            <h6 className="lower light teal">&#35;AHKWales</h6>
-          </div>
-        </a>
-      </div>
-      <div className="preFooter-nav wide">
-        <div className="menuContent">
-          <div className="column navColumn">
-            <a href="/cy/home"> Hafan </a>
-            <a href="/cy/report-card"> Cardiau Cofnodi </a>
-            <a href="/cy/about"> Amdanom Ni </a>
-          </div>
-          <div className="column mapColumn">
-            <a href="/maps/swanlinx/home" target="_blank">
-              {" "}
-              Swanlinx Map{" "}
-            </a>
-            <a href="/maps/dc/home" target="_blank">
-              {" "}
-              Dragon Challenge Map{" "}
-            </a>
-          </div>
-        </div>
-      </div>
     </>
   );
 };

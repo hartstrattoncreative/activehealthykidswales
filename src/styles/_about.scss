@@ -1,146 +1,162 @@
 .landing.aboutPage {
-    background: url(/media/images/twitter_banner.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+  background: url(/images/twitter_banner.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 ul.expertGroup {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 56px;
+  @media screen and (min-width: 450px) and (max-width: 600px) {
     width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 56px;
-    @media screen and (min-width: 450px) and (max-width: 600px) {
-        width: 80%
-    }
-    @media screen and (min-width: 600px) and (max-width: 768px) {
-        width: 50%;
-    }
+  }
+  @media screen and (min-width: 600px) and (max-width: 768px) {
+    width: 50%;
+  }
+  @media screen and (min-width: 768px) {
+    width: 95%;
+  }
+  & > li {
+    width: 100%;
+    height: 150px;
     @media screen and (min-width: 768px) {
-        width: 95%;
+      width: 50%;
+      float: left;
     }
-    & > li {
-        width: 100%;
-        height: 150px;
-        @media screen and (min-width: 768px) {
-            width: 50%;
-            float: left;
-        }
-        div.profilePic {
-            height: 100px;
-            float: left;
-            @include profilePic('gareth', 'simon', 'sue', 'rebecca', 'marianne', 'robert', 'malcolm', 'becca', 'richard', 'chris');
-        }
-        div.profile {
-            padding-left: 14px;
-            float: left;
-            width: 50%;
-            @media screen and (min-width: 650px) {
-                padding-left: 28px;
-            }
-            & > p.name {
-                font-weight: 700;
-                margin-bottom: 0;
-                margin-top: 14px;
-            }
-            & > p.uni {
-                font-size: $desktopFont * 0.9;
-                margin-bottom: 56px;
-            }
-        }
+    div.profilePic {
+      height: 100px;
+      float: left;
+      @include profilePic(
+        "gareth",
+        "simon",
+        "sue",
+        "rebecca",
+        "marianne",
+        "robert",
+        "malcolm",
+        "becca",
+        "richard",
+        "chris"
+      );
     }
-    & > br {
-        display: none;
-        @media screen and (min-width: 768px) {
-            display: inherit;
-        }
+    div.profile {
+      padding-left: 14px;
+      float: left;
+      width: 50%;
+      @media screen and (min-width: 650px) {
+        padding-left: 28px;
+      }
+      & > p.name {
+        font-weight: 700;
+        margin-bottom: 0;
+        margin-top: 14px;
+      }
+      & > p.uni {
+        font-size: $desktopFont * 0.9;
+        margin-bottom: 56px;
+      }
     }
+  }
+  & > br {
+    display: none;
+    @media screen and (min-width: 768px) {
+      display: inherit;
+    }
+  }
 }
 
-
-
 div.section.contact {
-    padding-top: 0;
-    @media screen and (min-width: 768px) {
-        padding-top: 14px;
-    }
+  padding-top: 0;
+  @media screen and (min-width: 768px) {
+    padding-top: 14px;
+  }
 }
 
 div.section.ack {
-    margin-top: 140px;
+  margin-top: 140px;
 }
 
 div.section.tweets {
-    padding: 0;
+  padding: 0;
 }
 
 ul.acknowledgements {
-    padding-top: 28px;
-    & li {
-        align-content: center;
-        margin-left: auto;
-        width: 80%;
-        @media screen and (min-width: 400px) and (max-width: 600px) {
-            width: 70%;
-        }
-        @media screen and (min-width: 600px) {
-            display: inline-block;
-            width: 40%;
-            padding-left: 9%;
-        }
-        & > div.profile {
-            & > p.name {
-                font-weight: 700;
-                margin-bottom: 0;
-                margin-top: 14px;
-            }
-            & > p.uni {
-                font-size: $desktopFont * 0.9;
-                margin-bottom: 42px;
-            }
-        }
+  padding-top: 28px;
+  & li {
+    align-content: center;
+    margin-left: auto;
+    width: 80%;
+    @media screen and (min-width: 400px) and (max-width: 600px) {
+      width: 70%;
     }
+    @media screen and (min-width: 600px) {
+      display: inline-block;
+      width: 40%;
+      padding-left: 9%;
+    }
+    & > div.profile {
+      & > p.name {
+        font-weight: 700;
+        margin-bottom: 0;
+        margin-top: 14px;
+      }
+      & > p.uni {
+        font-size: $desktopFont * 0.9;
+        margin-bottom: 42px;
+      }
+    }
+  }
 }
 
 div.wide.supportLogos {
-    margin-top: 140px;
-    & > h2 {
-        clear: both;
+  margin-top: 140px;
+  & > h2 {
+    clear: both;
+  }
+  & > .logos {
+    padding: 28px 14px 0 14px;
+    @media screen and (min-width: 768px) {
+      text-align: center;
     }
-    & > .logos {
-        padding: 28px 14px 0 14px;
-        @media screen and (min-width: 768px) {
-            text-align: center;
-        }
-        & a {
-            text-decoration: none;
-        }
-        & .logo {
-            height: 150px;
-            width: 150px;
-            margin-left: auto;
-            margin-right: auto;
-            @include orgLogos('swanseaUni', 'southWalesUni', 'cardiffMetUni', 'glyndwrUni', 'sportWales', 'pubHealth', 'playWales');
-            @media screen and (min-width: 768px) and (max-width: 970px) {
-                display: inline-block;
-                margin: 10px 60px;
-            }
-            @media screen and (min-width: 970px) and (max-width: 1200px) {
-                display: inline-block;
-                margin: 10px 40px;
-            }
-            @media screen and (min-width: 1200px) {
-                margin: 10px 80px;
-                display: inline-block;
-            }    
-        } 
+    & a {
+      text-decoration: none;
     }
+    & .logo {
+      height: 150px;
+      width: 150px;
+      margin-left: auto;
+      margin-right: auto;
+      @include orgLogos(
+        "swanseaUni",
+        "southWalesUni",
+        "cardiffMetUni",
+        "glyndwrUni",
+        "sportWales",
+        "pubHealth",
+        "playWales"
+      );
+      @media screen and (min-width: 768px) and (max-width: 970px) {
+        display: inline-block;
+        margin: 10px 60px;
+      }
+      @media screen and (min-width: 970px) and (max-width: 1200px) {
+        display: inline-block;
+        margin: 10px 40px;
+      }
+      @media screen and (min-width: 1200px) {
+        margin: 10px 80px;
+        display: inline-block;
+      }
+    }
+  }
 }
 
 div.twitterFeed {
-    padding-top: 28px;
-    width: 320px;
-    margin-left: auto;
-    margin-right: auto;
+  padding-top: 28px;
+  width: 320px;
+  margin-left: auto;
+  margin-right: auto;
 }
-
