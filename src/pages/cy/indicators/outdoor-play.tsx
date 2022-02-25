@@ -1,5 +1,6 @@
+import Overlay from "components/Overlay";
 import { NextPage } from "next";
-import Image from "next/image";
+
 import Link from "next/link";
 
 const Page: NextPage = () => {
@@ -177,14 +178,7 @@ const Page: NextPage = () => {
         </p>
       </div>
 
-      <div className="wrapper rm">
-        <a className="button" id="rmBtn">
-          {" "}
-          ddarllen mwy{" "}
-        </a>
-      </div>
-
-      <div className="rmView">
+      <Overlay>
         <ol className="dataList">
           <li>
             <span className="dataNumber"> 1 </span>
@@ -217,22 +211,15 @@ const Page: NextPage = () => {
             </p>
           </li>
         </ol>
-        <div className="closeRM">
-          <div></div>
-          <h6 className="light">Cau</h6>
-        </div>
-      </div>
+      </Overlay>
 
       <div className="indicatorExpand">
         <div className="wide">
-          <div className="expand xtraDarkBlue">
-            <h5 className="light xtraDarkBlue">
-              <div></div>
-              Penderfynu ar Radd
-            </h5>
+          <div className="expand open  xtraDarkBlue">
+            <h5 className="light xtraDarkBlue">Penderfynu ar Radd</h5>
           </div>
 
-          <div className="expandContent grade">
+          <div className="expandContent open  grade">
             <p>
               Mae&apos;r Gweithgor Ymchwil yn nodi bod casglu data gan blant
               wrth iddynt chwarae mewn ffordd ddistrwythur yn heriol, yn
@@ -250,13 +237,10 @@ const Page: NextPage = () => {
         </div>
 
         <div className="wide">
-          <div className="expand darkBlue">
-            <h5 className="light darkBlue">
-              <div></div>
-              Ystyriaethau
-            </h5>
+          <div className="expand open  darkBlue">
+            <h5 className="light darkBlue">Ystyriaethau</h5>
           </div>
-          <div className="expandContent considerations">
+          <div className="expandContent open  considerations">
             <p>
               Mae&apos;r dystiolaeth orau sydd ar gael yn dangos, o ran Chwarae
               Egnïol, bod Cymru yn llwyddo o drwch blewyn, gyda llai na hanner o
@@ -307,13 +291,10 @@ const Page: NextPage = () => {
         </div>
 
         <div className="wide">
-          <div className="expand blue">
-            <h5 className="light blue">
-              <div></div>
-              Sut Mae Gwella&apos;r
-            </h5>
+          <div className="expand open  blue">
+            <h5 className="light blue">Sut Mae Gwella&apos;r</h5>
           </div>
-          <div className="expandContent improve">
+          <div className="expandContent open  improve">
             <ul className="indent" aria-label="Chwarae Cymru">
               <li>
                 Chwarae Allan &#45;
@@ -391,13 +372,13 @@ const Page: NextPage = () => {
         </div>
 
         <div className="wide">
-          <div className="expand lightBlue">
+          <div className="expand open  lightBlue">
             <h5 className="light lightBlue">
               <div></div>
               Ffynonellau Data
             </h5>
           </div>
-          <div className="expandContent sources">
+          <div className="expandContent open  sources">
             <ul className="indent" aria-label="Chwaraeon Cymru">
               <li>
                 Arolwg ar Chwaraeon Ysgol 2015 &#45;
@@ -425,7 +406,7 @@ const Page: NextPage = () => {
       </div>
 
       <div className="wide">
-        <Link href="/cy/active-transport">
+        <Link href="/cy/indicators/active-transport">
           <a>
             <div className="card orange link nextIndicator">
               <div className="grade grade-d">d+</div>

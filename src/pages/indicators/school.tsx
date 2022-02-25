@@ -1,6 +1,6 @@
+import Overlay from "components/Overlay";
 import { NextPage } from "next";
 import Link from "next/link";
-import Image from "next/image";
 
 const Page: NextPage = () => {
   return (
@@ -49,8 +49,8 @@ const Page: NextPage = () => {
           Group used data on, (1) the percentage of schools that offer physical
           activity opportunities (excluding PE) to the majority of their pupils;
           (2) the percentage of schools with sufficient facilities/equipment to
-          support pupils’ physical activity and sport; (3) the percentage of
-          schools where teachers were confident in delivering quality PE
+          support pupils&apos; physical activity and sport; (3) the percentage
+          of schools where teachers were confident in delivering quality PE
           lessons; (4) the percentage of children that believe PE lessons and
           school sport help them to have a healthy lifestyle; to allocate a
           grade to this indicator.
@@ -61,18 +61,11 @@ const Page: NextPage = () => {
         <h1>Survey Data</h1>
         <p>
           Since 2016, there has been no available or representative data that
-          reported children’s PE and School Sport experiences.
+          reported children&apos;s PE and School Sport experiences.
         </p>
       </div>
 
-      <div className="wrapper rm">
-        <a className="button" id="rmBtn">
-          {" "}
-          Read More{" "}
-        </a>
-      </div>
-
-      <div className="rmView">
+      <Overlay>
         <ol className="dataList">
           <li>
             <span className="dataNumber"> 1 </span>
@@ -123,22 +116,15 @@ const Page: NextPage = () => {
             </p>
           </li>
         </ol>
-        <div className="closeRM">
-          <div></div>
-          <h6 className="light">Close</h6>
-        </div>
-      </div>
+      </Overlay>
 
       <div className="indicatorExpand">
         <div className="wide">
-          <div className="expand xtraDarkBlue">
-            <h5 className="light xtraDarkBlue">
-              <div></div>
-              Deciding on a Grade
-            </h5>
+          <div className="expand open  xtraDarkBlue">
+            <h5 className="light xtraDarkBlue">Deciding on a Grade</h5>
           </div>
 
-          <div className="expandContent grade">
+          <div className="expandContent open  grade">
             <p>
               With no updated and available data since the 2016 report card, the
               Research Work Group assigned an inconclusive grade to the School
@@ -148,13 +134,10 @@ const Page: NextPage = () => {
         </div>
 
         <div className="wide">
-          <div className="expand darkBlue">
-            <h5 className="light darkBlue">
-              <div></div>
-              Considerations
-            </h5>
+          <div className="expand open  darkBlue">
+            <h5 className="light darkBlue">Considerations</h5>
           </div>
-          <div className="expandContent considerations">
+          <div className="expandContent open  considerations">
             <ul>
               <li>
                 Given the upcoming curriculum changes that places an emphasis on
@@ -201,16 +184,13 @@ const Page: NextPage = () => {
         </div>
 
         <div className="wide">
-          <div className="expand blue">
-            <h5 className="light blue">
-              <div></div>
-              How to Improve
-            </h5>
+          <div className="expand open  blue">
+            <h5 className="light blue">How to Improve</h5>
           </div>
-          <div className="expandContent improve">
+          <div className="expandContent open  improve">
             <ul className="indent" aria-label="Sport Wales">
               <li>
-                School Sport Survey ‘School Toolkit’ &#45;
+                School Sport Survey ‘School Toolkit&apos; &#45;
                 <a
                   href="http://sportwales.org.uk/research--policy/surveys-and-statistics/school-sport-survey/using-the-results.aspx"
                   target="_blank"
@@ -246,13 +226,10 @@ const Page: NextPage = () => {
         </div>
 
         <div className="wide">
-          <div className="expand lightBlue">
-            <h5 className="light lightBlue">
-              <div></div>
-              Data Sources
-            </h5>
+          <div className="expand open  lightBlue">
+            <h5 className="light lightBlue">Data Sources</h5>
           </div>
-          <div className="expandContent sources">
+          <div className="expandContent open  sources">
             <ul className="indent" aria-label="Sport Wales">
               <li>
                 School Sport Survey &#45;

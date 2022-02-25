@@ -1,6 +1,5 @@
 import { NextPage } from "next";
 import Link from "next/link";
-import Image from "next/image";
 
 const Page: NextPage = () => {
   return (
@@ -29,17 +28,18 @@ const Page: NextPage = () => {
           additional indicator to reflect the work being completed in Wales.
         </p>
         <p>
-          Sport Wales adopts Whitehead’s definition of physical literacy,
+          Sport Wales adopts Whitehead&apos;s definition of physical literacy,
           namely: “the motivation, confidence, physical competence, knowledge
           and understanding to value and take responsibility for engagement in
           physical activities for life” (Whitehead, 2017). Physical literacy is
-          considered a ‘holistic’ concept and acknowledges the physical,
-          affective and cognitive domains as equally important (Edwards et al.,
-          2017). Recent developments have acknowledged the ‘social element’ of
-          physical literacy alongside the affective, physical and cognitive
-          domains (Australian Sports Commission, 2017). Sport Wales’ definition
-          is comprised of physical skills, confidence, motivation, knowledge and
-          understanding and lots of opportunities
+          considered a &apos;holistic&apos; concept and acknowledges the
+          physical, affective and cognitive domains as equally important
+          (Edwards et al., 2017). Recent developments have acknowledged the
+          &apos;social element&apos; of physical literacy alongside the
+          affective, physical and cognitive domains (Australian Sports
+          Commission, 2017). Sport Wales&apos; definition is comprised of
+          physical skills, confidence, motivation, knowledge and understanding
+          and lots of opportunities
         </p>
         <p>
           Despite being a lifelong concept, work in Wales has primarily centred
@@ -58,22 +58,22 @@ const Page: NextPage = () => {
           Hill University, Sport Wales designed a national measure of applied
           Physical Competence for children aged 8-14 years old called the
           “Dragon Challenge”. Physical Competence is an important component of
-          Physical Literacy and can be defined as “one’s ability to move with
-          competence in a wide variety of activities” (Edwards et al., 2017, p.
-          118). Physical Competence includes the acquisition of health and
-          skills related components of fitness (e.g. aerobic fitness, strength,
-          flexibility, agility, balance, coordination, power, reactions and
-          speed), as well as fundamental movement skills like catching, throwing
-          and running. Research suggests that higher physical competency levels
-          will cause a positive trajectory toward perceived competence,
-          health-related fitness and, sequentially, physical activity levels
-          (Foweather et al., 2014; Holfelder & Schott, 2014; Robinson et al.,
-          2015; Lubans et al., 2010; Stodden et al., 2008). The Dragon Challenge
-          assesses physical competence skills in the areas of ‘stability’
-          (balancing the body in one place or while in motion), ‘locomotion’
-          (moving the body in any direction from one point to another) and
-          ‘manipulative skills’ (handling or controlling objects with the hand,
-          foot or an implement).
+          Physical Literacy and can be defined as “one&apos;s ability to move
+          with competence in a wide variety of activities” (Edwards et al.,
+          2017, p. 118). Physical Competence includes the acquisition of health
+          and skills related components of fitness (e.g. aerobic fitness,
+          strength, flexibility, agility, balance, coordination, power,
+          reactions and speed), as well as fundamental movement skills like
+          catching, throwing and running. Research suggests that higher physical
+          competency levels will cause a positive trajectory toward perceived
+          competence, health-related fitness and, sequentially, physical
+          activity levels (Foweather et al., 2014; Holfelder & Schott, 2014;
+          Robinson et al., 2015; Lubans et al., 2010; Stodden et al., 2008). The
+          Dragon Challenge assesses physical competence skills in the areas of
+          &apos;stability&apos; (balancing the body in one place or while in
+          motion), &apos;locomotion&apos; (moving the body in any direction from
+          one point to another) and &apos;manipulative skills&apos; (handling or
+          controlling objects with the hand, foot or an implement).
         </p>
         <p>
           Participants perform nine tasks in a circuit that require single or
@@ -88,7 +88,7 @@ const Page: NextPage = () => {
           marked by trained assessors on the quality of the movements and the
           completion of the end goal for each task. These are used to calculate
           an Overall Dragon Challenge Score, which provides a single observation
-          of a participant’s physical competence at the time of testing
+          of a participant&apos;s physical competence at the time of testing
           (Stratton et al., 2015).
         </p>
       </div>
@@ -110,9 +110,9 @@ const Page: NextPage = () => {
           East, n=1238; Mid & West, n=1336; North, n=906). Results concluded
           that 62% children did not achieve an expected level of physical
           competence (bronze/silver awards) leaving 38% children with a good
-          level of physical competence. The 38% of children meeting the ‘good
-          level’ of physical competence translated to a D+ grade for Physical
-          Competence.
+          level of physical competence. The 38% of children meeting the
+          &apos;good level&apos; of physical competence translated to a D+ grade
+          for Physical Competence.
         </p>
       </div>
 
@@ -130,14 +130,11 @@ const Page: NextPage = () => {
 
       <div className="indicatorExpand">
         <div className="wide">
-          <div className="expand xtraDarkBlue">
-            <h5 className="light xtraDarkBlue">
-              <div></div>
-              Deciding on a Grade
-            </h5>
+          <div className="expand open  xtraDarkBlue">
+            <h5 className="light xtraDarkBlue">Deciding on a Grade</h5>
           </div>
 
-          <div className="expandContent grade">
+          <div className="expandContent open  grade">
             <p>
               The Research Work Group decided to grade Physical Literacy as
               inconclusive based on the limited available data.
@@ -146,13 +143,13 @@ const Page: NextPage = () => {
         </div>
 
         <div className="wide">
-          <div className="expand darkBlue">
+          <div className="expand open  darkBlue">
             <h5 className="light darkBlue">
               <div></div>
               Considerations
             </h5>
           </div>
-          <div className="expandContent considerations">
+          <div className="expandContent open  considerations">
             <ul>
               <li>
                 There are limited empirical research around the concept of
@@ -186,13 +183,10 @@ const Page: NextPage = () => {
         </div>
 
         <div className="wide">
-          <div className="expand blue">
-            <h5 className="light blue">
-              <div></div>
-              How to Improve
-            </h5>
+          <div className="expand open  blue">
+            <h5 className="light blue">How to Improve</h5>
           </div>
-          <div className="expandContent improve">
+          <div className="expandContent open  improve">
             <ul className="indent" aria-label="Sport Wales">
               <li>
                 Physical Literacy &#45;
@@ -251,13 +245,10 @@ const Page: NextPage = () => {
         </div>
 
         <div className="wide">
-          <div className="expand lightBlue">
-            <h5 className="light lightBlue">
-              <div></div>
-              Data Sources
-            </h5>
+          <div className="expand open  lightBlue">
+            <h5 className="light lightBlue">Data Sources</h5>
           </div>
-          <div className="expandContent sources">
+          <div className="expandContent open  sources">
             <ul className="indent" aria-label="Active Healthy Kids Wales">
               <li>
                 Dragon Challenge Map &#45;{" "}
@@ -272,7 +263,7 @@ const Page: NextPage = () => {
       </div>
 
       <div className="wide">
-        <Link href="/indicators/family-and-peer">
+        <Link href="/indicators/family-and-peers">
           <a>
             <div className="card orange link nextIndicator">
               <div className="grade grade-d">d</div>

@@ -1,6 +1,6 @@
+import Overlay from "components/Overlay";
 import { NextPage } from "next";
 import Link from "next/link";
-import Image from "next/image";
 
 const Page: NextPage = () => {
   return (
@@ -66,14 +66,7 @@ const Page: NextPage = () => {
         </p>
       </div>
 
-      <div className="wrapper rm">
-        <a className="button" id="rmBtn">
-          {" "}
-          ddarllen mwy{" "}
-        </a>
-      </div>
-
-      <div className="rmView">
+      <Overlay>
         <ol className="dataList">
           <li>
             <span className="dataNumber"> 1 </span>
@@ -94,22 +87,15 @@ const Page: NextPage = () => {
             </p>
           </li>
         </ol>
-        <div className="closeRM">
-          <div></div>
-          <h6 className="light">Cau</h6>
-        </div>
-      </div>
+      </Overlay>
 
       <div className="indicatorExpand">
         <div className="wide">
-          <div className="expand xtraDarkBlue">
-            <h5 className="light xtraDarkBlue">
-              <div></div>
-              Penderfynu ar Radd
-            </h5>
+          <div className="expand open  xtraDarkBlue">
+            <h5 className="light xtraDarkBlue">Penderfynu ar Radd</h5>
           </div>
 
-          <div className="expandContent grade">
+          <div className="expandContent open  grade">
             <p>
               Fe wnaeth y Gweithgor Ymchwil neilltuo D i&apos;r categori hwn. Ar
               ôl cymryd canrannau o&apos;r holl gwestiynau sy&apos;n ymwneud â
@@ -128,13 +114,10 @@ const Page: NextPage = () => {
         </div>
 
         <div className="wide">
-          <div className="expand darkBlue">
-            <h5 className="light darkBlue">
-              <div></div>
-              Ystyriaethau
-            </h5>
+          <div className="expand open  darkBlue">
+            <h5 className="light darkBlue">Ystyriaethau</h5>
           </div>
-          <div className="expandContent considerations">
+          <div className="expandContent open  considerations">
             <ul>
               <li>
                 Anogir rhieni i gymryd rhan mewn chwaraeon, dawns a gweithgaredd
@@ -180,13 +163,10 @@ const Page: NextPage = () => {
         </div>
 
         <div className="wide">
-          <div className="expand blue">
-            <h5 className="light blue">
-              <div></div>
-              Sut Mae Gwella’r
-            </h5>
+          <div className="expand open  blue">
+            <h5 className="light blue">Sut Mae Gwella’r</h5>
           </div>
-          <div className="expandContent improve">
+          <div className="expandContent open  improve">
             <ul className="indent" aria-label="Chwaraeon Cymru">
               <li>
                 5 x 60 &#45;
@@ -268,13 +248,10 @@ const Page: NextPage = () => {
         </div>
 
         <div className="wide">
-          <div className="expand lightBlue">
-            <h5 className="light lightBlue">
-              <div></div>
-              Ffynonellau Data
-            </h5>
+          <div className="expand open  lightBlue">
+            <h5 className="light lightBlue">Ffynonellau Data</h5>
           </div>
-          <div className="expandContent sources">
+          <div className="expandContent open  sources">
             <ul className="indent" aria-label="Chwareaeon Cymru">
               <li>
                 Arolwg Cenedlaethol Cymru (2016-17) &#45;
@@ -292,7 +269,7 @@ const Page: NextPage = () => {
       </div>
 
       <div className="wide">
-        <Link href="/cy/school">
+        <Link href="/cy/indicators/school">
           <a>
             <div className="card red link nextIndicator">
               <div className="grade grade-inc">inc</div>

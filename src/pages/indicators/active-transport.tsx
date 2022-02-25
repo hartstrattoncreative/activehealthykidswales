@@ -1,6 +1,6 @@
+import Overlay from "components/Overlay";
 import { NextPage } from "next";
 import Link from "next/link";
-import Image from "next/image";
 
 const Page: NextPage = () => {
   return (
@@ -73,14 +73,7 @@ const Page: NextPage = () => {
         </p>
       </div>
 
-      <div className="wrapper rm">
-        <a className="button" id="rmBtn">
-          {" "}
-          Read More{" "}
-        </a>
-      </div>
-
-      <div className="rmView">
+      <Overlay>
         <ol className="dataList">
           <li>
             <span className="dataNumber"> 1 </span>
@@ -150,22 +143,15 @@ const Page: NextPage = () => {
             </p>
           </li>
         </ol>
-        <div className="closeRM">
-          <div></div>
-          <h6 className="light">Close</h6>
-        </div>
-      </div>
+      </Overlay>
 
       <div className="indicatorExpand">
         <div className="wide">
-          <div className="expand xtraDarkBlue">
-            <h5 className="light xtraDarkBlue">
-              <div></div>
-              Deciding on a Grade
-            </h5>
+          <div className="expand xtraDarkBlue open">
+            <h5 className="light xtraDarkBlue">Deciding on a Grade</h5>
           </div>
 
-          <div className="expandContent grade">
+          <div className="expandContent grade open">
             <p>
               The Research Group decided to weight the data in the following
               way:
@@ -191,13 +177,10 @@ const Page: NextPage = () => {
         </div>
 
         <div className="wide">
-          <div className="expand darkBlue">
-            <h5 className="light darkBlue">
-              <div></div>
-              Considerations
-            </h5>
+          <div className="expand darkBlue open">
+            <h5 className="light darkBlue">Considerations</h5>
           </div>
-          <div className="expandContent considerations">
+          <div className="expandContent considerations open">
             <ul>
               <li>
                 The best available evidence shows that less than 40% of children
@@ -237,13 +220,10 @@ const Page: NextPage = () => {
         </div>
 
         <div className="wide">
-          <div className="expand blue">
-            <h5 className="light blue">
-              <div></div>
-              How to Improve
-            </h5>
+          <div className="expand blue open">
+            <h5 className="light blue">How to Improve</h5>
           </div>
-          <div className="expandContent improve">
+          <div className="expandContent improve open">
             <ul className="indent" aria-label="Sustrans Wales">
               <li>
                 Active Journeys to Schools &#45;
@@ -285,13 +265,10 @@ const Page: NextPage = () => {
         </div>
 
         <div className="wide">
-          <div className="expand lightBlue">
-            <h5 className="light lightBlue">
-              <div></div>
-              Data Sources
-            </h5>
+          <div className="expand lightBlue open">
+            <h5 className="light lightBlue">Data Sources</h5>
           </div>
-          <div className="expandContent sources">
+          <div className="expandContent sources open">
             <ul className="indent" aria-label="Sport Wales">
               <li>
                 School Sport Survey 2015 &#45;

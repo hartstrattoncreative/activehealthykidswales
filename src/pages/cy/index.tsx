@@ -1,6 +1,5 @@
 import type { NextPage } from "next";
 import Link from "next/link";
-import Image from "next/image";
 
 const Home: NextPage = () => {
   return (
@@ -36,7 +35,7 @@ const Home: NextPage = () => {
       </div>
 
       <div className="wide">
-        <Link href="/cy/overall-physical-activity">
+        <Link href="/cy/indicators/overall-physical-activity">
           <a>
             <div className="card orange" id="opal">
               <div className="grade grade-d">d+</div>
@@ -82,7 +81,7 @@ const Home: NextPage = () => {
       </div>
 
       <div className="wide">
-        <Link href="/cy/community">
+        <Link href="/cy/indicators/community">
           <a>
             <div className="card red" id="catbe">
               <div className="grade grade-e">ang</div>
@@ -124,7 +123,7 @@ const Home: NextPage = () => {
       </div>
 
       <div className="wide">
-        <Link href="/cy/school">
+        <Link href="/cy/indicators/school">
           <a>
             <div className="card red" id="s">
               <div className="grade grade-e">ang</div>
@@ -165,7 +164,7 @@ const Home: NextPage = () => {
         </Link>
       </div>
       <div className="wide">
-        <Link href="/cy/active-transport">
+        <Link href="/cy/indicators/active-transport">
           <a>
             <div className="card orange" id="at">
               <div className="grade grade-d">d+</div>
@@ -210,7 +209,7 @@ const Home: NextPage = () => {
         </Link>
       </div>
       <div className="wide">
-        <Link href="/cy/sedentary-behaviour">
+        <Link href="/cy/indicators/sedentary-behaviour">
           <a>
             <div className="card red" id="sb">
               <div className="grade grade-f">f</div>
@@ -251,7 +250,7 @@ const Home: NextPage = () => {
         </Link>
       </div>
       <div className="wide">
-        <Link href="/cy/outdoor-play">
+        <Link href="/cy/indicators/outdoor-play">
           <a>
             <div className="card yellow" id="oaap">
               <div className="grade grade-c">c-</div>
@@ -293,7 +292,7 @@ const Home: NextPage = () => {
       </div>
 
       <div className="wide">
-        <Link href="/cy/government">
+        <Link href="/cy/indicators/government">
           <a>
             <div className="card yellow" id="ngpsai">
               <div className="grade grade-c">c+</div>
@@ -334,7 +333,7 @@ const Home: NextPage = () => {
         </Link>
       </div>
       <div className="wide">
-        <Link href="/cy/family-and-peer">
+        <Link href="/cy/indicators/family-and-peers">
           <a>
             <div className="card orange" id="fapi">
               <div className="grade grade-d">d</div>
@@ -375,7 +374,7 @@ const Home: NextPage = () => {
         </Link>
       </div>
       <div className="wide">
-        <Link href="/cy/organised-sports">
+        <Link href="/cy/indicators/organised-sport">
           <a>
             <div className="card yellow" id="os">
               <div className="grade grade-c">c+</div>
@@ -420,7 +419,7 @@ const Home: NextPage = () => {
         </Link>
       </div>
       <div className="wide">
-        <Link href="/cy/physical-literacy">
+        <Link href="/cy/indicators/physical-literacy">
           <a>
             <div className="card red" id="pl">
               <div className="grade grade-e">ang</div>

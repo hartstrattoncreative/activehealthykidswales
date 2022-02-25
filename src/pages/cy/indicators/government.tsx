@@ -1,6 +1,5 @@
 import { NextPage } from "next";
 import Link from "next/link";
-import Image from "next/image";
 
 const Page: NextPage = () => {
   return (
@@ -10,7 +9,7 @@ const Page: NextPage = () => {
           <div className="grade grade-c">c+</div>
           <div className="cardTitle yellow">
             <h6 className="lower light">
-              Polisïau, Strategaethau a Buddsoddiadau’r Llywodraeth
+              Polisïau, Strategaethau a Buddsoddiadau&apos;r Llywodraeth
             </h6>
             <span className="ui arrowRight"> </span>
           </div>
@@ -71,10 +70,11 @@ const Page: NextPage = () => {
       <div className="section">
         <h1>Diffiniad</h1>
         <p>
-          Dringo’n Uwch, Creu Cymru Egnïol, y Ddeddf Teithio Egnïol, Chwaraeon
-          Cymru, Pob Plentyn Wedi Gwirioni ar Chwaraeon, Chwarae Cymru, Yr Hawl
-          i Chwarae, Ysgolion Iach, Cenedlaethau’r Dyfodol, y Gwasanaeth Iechyd
-          Gwladol Law yn Llaw at Iechyd, a Llywodraeth Cymru Ein Dyfodol Iach.
+          Dringo&apos;n Uwch, Creu Cymru Egnïol, y Ddeddf Teithio Egnïol,
+          Chwaraeon Cymru, Pob Plentyn Wedi Gwirioni ar Chwaraeon, Chwarae
+          Cymru, Yr Hawl i Chwarae, Ysgolion Iach, Cenedlaethau&apos;r Dyfodol,
+          y Gwasanaeth Iechyd Gwladol Law yn Llaw at Iechyd, a Llywodraeth Cymru
+          Ein Dyfodol Iach.
         </p>
         <p>
           Ni chafodd polisïau lleol eu hystyried yn y broses raddio oherwydd
@@ -85,14 +85,11 @@ const Page: NextPage = () => {
 
       <div className="indicatorExpand">
         <div className="wide">
-          <div className="expand xtraDarkBlue">
-            <h5 className="light xtraDarkBlue">
-              <div></div>
-              Penderfynu ar Radd
-            </h5>
+          <div className="expand open  xtraDarkBlue">
+            <h5 className="light xtraDarkBlue">Penderfynu ar Radd</h5>
           </div>
 
-          <div className="expandContent grade">
+          <div className="expandContent open  grade">
             <p>
               Er bod y PAT HEPA yn ddefnyddiol iawn wrth ddadansoddi&apos;r
               dangosydd hwn, roedd yn dal i fod yn broses oddrychol yn bennaf.
@@ -133,13 +130,12 @@ const Page: NextPage = () => {
         </div>
 
         <div className="wide">
-          <div className="expand darkBlue">
+          <div className="expand open  darkBlue">
             <h5 className="light darkBlue">
-              <div></div>
               Pethau i&apos;w hystyried ar gyfer y dyfodol
             </h5>
           </div>
-          <div className="expandContent considerations">
+          <div className="expandContent open  considerations">
             <p>
               Er eu bod &apos;ar waith&apos; ac yn bodoli o hyd, mae rhai
               o&apos;r polisïau yn eithaf hen erbyn hyn. Mae&apos;n bwysig
@@ -227,13 +223,10 @@ const Page: NextPage = () => {
         </div>
 
         <div className="wide">
-          <div className="expand blue">
-            <h5 className="light blue">
-              <div></div>
-              Ffynonellau Data
-            </h5>
+          <div className="expand open  blue">
+            <h5 className="light blue">Ffynonellau Data</h5>
           </div>
-          <div className="expandContent sources">
+          <div className="expandContent open  sources">
             <ul className="indent" aria-label="Miscellaneous">
               <li>
                 Llywodraeth Cymru &#45;
@@ -338,7 +331,7 @@ const Page: NextPage = () => {
       </div>
 
       <div className="wide">
-        <Link href="/cy/overall-physical-activity">
+        <Link href="/cy/indicators/overall-physical-activity">
           <a>
             <div className="card orange link nextIndicator">
               <div className="grade grade-d">d+</div>

@@ -1,6 +1,5 @@
 import { NextPage } from "next";
 import Link from "next/link";
-import Image from "next/image";
 
 const Page: NextPage = () => {
   return (
@@ -86,14 +85,11 @@ const Page: NextPage = () => {
 
       <div className="indicatorExpand">
         <div className="wide">
-          <div className="expand xtraDarkBlue">
-            <h5 className="light xtraDarkBlue">
-              <div></div>
-              Deciding on a Grade
-            </h5>
+          <div className="expand open  xtraDarkBlue">
+            <h5 className="light xtraDarkBlue">Deciding on a Grade</h5>
           </div>
 
-          <div className="expandContent grade">
+          <div className="expandContent open  grade">
             <p>
               Whilst the HEPA PAT tool was very helpful in analysing this
               indicator it was still a largely subjective process, and so a
@@ -132,13 +128,10 @@ const Page: NextPage = () => {
         </div>
 
         <div className="wide">
-          <div className="expand darkBlue">
-            <h5 className="light darkBlue">
-              <div></div>
-              Considerations
-            </h5>
+          <div className="expand open  darkBlue">
+            <h5 className="light darkBlue">Considerations</h5>
           </div>
-          <div className="expandContent considerations">
+          <div className="expandContent open  considerations">
             <ul>
               <li>
                 Though still in existence and ‘active’, some of the policies are
@@ -218,13 +211,10 @@ const Page: NextPage = () => {
         </div>
 
         <div className="wide">
-          <div className="expand blue">
-            <h5 className="light blue">
-              <div></div>
-              Data Sources
-            </h5>
+          <div className="expand open  blue">
+            <h5 className="light blue">Data Sources</h5>
           </div>
-          <div className="expandContent sources">
+          <div className="expandContent open  sources">
             <ul className="indent" aria-label="Miscellaneous">
               <li>
                 Welsh Government &#45;

@@ -1,6 +1,5 @@
 import type { NextPage } from "next";
 import Link from "next/link";
-import Image from "next/image";
 
 const Home: NextPage = () => {
   return (
@@ -334,7 +333,7 @@ const Home: NextPage = () => {
         </Link>
       </div>
       <div className="wide">
-        <Link href="/indicators/family-and-peer">
+        <Link href="/indicators/family-and-peers">
           <a>
             <div className="card orange" id="fapi">
               <div className="grade grade-d">d</div>
@@ -375,7 +374,7 @@ const Home: NextPage = () => {
         </Link>
       </div>
       <div className="wide">
-        <Link href="/indicators/organised-sports">
+        <Link href="/indicators/organised-sport">
           <a>
             <div className="card yellow" id="os">
               <div className="grade grade-c">c+</div>

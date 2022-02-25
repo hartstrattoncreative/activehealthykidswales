@@ -1,6 +1,6 @@
+import Overlay from "components/Overlay";
 import { NextPage } from "next";
 import Link from "next/link";
-import Image from "next/image";
 
 const Page: NextPage = () => {
   return (
@@ -121,14 +121,7 @@ const Page: NextPage = () => {
         </a>
       </div>
 
-      <div className="wrapper rm">
-        <a className="button" id="rmBtn">
-          {" "}
-          Read More{" "}
-        </a>
-      </div>
-
-      <div className="rmView">
+      <Overlay>
         <ol className="dataList">
           <li>
             <span className="dataNumber"> 1 </span>
@@ -178,22 +171,15 @@ const Page: NextPage = () => {
             </p>
           </li>
         </ol>
-        <div className="closeRM">
-          <div></div>
-          <h6 className="light">Close</h6>
-        </div>
-      </div>
+      </Overlay>
 
       <div className="indicatorExpand">
         <div className="wide">
-          <div className="expand xtraDarkBlue">
-            <h5 className="light xtraDarkBlue">
-              <div></div>
-              Deciding on a Grade
-            </h5>
+          <div className="expand open  xtraDarkBlue">
+            <h5 className="light xtraDarkBlue">Deciding on a Grade</h5>
           </div>
 
-          <div className="expandContent grade">
+          <div className="expandContent open  grade">
             <p>
               The Research Working Group assigned a D+ to the physical activity
               category to reflect the findings from both surveys. The percentage
@@ -215,13 +201,10 @@ const Page: NextPage = () => {
         </div>
 
         <div className="wide">
-          <div className="expand darkBlue">
-            <h5 className="light darkBlue">
-              <div></div>
-              Considerations
-            </h5>
+          <div className="expand open  darkBlue">
+            <h5 className="light darkBlue">Considerations</h5>
           </div>
-          <div className="expandContent considerations">
+          <div className="expandContent open  considerations">
             <ul>
               <li>
                 Both NSW and HBSC use self-reported measures of physical
@@ -263,13 +246,10 @@ const Page: NextPage = () => {
         </div>
 
         <div className="wide">
-          <div className="expand blue">
-            <h5 className="light blue">
-              <div></div>
-              How to Improve
-            </h5>
+          <div className="expand open  blue">
+            <h5 className="light blue">How to Improve</h5>
           </div>
-          <div className="expandContent improve">
+          <div className="expandContent open  improve">
             <ul className="indent" aria-label="Sport Wales">
               <li>
                 Physical Literacy &#45;
@@ -369,13 +349,10 @@ const Page: NextPage = () => {
         </div>
 
         <div className="wide">
-          <div className="expand lightBlue">
-            <h5 className="light lightBlue">
-              <div></div>
-              Data Sources
-            </h5>
+          <div className="expand open  lightBlue">
+            <h5 className="light lightBlue">Data Sources</h5>
           </div>
-          <div className="expandContent sources">
+          <div className="expandContent open  sources">
             <ul className="indent" aria-label="Welsh Government">
               <li>
                 Health Behaviour in School-aged Children Wales Survey 2013/14
@@ -404,7 +381,7 @@ const Page: NextPage = () => {
       </div>
 
       <div className="wide">
-        <Link href="/indicators/organised-sports">
+        <Link href="/indicators/organised-sport">
           <a>
             <div className="card yellow link nextIndicator">
               <div className="grade grade-c">c+</div>

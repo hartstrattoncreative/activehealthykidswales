@@ -1,6 +1,5 @@
 import { NextPage } from "next";
 import Link from "next/link";
-import Image from "next/image";
 
 const Page: NextPage = () => {
   return (
@@ -133,14 +132,11 @@ const Page: NextPage = () => {
 
       <div className="indicatorExpand">
         <div className="wide">
-          <div className="expand xtraDarkBlue">
-            <h5 className="light xtraDarkBlue">
-              <div></div>
-              Penderfynu ar Radd
-            </h5>
+          <div className="expand open  xtraDarkBlue">
+            <h5 className="light xtraDarkBlue">Penderfynu ar Radd</h5>
           </div>
 
-          <div className="expandContent grade">
+          <div className="expandContent open  grade">
             <p>
               Penderfynodd y Gweithgor Ymchwil roi gradd amhendant ar gyfer
               Llythrennedd Corfforol am fod data&apos;n brin.
@@ -149,13 +145,10 @@ const Page: NextPage = () => {
         </div>
 
         <div className="wide">
-          <div className="expand darkBlue">
-            <h5 className="light darkBlue">
-              <div></div>
-              Ystyriaethau
-            </h5>
+          <div className="expand open  darkBlue">
+            <h5 className="light darkBlue">Ystyriaethau</h5>
           </div>
-          <div className="expandContent considerations">
+          <div className="expandContent open  considerations">
             <ul>
               <li>
                 Dim ond hyn a hyn o ymchwil empirig sy&apos;n cael ei gwneud i
@@ -190,13 +183,10 @@ const Page: NextPage = () => {
         </div>
 
         <div className="wide">
-          <div className="expand blue">
-            <h5 className="light blue">
-              <div></div>
-              Sut Mae Gwella&apos;r
-            </h5>
+          <div className="expand open  blue">
+            <h5 className="light blue">Sut Mae Gwella&apos;r</h5>
           </div>
-          <div className="expandContent improve">
+          <div className="expandContent open  improve">
             <ul className="indent" aria-label="Chwaraeon Cymru">
               <li>
                 Llythrennedd Corfforol &#45;
@@ -255,13 +245,10 @@ const Page: NextPage = () => {
         </div>
 
         <div className="wide">
-          <div className="expand lightBlue">
-            <h5 className="light lightBlue">
-              <div></div>
-              Ffynonellau Data
-            </h5>
+          <div className="expand open  lightBlue">
+            <h5 className="light lightBlue">Ffynonellau Data</h5>
           </div>
-          <div className="expandContent sources">
+          <div className="expandContent open  sources">
             <ul className="indent" aria-label="Active Healthy Kids Wales">
               <li>
                 Dragon Challenge Map &#45;{" "}
@@ -276,7 +263,7 @@ const Page: NextPage = () => {
       </div>
 
       <div className="wide">
-        <Link href="/cy/family-and-peer">
+        <Link href="/cy/indicators/family-and-peers">
           <a>
             <div className="card orange link nextIndicator">
               <div className="grade grade-d">d</div>

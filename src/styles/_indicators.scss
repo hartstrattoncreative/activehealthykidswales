@@ -148,7 +148,6 @@ div.expand {
   height: 80px;
   position: relative;
   color: $white;
-  cursor: pointer;
   @include bgColor($darkBlue);
   @include bgColor($blue);
   @include bgColor($lightBlue);
