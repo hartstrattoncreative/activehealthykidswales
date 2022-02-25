@@ -1,13 +1,31 @@
 import Image from "next/image";
 import Link from "next/link";
+import clsx from "clsx";
 import * as React from "react";
 import AHKWLogo from "../../public/images/ahkw_logo.svg";
+import { useRouter } from "next/router";
 
 const AppLayout: React.FC = (props) => {
   const { children } = props;
+  const router = useRouter();
+  const [navOpen, setNavOpen] = React.useState(false);
+  const handleClick = () => setNavOpen((current) => !current);
+
+  React.useEffect(() => {
+    const handleRouteChange = () => setNavOpen(false);
+
+    router.events.on("routeChangeComplete", handleRouteChange);
+
+    // If the component is unmounted, unsubscribe
+    // from the event with the `off` method:
+    return () => {
+      router.events.off("routeChangeComplete", handleRouteChange);
+    };
+  }, []);
+
   return (
     <>
-      <nav>
+      <nav className={clsx(navOpen && "is-active")}>
         <div className="menuContent">
           <div className="column navColumn">
             <Link href="/">
@@ -41,13 +59,37 @@ const AppLayout: React.FC = (props) => {
         </div>
       </nav>
       <div className="container rc">
-        <header className="wide">
-          <button className="hamburger hamburger--spin" type="button">
+        <header className={clsx("wide", navOpen && "fixed")}>
+          <button
+            onClick={handleClick}
+            className={clsx(
+              "hamburger",
+              "hamburger--spin",
+              navOpen && "is-active"
+            )}
+            type="button"
+          >
             <span className="hamburger-box">
               <span className="hamburger-inner"></span>
             </span>
-            <span className="hamburger-label menu is-active">menu</span>
-            <span className="hamburger-label close">close</span>
+            <span
+              className={clsx(
+                "hamburger-label",
+                "menu",
+                !navOpen && "is-active"
+              )}
+            >
+              menu
+            </span>
+            <span
+              className={clsx(
+                "hamburger-label",
+                "close",
+                navOpen && "is-active"
+              )}
+            >
+              close
+            </span>
           </button>
           <Link href="/">
             <a>
