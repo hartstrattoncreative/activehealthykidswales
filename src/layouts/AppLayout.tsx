@@ -2,14 +2,18 @@ import Image from "next/image";
 import Link from "next/link";
 import clsx from "clsx";
 import * as React from "react";
-import AHKWLogo from "../../public/images/ahkw_logo.svg";
 import { useRouter } from "next/router";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTwitter } from "@fortawesome/free-brands-svg-icons";
+import AHKWLogo from "../../public/images/ahkw_logo.svg";
 
 const AppLayout: React.FC = (props) => {
   const { children } = props;
   const router = useRouter();
   const [navOpen, setNavOpen] = React.useState(false);
-  const [lang, setLang] = React.useState("en");
+  const [lang, setLang] = React.useState(
+    router.asPath.includes("/cy") ? "cy" : "en"
+  );
 
   const handleClick = () => setNavOpen((current) => !current);
   const handleLangToggle = (e: React.MouseEvent) => {
@@ -17,13 +21,26 @@ const AppLayout: React.FC = (props) => {
     setLang(lang as string);
 
     if (lang === "cy") {
-      router.push(`/cy${router.asPath}`);
+      if (!router.asPath.includes("/cy")) {
+        router.push(`/cy${router.asPath}`);
+      }
     } else {
-      router.push(router.asPath.replace("/cy", ""));
+      if (router.asPath === "/cy") {
+        router.push(router.asPath.replace("/cy", "/"));
+      } else {
+        router.push(router.asPath.replace("/cy", ""));
+      }
     }
   };
 
+  const handleBackToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
+
   React.useEffect(() => {
+    if (navigator.language.includes("cy") && !router.asPath.includes("/cy")) {
+      router.push(`/cy${router.asPath}`);
+      setLang("cy");
+    }
+
     const handleRouteChange = () => setNavOpen(false);
     router.events.on("routeChangeComplete", handleRouteChange);
     return () => {
@@ -36,33 +53,52 @@ const AppLayout: React.FC = (props) => {
       <nav className={clsx(navOpen && "is-active")}>
         <div className="menuContent">
           <div className="column navColumn">
-            <Link href="/">
-              <a>Home</a>
-            </Link>
-            <Link href="/report-card">
-              <a>Report Cards</a>
-            </Link>
-            <Link href="about">
-              <a>About</a>
-            </Link>
+            {lang === "cy" && (
+              <>
+                <Link href="/cy/home">
+                  <a>Hafan</a>
+                </Link>
+                <Link href="/cy/report-card">
+                  <a>Cardiau Cofnodi</a>
+                </Link>
+                <Link href="/cy/about">
+                  <a>Amdanom Ni</a>
+                </Link>
+              </>
+            )}
+            {lang === "en" && (
+              <>
+                <Link href="/">
+                  <a>Home</a>
+                </Link>
+                <Link href="/report-card">
+                  <a>Report Card</a>
+                </Link>
+                <Link href="/about">
+                  <a>About</a>
+                </Link>
+              </>
+            )}
           </div>
-          <div className="column mapColumn">
+          {/* <div className="column mapColumn">
             <Link href="/maps/swanlinx/home">
               <a target="_blank">Swanlinx Map</a>
             </Link>
             <Link href="/maps/dc/home">
               <a target="_blank">Dragon Challenge Map</a>
             </Link>
-          </div>
+          </div> */}
         </div>
         <div className="socialContent">
           <div className="twitterWrapper">
             <a
-              className="social twitter fa fa-twitter fa-3x"
+              className="social twitter"
               href="https://twitter.com/AHK_Wales"
               target="_blank"
               rel="noreferrer"
-            ></a>
+            >
+              <FontAwesomeIcon icon={faTwitter} size="2x" />
+            </a>
           </div>
         </div>
       </nav>
@@ -87,7 +123,7 @@ const AppLayout: React.FC = (props) => {
                 !navOpen && "is-active"
               )}
             >
-              menu
+              {lang === "en" ? "menu" : "Dewislen"}
             </span>
             <span
               className={clsx(
@@ -96,10 +132,10 @@ const AppLayout: React.FC = (props) => {
                 navOpen && "is-active"
               )}
             >
-              close
+              {lang === "en" ? "close" : "Cau"}
             </span>
           </button>
-          <Link href="/">
+          <Link href={lang === "cy" ? "/cy" : "/"}>
             <a>
               <div className="logo">
                 <Image
@@ -144,42 +180,57 @@ const AppLayout: React.FC = (props) => {
         <div className="preFooter-nav wide">
           <div className="menuContent">
             <div className="column navColumn">
-              <Link href="/cy/home">
-                <a>Hafan</a>
-              </Link>
-              <Link href="/cy/home">
-                <a>Cardiau Cofnodi</a>
-              </Link>
-              <Link href="/cy/about">
-                <a>Amdanom Ni</a>
-              </Link>
+              {lang === "cy" && (
+                <>
+                  <Link href="/cy/home">
+                    <a>Hafan</a>
+                  </Link>
+                  <Link href="/cy/report-card">
+                    <a>Cardiau Cofnodi</a>
+                  </Link>
+                  <Link href="/cy/about">
+                    <a>Amdanom Ni</a>
+                  </Link>
+                </>
+              )}
+              {lang === "en" && (
+                <>
+                  <Link href="/">
+                    <a>Home</a>
+                  </Link>
+                  <Link href="/report-card">
+                    <a>Report Card</a>
+                  </Link>
+                  <Link href="/about">
+                    <a>About</a>
+                  </Link>
+                </>
+              )}
             </div>
-            <div className="column mapColumn">
+            {/* <div className="column mapColumn">
               <Link href="/maps/swanlinx/home">
                 <a target="_blank">Swanlinx Map</a>
               </Link>
               <Link href="/maps/dc/home">
                 <a target="_blank">Dragon Challenge Map</a>
               </Link>
-            </div>
+            </div> */}
           </div>
         </div>
         <footer className="wide">
           <div className="footerInfo">
             <i className="fa fa-copyright" aria-hidden="true"></i>
-            <span className="copyright"> copyright 2016 &#124; </span>
+            <span className="copyright">
+              copyright {new Date().getFullYear()} &#124;{" "}
+            </span>
             <span className="siteBy">
-              site by
-              <a
-                href="http://geoshepherds.com"
-                target="_blank"
-                rel="noreferrer"
-              >
-                geoshepherds
+              site by{" "}
+              <a href="http://hsc.studio" target="_blank" rel="noreferrer">
+                hsc
               </a>
             </span>
           </div>
-          <div className="ui-BackToTop">
+          <div className="ui-BackToTop" onClick={handleBackToTop}>
             <span>
               <svg
                 version="1.1"
@@ -204,7 +255,9 @@ const AppLayout: React.FC = (props) => {
                 </g>
               </svg>
             </span>
-            <div className="ui-content">back to top</div>
+            <div className="ui-content">
+              {lang === "en" ? "back to top" : "Yn ôl i'r top"}
+            </div>
           </div>
         </footer>
       </div>
