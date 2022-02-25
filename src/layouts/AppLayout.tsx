@@ -9,15 +9,23 @@ const AppLayout: React.FC = (props) => {
   const { children } = props;
   const router = useRouter();
   const [navOpen, setNavOpen] = React.useState(false);
+  const [lang, setLang] = React.useState("en");
+
   const handleClick = () => setNavOpen((current) => !current);
+  const handleLangToggle = (e: React.MouseEvent) => {
+    const lang = (e.target as HTMLElement).dataset.lang;
+    setLang(lang as string);
+
+    if (lang === "cy") {
+      router.push(`/cy${router.asPath}`);
+    } else {
+      router.push(router.asPath.replace("/cy", ""));
+    }
+  };
 
   React.useEffect(() => {
     const handleRouteChange = () => setNavOpen(false);
-
     router.events.on("routeChangeComplete", handleRouteChange);
-
-    // If the component is unmounted, unsubscribe
-    // from the event with the `off` method:
     return () => {
       router.events.off("routeChangeComplete", handleRouteChange);
     };
@@ -105,7 +113,20 @@ const AppLayout: React.FC = (props) => {
             </a>
           </Link>
           <div className="langSetting header">
-            <a className="en is-active">en</a> <a className="cy">cy</a>
+            <a
+              className={clsx("en", lang === "en" && "is-active")}
+              onClick={handleLangToggle}
+              data-lang="en"
+            >
+              en
+            </a>
+            <a
+              className={clsx("cy", lang === "cy" && "is-active")}
+              onClick={handleLangToggle}
+              data-lang="cy"
+            >
+              cy
+            </a>
           </div>
         </header>
         <main>{children}</main>
