@@ -164,7 +164,7 @@ div.expand {
     @include shortShadow($lightBlue);
     @include shortShadow($xtraDarkBlue);
     & > div {
-      background: url(/media/icons/uiarrow-accordion.svg);
+      background: url(/icons/uiarrow-accordion.svg);
       background-repeat: no-repeat;
       background-position: center;
       background-size: contain;
@@ -265,10 +265,10 @@ div.expandContent.sources {
   opacity: 0.85;
   transition: opacity 0.3s ease-in-out;
   &#swanlinx {
-    background-image: url(/media/images/swanlinx.jpg);
+    background-image: url(/images/swanlinx.jpg);
   }
   &#dragonChallenge {
-    background-image: url(/media/images/dragon_challenge.jpg);
+    background-image: url(/images/dragon_challenge.jpg);
   }
   @media screen and (min-width: 768px) {
     height: 420px;

@@ -1,5 +1,7 @@
+import Image from "next/image";
 import Link from "next/link";
 import * as React from "react";
+import AHKWLogo from "../../public/images/ahkw_logo.svg";
 
 const AppLayout: React.FC = (props) => {
   const { children } = props;
@@ -8,18 +10,23 @@ const AppLayout: React.FC = (props) => {
       <nav>
         <div className="menuContent">
           <div className="column navColumn">
-            <a href="/home"> Home </a> <a href="/report-card"> Report Cards </a>
-            <a href="about"> About </a>
+            <Link href="/">
+              <a>Home</a>
+            </Link>
+            <Link href="/report-card">
+              <a>Report Cards</a>
+            </Link>
+            <Link href="about">
+              <a>About</a>
+            </Link>
           </div>
           <div className="column mapColumn">
-            <a href="/maps/swanlinx/home" target="_blank">
-              {" "}
-              Swanlinx Map{" "}
-            </a>
-            <a href="/maps/dc/home" target="_blank">
-              {" "}
-              Dragon Challenge Map{" "}
-            </a>
+            <Link href="/maps/swanlinx/home">
+              <a target="_blank">Swanlinx Map</a>
+            </Link>
+            <Link href="/maps/dc/home">
+              <a target="_blank">Dragon Challenge Map</a>
+            </Link>
           </div>
         </div>
         <div className="socialContent">
@@ -42,16 +49,19 @@ const AppLayout: React.FC = (props) => {
             <span className="hamburger-label menu is-active">menu</span>
             <span className="hamburger-label close">close</span>
           </button>
-          <a href="/home">
-            <div className="logo">
-              <img
-                src="images/ahkw_logo.svg"
-                alt="Active Healthy Kids Wales logo"
-                width="600"
-                height="415"
-              />
-            </div>
-          </a>
+          <Link href="/">
+            <a>
+              <div className="logo">
+                <Image
+                  src={AHKWLogo.src}
+                  layout="fixed"
+                  alt="Active Healthy Kids Wales logo"
+                  width={100}
+                  height={80}
+                />
+              </div>
+            </a>
+          </Link>
           <div className="langSetting header">
             <a className="en is-active">en</a> <a className="cy">cy</a>
           </div>
@@ -82,14 +92,12 @@ const AppLayout: React.FC = (props) => {
               </Link>
             </div>
             <div className="column mapColumn">
-              <a href="/maps/swanlinx/home" target="_blank">
-                {" "}
-                Swanlinx Map{" "}
-              </a>
-              <a href="/maps/dc/home" target="_blank">
-                {" "}
-                Dragon Challenge Map{" "}
-              </a>
+              <Link href="/maps/swanlinx/home">
+                <a target="_blank">Swanlinx Map</a>
+              </Link>
+              <Link href="/maps/dc/home">
+                <a target="_blank">Dragon Challenge Map</a>
+              </Link>
             </div>
           </div>
         </div>
