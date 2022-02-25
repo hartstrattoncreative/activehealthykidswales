@@ -138,7 +138,7 @@ const AppLayout: React.FC = (props) => {
           <Link href={lang === "cy" ? "/cy" : "/"}>
             <a>
               <div className="logo">
-                <Image
+                <img
                   src={AHKWLogo.src}
                   layout="fixed"
                   alt="Active Healthy Kids Wales logo"

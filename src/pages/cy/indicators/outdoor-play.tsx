@@ -13,12 +13,10 @@ const Page: NextPage = () => {
             <span className="ui arrowRight"> </span>
           </div>
           <div className="cardIcon">
-            <Image
+            <img
               alt="outdoor"
               className="yellow"
               src="/icons/outdoor-icon.svg"
-              layout="fill"
-              objectFit="contain"
             />
           </div>
         </div>
@@ -461,10 +459,8 @@ const Page: NextPage = () => {
                 </h6>
               </div>
               <div className="cardIcon">
-                <Image
+                <img
                   alt="active transport"
-                  layout="fill"
-                  objectFit="contain"
                   className="orange"
                   src="/icons/activetransport-icon.svg"
                 />

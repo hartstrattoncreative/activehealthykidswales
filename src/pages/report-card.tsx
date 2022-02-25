@@ -85,7 +85,7 @@ const Page: NextPage = () => {
       </div>
 
       <div className="wide rcCard">
-        <Link href="/media/reports/AHK-Wales_Report_Card_2016.pdf">
+        <Link href="/reports/AHK-Wales_Report_Card_2016.pdf">
           <a target="_blank">
             <div className="dlReport16 blue">
               <h5 className="light blue">
@@ -95,7 +95,7 @@ const Page: NextPage = () => {
           </a>
         </Link>
 
-        <Link href="/media/reports/AHK_Wales_Report_Card_2014.pdf">
+        <Link href="/reports/AHK_Wales_Report_Card_2014.pdf">
           <a target="_blank">
             <div className="dlReport14 lightBlue">
               <h6 className="light lightBlue">
@@ -141,11 +141,9 @@ const Page: NextPage = () => {
                 </h6>
               </div>
               <div className="cardIcon">
-                <Image
+                <img
                   className="orange"
                   src="/icons/overallphys-icon.svg"
-                  layout="fill"
-                  objectFit="contain"
                   alt="overall physical activity"
                 />
               </div>

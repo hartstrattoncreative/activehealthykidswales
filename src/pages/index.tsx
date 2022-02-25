@@ -70,10 +70,8 @@ const Home: NextPage = () => {
                 </h6>
               </div>
               <div className="cardIcon">
-                <Image
-                  alt=""
-                  layout="fill"
-                  objectFit="contain"
+                <img
+                  alt="overall physical activity"
                   className="orange"
                   src="/icons/overallphys-icon.svg"
                 />
@@ -118,13 +116,7 @@ const Home: NextPage = () => {
                 </h6>
               </div>
               <div className="cardIcon">
-                <Image
-                  alt=""
-                  layout="fill"
-                  objectFit="contain"
-                  className="red"
-                  src="/icons/builtenviro-icon.svg"
-                />
+                <img alt="" className="red" src="/icons/builtenviro-icon.svg" />
               </div>
             </div>
           </a>
@@ -166,13 +158,7 @@ const Home: NextPage = () => {
                 </h6>
               </div>
               <div className="cardIcon">
-                <Image
-                  alt=""
-                  layout="fill"
-                  objectFit="contain"
-                  className="red"
-                  src="/icons/school-icon.svg"
-                />
+                <img alt="" className="red" src="/icons/school-icon.svg" />
               </div>
             </div>
           </a>
@@ -213,10 +199,8 @@ const Home: NextPage = () => {
                 </h6>
               </div>
               <div className="cardIcon">
-                <Image
+                <img
                   alt=""
-                  layout="fill"
-                  objectFit="contain"
                   className="orange"
                   src="/icons/activetransport-icon.svg"
                 />
@@ -260,13 +244,7 @@ const Home: NextPage = () => {
                 </h6>
               </div>
               <div className="cardIcon">
-                <Image
-                  alt=""
-                  layout="fill"
-                  objectFit="contain"
-                  className="red"
-                  src="/icons/sedentary-icon.svg"
-                />
+                <img alt="" className="red" src="/icons/sedentary-icon.svg" />
               </div>
             </div>
           </a>
@@ -307,13 +285,7 @@ const Home: NextPage = () => {
                 </h6>
               </div>
               <div className="cardIcon">
-                <Image
-                  alt=""
-                  layout="fill"
-                  objectFit="contain"
-                  className="yellow"
-                  src="/icons/outdoor-icon.svg"
-                />
+                <img alt="" className="yellow" src="/icons/outdoor-icon.svg" />
               </div>
             </div>
           </a>
@@ -355,13 +327,7 @@ const Home: NextPage = () => {
                 </h6>
               </div>
               <div className="cardIcon">
-                <Image
-                  alt=""
-                  layout="fill"
-                  objectFit="contain"
-                  className="yellow"
-                  src="/media/icons/govt-icon.svg"
-                />
+                <img alt="" className="yellow" src="/icons/govt-icon.svg" />
               </div>
             </div>
           </a>
@@ -402,13 +368,7 @@ const Home: NextPage = () => {
                 </h6>
               </div>
               <div className="cardIcon">
-                <Image
-                  alt=""
-                  layout="fill"
-                  objectFit="contain"
-                  className="orange"
-                  src="/icons/family-icon.svg"
-                />
+                <img alt="" className="orange" src="/icons/family-icon.svg" />
               </div>
             </div>
           </a>
@@ -449,10 +409,8 @@ const Home: NextPage = () => {
                 </h6>
               </div>
               <div className="cardIcon">
-                <Image
+                <img
                   alt=""
-                  layout="fill"
-                  objectFit="contain"
                   className="yellow"
                   src="/icons/organisedsport-icon.svg"
                 />
@@ -496,13 +454,7 @@ const Home: NextPage = () => {
                 </h6>
               </div>
               <div className="cardIcon">
-                <Image
-                  alt=""
-                  layout="fill"
-                  objectFit="contain"
-                  className="red"
-                  src="/icons/physlit-icon.svg"
-                />
+                <img alt="" className="red" src="/icons/physlit-icon.svg" />
               </div>
             </div>
           </a>
