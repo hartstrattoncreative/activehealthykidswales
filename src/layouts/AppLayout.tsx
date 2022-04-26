@@ -139,7 +139,6 @@ const AppLayout: React.FC = (props) => {
               <div className="logo">
                 <img
                   src={AHKWLogo.src}
-                  layout="fixed"
                   alt="Active Healthy Kids Wales logo"
                   width={100}
                   height={80}
