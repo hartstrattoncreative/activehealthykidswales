@@ -1,0 +1,39 @@
+{
+  "root": true,
+  "project": {
+    "name": "activehealthykidswales"
+  },
+  "api": {
+    "projectId": "7u2wamp6",
+    "dataset": "production"
+  },
+  "plugins": [
+    "@sanity/base",
+    "@sanity/default-layout",
+    "@sanity/default-login",
+    "@sanity/desk-tool",
+    "@sanity/document-internationalization",
+    "@sanity/language-filter"
+  ],
+  "env": {
+    "development": {
+      "plugins": [
+        "@sanity/vision"
+      ]
+    }
+  },
+  "parts": [
+    {
+      "name": "part:@sanity/language-filter/config",
+      "path": "./parts/languageFilterConfig"
+    },
+    {
+      "name": "part:@sanity/base/schema",
+      "path": "./schemas/schema"
+    },
+    {
+      "implements": "part:@sanity/desk-tool/structure",
+      "path": "./deskStructure"
+    }
+  ]
+}
