@@ -32,12 +32,7 @@ export default {
       title: 'Hero media',
       validation: (Rule: any) =>
         Rule.max(1).error('You can select only one hero media item'),
-      of: [{ type: 'image' }, { type: 'globe' }],
-    },
-    {
-      name: 'ecosystemSearch',
-      type: 'search',
-      title: 'Ecosystem Search',
+      of: [{ type: 'image' }],
     },
   ],
   preview: {

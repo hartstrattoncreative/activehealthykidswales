@@ -22,7 +22,6 @@ import portableText from './objects/portableText';
 import simplePortableText from './objects/simplePortableText';
 import textSection from './objects/textSection';
 import heroSection from './objects/heroSection';
-import exploreEcosystemSection from './objects/exploreEcosystemSection';
 
 // Then we give our schema to the builder and provide the result to Sanity
 // eslint-disable-next-line @typescript-eslint/no-unsafe-call
@@ -48,6 +47,5 @@ export default createSchema({
     simplePortableText,
     siteConfig,
     textSection,
-    exploreEcosystemSection,
   ]),
 });

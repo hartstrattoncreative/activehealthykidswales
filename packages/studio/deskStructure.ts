@@ -9,7 +9,7 @@ import navigation from './stucture/navigation';
 // them from being listed twice
 const hiddenDocTypes = (listItem: any) =>
   !['page', 'route', 'site-config', 'navigation', 'footer'].includes(
-    listItem?.getId() as string
+    (listItem?.getId?.() as string) ?? (listItem.id as string)
   );
 
 export default () => {

@@ -1,11 +1,11 @@
 {
   "root": true,
+  "api": {
+    "projectId": "jeky4zr9",
+    "dataset": "production"
+  },
   "project": {
     "name": "activehealthykidswales"
-  },
-  "api": {
-    "projectId": "7u2wamp6",
-    "dataset": "production"
   },
   "plugins": [
     "@sanity/base",
