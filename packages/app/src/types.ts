@@ -8,5 +8,5 @@ export type NavigationItem = {
 export type SiteSettings = {
   title: string;
   url: string;
-  logo: SanityImageObject;
+  logo?: SanityImageObject;
 };

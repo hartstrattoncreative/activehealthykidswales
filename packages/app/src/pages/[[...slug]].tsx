@@ -14,8 +14,9 @@ export type SlugPageProps = {
 };
 
 const SlugPage: NextPage<SlugPageProps> = (props) => {
-  const { page } = props;
-  const { title, description, disallowRobots = false, content } = page;
+  const { page = { title: '', description: '', disallowRobots: false } } =
+    props;
+  const { title, description, disallowRobots, content } = page;
 
   return (
     <>

@@ -12,14 +12,17 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import { useNextSanityImage } from 'next-sanity-image';
 import { sanityClient } from 'libs/sanity/client.server';
-import { SanityImageObject } from '@sanity/image-url/lib/types/types';
+import {
+  SanityImageObject,
+  SanityImageSource,
+} from '@sanity/image-url/lib/types/types';
 import Divider from '@mui/material/Divider';
 import HeaderNavBar from './partials/HeaderNavBar';
 import SvgHamburgerMenu from 'icons/SvgHamburgerIcon';
 import { NavigationItem } from 'types';
 
 export type HeaderProps = {
-  logo: SanityImageObject;
+  logo?: SanityImageObject;
   navItems: NavigationItem[];
   title: string;
 };
@@ -28,7 +31,10 @@ const Header: React.FC<HeaderProps> = (props) => {
   const { logo, navItems = [], title } = props;
   const [navOpen, setNavOpen] = React.useState(false);
 
-  const logoProps = useNextSanityImage(sanityClient, logo?.asset);
+  const logoProps = useNextSanityImage(
+    sanityClient,
+    (logo?.asset as SanityImageSource) ?? null
+  );
 
   const toggleOpenNavMenu = React.useCallback(
     () => setNavOpen((open) => !open),

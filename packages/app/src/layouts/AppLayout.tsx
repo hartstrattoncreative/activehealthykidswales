@@ -23,7 +23,7 @@ export type AppLayoutProps = {
 const Main = styled('main')();
 
 const AppLayout: React.FC<AppLayoutProps> = (props) => {
-  const { children, config } = props;
+  const { children, config = { title: '', url: '' } } = props;
   const { logo, title, url } = config;
 
   return (
