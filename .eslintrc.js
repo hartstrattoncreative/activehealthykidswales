@@ -43,6 +43,7 @@ module.exports = {
   ],
   "rules": {
     // Other rules
-    "@next/next/no-img-element": "off"
+    "@next/next/no-img-element": "off",
+    "@typescript-eslint/ban-ts-comment": 'off'
   }
 };

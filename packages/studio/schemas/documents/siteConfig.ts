@@ -27,21 +27,20 @@ export default {
       description: 'The main site url. Used to create canonical url',
     },
     {
-      name: 'frontpage',
-      type: 'reference',
-      description: 'Choose page to be the frontpage',
-      to: { type: 'page' },
-    },
-    {
-      title: 'Site language',
+      title: 'Site languages',
       description:
         'Should be a valid bcp47 language code like en, en-US, no or nb-NO',
       name: 'lang',
-      type: 'string',
-      validation: (Rule: any) =>
-        Rule.custom((lang: string) =>
-          bcp47.parse(lang) ? true : 'Please use a valid bcp47 code'
-        ),
+      type: 'array',
+      of: [
+        {
+          type: 'string',
+          validation: (Rule: any) =>
+            Rule.custom((lang: string) =>
+              bcp47.parse(lang) ? true : 'Please use a valid bcp47 code'
+            ),
+        },
+      ],
     },
     {
       title: 'Brand logo',

@@ -1,3 +1,6 @@
 {
-  "languages": ["en", "cy"]
+  "languages": [      
+    {"id": "en", "title": "English"},
+    {"id": "cy", "title": "Welsh"}
+  ]
 }

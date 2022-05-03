@@ -9,14 +9,7 @@ export default S.listItem()
     S.list()
       .title('Navigation')
       .items([
-        S.documentListItem()
-          .id('navigation')
-          .schemaType('navigation')
-          .title('Main Navigation'),
-        S.documentListItem()
-          .id('footer')
-          .schemaType('footer')
-          .title('Footer Navigation'),
+        S.documentListItem().id('menu').schemaType('menu').title('Main menu'),
         S.listItem()
           .title('Routes')
           .schemaType('route')

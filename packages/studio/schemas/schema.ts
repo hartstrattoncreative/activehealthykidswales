@@ -8,10 +8,12 @@ import schemaTypes from 'all:part:@sanity/base/schema-type';
 import page from './documents/page';
 import route from './documents/route';
 import siteConfig from './documents/siteConfig';
-import navigation from './documents/navigation';
-import footer from './documents/footer';
+import menu from './documents/menu';
+import team from './documents/team';
 
 // Object types
+import navPage from './objects/navPage';
+import navDropdown from './objects/navDropdown';
 import cta from './objects/cta';
 import embedHTML from './objects/embedHTML';
 import figure from './objects/figure';
@@ -32,8 +34,8 @@ export default createSchema({
   // to the ones provided by any plugins that are installed
   types: schemaTypes.concat([
     /* Your types here! */
-    navigation,
-    footer,
+    navPage,
+    navDropdown,
     cta,
     page,
     route,
@@ -47,5 +49,7 @@ export default createSchema({
     simplePortableText,
     siteConfig,
     textSection,
+    menu,
+    team,
   ]),
 });

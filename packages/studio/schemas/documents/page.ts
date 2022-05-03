@@ -5,6 +5,7 @@ export default {
   name: 'page',
   type: 'document',
   title: 'Page',
+  i18n: true,
   icon: MasterDetailIcon,
   fieldsets: [
     {
@@ -43,7 +44,6 @@ export default {
       ],
     },
   ],
-
   preview: {
     select: {
       title: 'title',
