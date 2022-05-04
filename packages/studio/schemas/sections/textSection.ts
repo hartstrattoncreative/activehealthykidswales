@@ -5,17 +5,17 @@ export default {
   fields: [
     {
       name: 'label',
-      type: 'string',
+      type: 'localeString',
       title: 'Label',
     },
     {
       name: 'heading',
-      type: 'string',
+      type: 'localeString',
       title: 'Heading',
     },
     {
       name: 'text',
-      type: 'portableText',
+      type: 'localePortableText',
       title: 'Text',
     },
   ],

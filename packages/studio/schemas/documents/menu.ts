@@ -7,7 +7,7 @@ export default {
   title: 'Main menu',
   // https://www.sanity.io/docs/experimental/ui-affordances-for-actions
   __experimental_actions: [
-    'create',
+    // 'create',
     //  "delete",
     'update',
     'publish',
@@ -25,7 +25,4 @@ export default {
       of: [{ type: 'navPage' }, { type: 'navDropdown' }],
     },
   ],
-  initialValue: {
-    __i18n_lang: 'en',
-  },
 };

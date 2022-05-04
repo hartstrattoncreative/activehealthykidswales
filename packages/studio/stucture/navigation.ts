@@ -2,14 +2,20 @@
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 import S from '@sanity/desk-tool/structure-builder';
+import { MdMenu, MdNavigation } from 'react-icons/md';
 
 export default S.listItem()
   .title('Navigation')
+  .icon(MdNavigation)
   .child(
     S.list()
       .title('Navigation')
       .items([
-        S.documentListItem().id('menu').schemaType('menu').title('Main menu'),
+        S.documentListItem()
+          .id('menu')
+          .icon(MdMenu)
+          .schemaType('menu')
+          .title('Main menu'),
         S.listItem()
           .title('Routes')
           .schemaType('route')

@@ -27,6 +27,12 @@ export default {
       description: 'The main site url. Used to create canonical url',
     },
     {
+      name: 'homepage',
+      type: 'reference',
+      description: 'Choose page to be the homepage',
+      to: { type: 'page' },
+    },
+    {
       title: 'Site languages',
       description:
         'Should be a valid bcp47 language code like en, en-US, no or nb-NO',

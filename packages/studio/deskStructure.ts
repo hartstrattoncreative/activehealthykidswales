@@ -3,59 +3,53 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-call */
 import S from '@sanity/desk-tool/structure-builder';
-import * as intlStructure from '@sanity/document-internationalization/lib/structure';
 import navigation from './stucture/navigation';
+import { MdSettings, MdStarRate, MdSupervisorAccount } from 'react-icons/md';
 
 // We filter document types defined in structure to prevent
 // them from being listed twice
 const hiddenDocTypes = (listItem: any) =>
-  !['route', 'site-config', 'menu', 'team'].includes(
+  !['route', 'site-config', 'menu', 'team', 'indicators'].includes(
     (listItem?.getId?.() as string) ?? (listItem.id as string)
   );
 
-S.documentList()
-  .id('frontpage')
-  .title('Frontpage')
-  .schemaType('page')
-  .filter('_id == $id && _type == $type')
-  .params({
-    id: 'frontpage',
-    type: 'frontpage',
-  })
-  .menuItems([
-    {
-      title: 'Create new',
-      intent: {
-        type: 'create',
-        params: {
-          id: 'frontpage',
-          type: 'page',
-          template: 'frontpage',
-        },
-      },
-    },
-  ]);
-
 export default () => {
-  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-  const items = intlStructure.getFilteredDocumentTypeListItems();
-  const pageStructure = intlStructure
-    .getFilteredDocumentTypeListItems()
-    .find((item) => item.id === 'page');
-
-  console.log(pageStructure);
-
   return S.list()
     .id('__root__')
     .title('Site Content')
     .items([
       navigation,
+      ...S.documentTypeListItems().filter(hiddenDocTypes),
+
       S.divider(),
-      ...items.filter(hiddenDocTypes),
-      S.documentListItem().id('team').schemaType('team').title('Team Members'),
+      S.listItem()
+        .title('Key Indicators')
+        .schemaType('indicators')
+        .id('indicators')
+        .icon(MdStarRate)
+        .child(
+          S.document()
+            .title('Key Indicators')
+            .schemaType('indicators')
+            .documentId('indicators')
+            .views([S.view.form()])
+        ),
+      S.listItem()
+        .title('Group Members')
+        .schemaType('team')
+        .id('team')
+        .icon(MdSupervisorAccount)
+        .child(
+          S.document()
+            .title('Group Members')
+            .schemaType('team')
+            .documentId('members')
+            .views([S.view.form()])
+        ),
       S.divider(),
       S.documentListItem()
         .id('site-config')
+        .icon(MdSettings)
         .schemaType('site-config')
         .title('Site Settings'),
     ]);

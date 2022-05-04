@@ -1,7 +1,8 @@
 export default {
-  name: 'team',
+  name: 'indicators',
+  id: 'indicators',
   type: 'document',
-  title: 'Group members',
+  title: 'Indicators',
   __experimental_actions: [
     'create',
     //  "delete",
@@ -10,10 +11,10 @@ export default {
   ],
   fields: [
     {
-      name: 'members',
+      name: 'indicators',
       type: 'array',
-      title: 'Members',
-      of: [{ type: 'member', name: 'name', title: 'Name' }],
+      title: 'Indicators',
+      of: [{ type: 'indicator', name: 'name', title: 'Name' }],
     },
     // {
     //   name: 'otherContributors',

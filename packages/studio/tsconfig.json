@@ -4,7 +4,7 @@
   // here will be ignored.
   "extends": "../../tsconfig.base.json",
   "compilerOptions": {
-    "jsx": "react"
+    "jsx": "react",
   },
   "include": ["../../node_modules/@sanity/base/types/**/*.ts", "./**/*.ts", "./**/*.tsx"]
 }

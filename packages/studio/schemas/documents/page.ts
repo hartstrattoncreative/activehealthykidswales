@@ -5,7 +5,6 @@ export default {
   name: 'page',
   type: 'document',
   title: 'Page',
-  i18n: true,
   icon: MasterDetailIcon,
   fieldsets: [
     {
@@ -41,6 +40,8 @@ export default {
         { type: 'heroSection' },
         { type: 'imageSection' },
         { type: 'textSection' },
+        { type: 'membersSection' },
+        { type: 'accordionSection' },
       ],
     },
   ],

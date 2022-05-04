@@ -11,9 +11,7 @@
     "@sanity/base",
     "@sanity/default-layout",
     "@sanity/default-login",
-    "@sanity/desk-tool",
-    "@sanity/document-internationalization",
-    "@sanity/language-filter"
+    "@sanity/desk-tool"
   ],
   "env": {
     "development": {
@@ -23,10 +21,7 @@
     }
   },
   "parts": [
-    {
-      "name": "part:@sanity/language-filter/config",
-      "path": "./parts/languageFilterConfig"
-    },
+
     {
       "name": "part:@sanity/base/schema",
       "path": "./schemas/schema"

@@ -10,6 +10,14 @@ import route from './documents/route';
 import siteConfig from './documents/siteConfig';
 import menu from './documents/menu';
 import team from './documents/team';
+import indicators from './documents/indicators';
+
+// Page sections
+import textSection from './sections/textSection';
+import heroSection from './sections/heroSection';
+import membersSection from './sections/membersSection';
+import imageSection from './sections/imageSection';
+import accordionSection from './sections/accordionSection';
 
 // Object types
 import navPage from './objects/navPage';
@@ -18,18 +26,21 @@ import cta from './objects/cta';
 import embedHTML from './objects/embedHTML';
 import figure from './objects/figure';
 import internalLink from './objects/internalLink';
-import imageSection from './objects/imageSection';
 import link from './objects/link';
 import portableText from './objects/portableText';
 import simplePortableText from './objects/simplePortableText';
-import textSection from './objects/textSection';
-import heroSection from './objects/heroSection';
+import member from './objects/member';
+import localeSimplePortableText from './objects/localeSimplePortableText';
+import localePortableText from './objects/localePortableText';
+import indicator from './objects/indicator';
+import score from './objects/score';
+import localeString from './objects/localeString';
 
 // Then we give our schema to the builder and provide the result to Sanity
 // eslint-disable-next-line @typescript-eslint/no-unsafe-call
 export default createSchema({
   // We name our schema
-  name: 'default',
+  name: 'activehealthykidswales',
   // Then proceed to concatenate our document type
   // to the ones provided by any plugins that are installed
   types: schemaTypes.concat([
@@ -39,6 +50,7 @@ export default createSchema({
     cta,
     page,
     route,
+    indicators,
     embedHTML,
     figure,
     heroSection,
@@ -50,6 +62,14 @@ export default createSchema({
     siteConfig,
     textSection,
     menu,
+    indicator,
     team,
+    member,
+    localeSimplePortableText,
+    accordionSection,
+    localeString,
+    localePortableText,
+    membersSection,
+    score,
   ]),
 });
