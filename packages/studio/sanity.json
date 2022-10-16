@@ -21,14 +21,9 @@
     }
   },
   "parts": [
-
     {
       "name": "part:@sanity/base/schema",
       "path": "./schemas/schema"
-    },
-    {
-      "implements": "part:@sanity/desk-tool/structure",
-      "path": "./deskStructure"
     }
   ]
 }

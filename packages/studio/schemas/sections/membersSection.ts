@@ -25,12 +25,12 @@ export default {
       type: 'simplePortableText',
       description: 'The tagline to accompany the headline',
     },
-    {
-      name: 'members',
-      type: 'array',
-      of: [{ type: 'reference', to: [{ type: 'team' }] }],
-      title: 'Members',
-    },
+    // {
+    //   name: 'members',
+    //   type: 'array',
+    //   of: [{ type: 'reference', to: [{ type: 'team' }] }],
+    //   title: 'Members',
+    // },
   ],
   preview: {
     select: {

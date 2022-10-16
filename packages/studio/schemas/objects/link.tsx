@@ -12,7 +12,7 @@ export default {
   fields: [
     {
       title: 'URL',
-      name: 'href',
+      name: 'url',
       type: 'url',
       validation: (Rule: any) =>
         Rule.uri({

@@ -1,18 +1,22 @@
+import { ArrowBendRightDown } from 'phosphor-react';
+
 export default {
   name: 'navDropdown',
   title: 'Navigation Dropdown',
   type: 'object',
+  icon: ArrowBendRightDown,
   fields: [
-    { name: 'name', type: 'string' },
     {
-      name: 'route',
-      title: 'Route',
+      title: 'Title',
+      name: 'title',
+      type: 'string',
+      description: 'Text to Display',
+    },
+    {
+      title: 'Dropdown Items',
+      name: 'dropdownItems',
       type: 'array',
-      of: [
-        {
-          type: 'navPage',
-        },
-      ],
+      of: [{ type: 'navPage' }, { type: 'navLink' }],
     },
   ],
 };

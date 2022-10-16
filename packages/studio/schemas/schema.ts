@@ -6,7 +6,6 @@ import schemaTypes from 'all:part:@sanity/base/schema-type';
 
 // Document types
 import page from './documents/page';
-import route from './documents/route';
 import siteConfig from './documents/siteConfig';
 import menu from './documents/menu';
 import team from './documents/team';
@@ -17,7 +16,7 @@ import textSection from './sections/textSection';
 import heroSection from './sections/heroSection';
 import membersSection from './sections/membersSection';
 import imageSection from './sections/imageSection';
-import accordionSection from './sections/accordionSection';
+import accordionsSection from './sections/accordionsSection';
 
 // Object types
 import navPage from './objects/navPage';
@@ -35,6 +34,8 @@ import localePortableText from './objects/localePortableText';
 import indicator from './objects/indicator';
 import score from './objects/score';
 import localeString from './objects/localeString';
+import accordion from './objects/accordion';
+import navLink from './objects/navLink';
 
 // Then we give our schema to the builder and provide the result to Sanity
 // eslint-disable-next-line @typescript-eslint/no-unsafe-call
@@ -44,32 +45,31 @@ export default createSchema({
   // Then proceed to concatenate our document type
   // to the ones provided by any plugins that are installed
   types: schemaTypes.concat([
-    /* Your types here! */
-    navPage,
-    navDropdown,
-    cta,
+    // Documents
     page,
-    route,
-    indicators,
-    embedHTML,
-    figure,
+    menu,
+
+    // Sections
+    accordionsSection,
     heroSection,
-    internalLink,
     imageSection,
-    link,
+    textSection,
+    membersSection,
+
+    // Objects
+    navDropdown,
+    navPage,
+    navLink,
+    accordion,
     portableText,
     simplePortableText,
-    siteConfig,
-    textSection,
-    menu,
-    indicator,
-    team,
-    member,
-    localeSimplePortableText,
-    accordionSection,
-    localeString,
     localePortableText,
-    membersSection,
-    score,
+    localeSimplePortableText,
+    figure,
+    cta,
+    localeString,
+    link,
+    embedHTML,
+    internalLink,
   ]),
 });
