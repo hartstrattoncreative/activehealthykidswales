@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
+
   },
   "dependencies": {
     "@emotion/cache": "^11.7.1",
