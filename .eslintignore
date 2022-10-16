@@ -1,6 +1,19 @@
+.git/
+.vscode/
 dist/
 out/
-cdk.out
+build/
 .next/
 node_modules/
 next-env.d.ts
+studio/plugins
+package.json
+yarn.lock
+yarn-error.log
+coverage/
+
+# FIXME: ignore studio until fixed
+apps/studio/ 
+
+# TODO: remove once app is deleted
+apps/old_app/

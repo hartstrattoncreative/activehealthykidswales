@@ -1,63 +1,44 @@
 {
   "name": "activehealthykidswales",
-  "version": "1.0.0",
-  "description": "Website reporting upon childrens activity and helath in Wales",
-  "main": "index.js",
+  "version": "0.0.0",
   "private": true,
   "workspaces": {
     "packages": [
+      "apps/*",
       "packages/*"
+    ],
+    "nohoist": [
+      "**/react", 
+      "**/react/**", 
+      "**/react-dom", 
+      "**/react-dom/**",
+      "**/@sanity/**"
     ]
   },
   "scripts": {
-    "prepare": "husky install",
-    "lint": "eslint . --ext .json,.js,.jsx,.ts,.tsx",
-    "lint:fix": "yarn lint --fix",
-    "dev": "nx run-many --parallel --target=dev --projects=app,studio",
-    "build": "nx run-many --parallel --target=build --projects=app,studio"
+    "build": "turbo run build",
+    "dev": "turbo run dev --parallel",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/hartstrattoncreative/activehealthykidswales.git"
-  },
-  "author": "Hart Stratton Creative",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/hartstrattoncreative/activehealthykidswales/issues"
-  },
-  "homepage": "https://github.com/hartstrattoncreative/activehealthykidswales#readme",
   "devDependencies": {
-    "@commitlint/cli": "^16.2.1",
-    "@commitlint/config-conventional": "^16.2.1",
-    "@next/eslint-plugin-next": "^12.1.0",
-    "@nrwl/cli": "latest",
-    "@nrwl/nx-cloud": "latest",
-    "@nrwl/tao": "latest",
-    "@nrwl/workspace": "latest",
-    "@sanity/cli": "^2.28.0",
-    "@types/prettier": "^2.4.4",
-    "@typescript-eslint/eslint-plugin": "^5.14.0",
-    "@typescript-eslint/parser": "^5.14.0",
-    "eslint": "^8.10.0",
-    "eslint-config-next": "^12.1.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-import-resolver-typescript": "^2.5.0",
-    "eslint-plugin-json": "^3.1.0",
-    "husky": "^7.0.4",
-    "lint-staged": "^12.4.1",
-    "nx": "^14.0.3",
-    "prettier": "^2.5.1",
-    "typescript": "^4.6.2"
+    "@commitlint/cli": "^17.0.0",
+    "@commitlint/config-conventional": "^17.0.0",
+    "eslint-config-custom": "*",
+    "prettier": "latest",
+    "turbo": "latest",
+    "husky": "^8.0.1",
+    "lint-staged": ">=10"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
+  "engines": {
+    "node": ">=14.0.0"
   },
+  "dependencies": {},
+  "packageManager": "yarn@1.22.19",
   "lint-staged": {
-    "*.{json,js,ts,tsx}": [
-      "eslint --fix --quiet"
+    "**/*.{js,jsx,ts,tsx}": [
+      "prettier --write",
+      "eslint --cache --fix"
     ]
   }
 }

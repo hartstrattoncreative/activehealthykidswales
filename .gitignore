@@ -2,18 +2,16 @@
 
 # dependencies
 node_modules
-/.pnp
+.pnp
 .pnp.js
 
 # testing
-/coverage
+coverage
 
 # next.js
 .next/
 out/
-
-# production
-/build
+build
 
 # misc
 .DS_Store
@@ -31,10 +29,5 @@ yarn-error.log*
 .env.test.local
 .env.production.local
 
-# vercel
-.vercel
-
-# typescript
-*.tsbuildinfo
-
-cdk.out
+# turbo
+.turbo

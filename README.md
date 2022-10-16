@@ -1,34 +1,114 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Active Healthy Kids Wales
 
-## Getting Started
+### Getting Started
 
-First, run the development server:
+See our [contributing](./CONTRIBUTING.md) guidelines for more detailed information about the Active Healthy Kids Wales project
+
+### What's inside?
+
+This turborepo uses [Yarn](https://classic.yarnpkg.com/) as a package manager. It includes the following packages/apps:
+
+## Setup Environment
+
+First, you should ensure you have **git** installed. The second requirement is **node**. It is recommended to install node using **nvm** (Node Version Manager) you can find instructions for installation and setup [here](https://github.com/creationix/nvm#installation).
+
+The project contains a `.nvmrc` file that sets the node version as the **long term stable**, which at the time of writing is [`lts/gallium` (_v16.13.2_)](https://nodejs.org/en/about/releases/).
 
 ```bash
-npm run dev
-# or
-yarn dev
+# From the project root
+nvm use # Sets the node version to what is defined in .nvmrc
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Alternatively if you use `bash` or `zsh` for your shell environment you can follow [this guide](https://github.com/creationix/nvm#deeper-shell-integration) to automatically read the `.nvmrc` file and change node version.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+For our package management we have chosen to use **Yarn**.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Local Development
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+In order to run all the applications locally in dev mode you can run one command from the project root
 
-## Learn More
+- Create a `.env.local` in `/apps/web`
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+# Sanity
+# ========================================================
+# NEXT_PUBLIC_SANITY_PROJECT_ID=
+# NEXT_PUBLIC_SANITY_DATASET=
+# SANITY_API_TOKEN=
+# SANITY_PREVIEW_SECRET=
+# SANITY_STUDIO_REVALIDATE_SECRET=
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Create a `.env.development` in `/apps/studio`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```bash
+# Switch the sanity studio dataset, useful for development
+# ========================================================
+# SANITY_STUDIO_API_DATASET=
+# SANITY_STUDIO_PREVIEW_SECRET= # NOTE: should match the secret in the web app
+# SANITY_STUDIO_PRODUCTION_URL= # NOTE: falls back to localhost
+```
 
-## Deploy on Vercel
+### Apps and Packages
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- `web`: [Next.js](https://nextjs.org) app powering the AHKW site
+- `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
+- `tsconfig`: `tsconfig.json`s used throughout the monorepo
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Each package/app is 100% [TypeScript](https://www.typescriptlang.org/).
+
+### Utilities
+
+This turborepo has some additional tools already setup for you:
+
+- [TypeScript](https://www.typescriptlang.org/) for static type checking
+- [ESLint](https://eslint.org/) for code linting
+- [Prettier](https://prettier.io) for code formatting
+
+### Build
+
+To build all apps and packages, run the following command:
+
+```
+cd activehealthykidswales
+yarn run build
+```
+
+### Develop
+
+To develop all apps and packages, run the following command:
+
+```
+cd activehealthykidswales
+yarn run dev
+```
+
+### Remote Caching
+
+Turborepo can use a technique known as [Remote Caching](https://turborepo.org/docs/core-concepts/remote-caching) to share cache artifacts across machines, enabling you to share build caches with your team and CI/CD pipelines.
+
+By default, Turborepo will cache locally. To enable Remote Caching you will need an account with Vercel. If you don't have an account you can [create one](https://vercel.com/signup), then enter the following commands:
+
+```
+cd activehealthykidswales
+npx turbo login
+```
+
+This will authenticate the Turborepo CLI with your [Vercel account](https://vercel.com/docs/concepts/personal-accounts/overview).
+
+Next, you can link your Turborepo to your Remote Cache by running the following command from the root of your turborepo:
+
+```
+npx turbo link
+```
+
+## Useful Links
+
+Learn more about the power of Turborepo:
+
+- [Pipelines](https://turborepo.org/docs/core-concepts/pipelines)
+- [Caching](https://turborepo.org/docs/core-concepts/caching)
+- [Remote Caching](https://turborepo.org/docs/core-concepts/remote-caching)
+- [Scoped Tasks](https://turborepo.org/docs/core-concepts/scopes)
+- [Configuration Options](https://turborepo.org/docs/reference/configuration)
+- [CLI Usage](https://turborepo.org/docs/reference/command-line-reference)
