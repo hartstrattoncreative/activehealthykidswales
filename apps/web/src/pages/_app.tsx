@@ -9,6 +9,7 @@ import { AppProps } from 'next/app';
 
 import '@fontsource/cantarell';
 import '@fontsource/roboto';
+import AppLayout from 'layouts/AppLayout';
 
 interface AHKWAppProps extends AppProps {
   emotionCache?: EmotionCache;
@@ -28,7 +29,9 @@ export default function AHKWApp(props: AHKWAppProps) {
       <ThemeProvider theme={theme}>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
-        <Component {...pageProps} />
+        <AppLayout>
+          <Component {...pageProps} />
+        </AppLayout>
       </ThemeProvider>
     </CacheProvider>
   );
