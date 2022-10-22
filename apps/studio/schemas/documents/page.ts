@@ -23,7 +23,7 @@ export default {
       title: 'Page Content',
       name: 'modules',
       type: 'array',
-      of: [{type: 'textSection'}, {type: 'accordion'}, {type: 'hero'}],
+      of: [{type: 'textSection'}, {type: 'accordion'}, {type: 'hero'}, {type: 'indicatorCard'}],
       group: 'content',
     },
     {

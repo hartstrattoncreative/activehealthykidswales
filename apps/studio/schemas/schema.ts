@@ -17,6 +17,7 @@ import localeString from './objects/localeString';
 import localePortableText from './objects/localePortableText';
 import portableText from './objects/portableText';
 import textSection from './objects/textSection'
+import indicatorCard from './objects/indicatorCard'
 import hero from './objects/hero'
 import asset from './objects/asset'
 
@@ -43,5 +44,6 @@ export default createSchema({
     textSection,
     hero,
     asset,
+    indicatorCard
   ]),
 });

@@ -5,11 +5,6 @@ export default {
   name: 'indicator',
   type: 'document',
   icon: Exam,
-  // groups: [
-  //   { title: 'Content', name: 'content', default: true },
-  //   { title: 'Settings', name: 'settings' },
-  //   { title: 'SEO Configuration', name: 'seo' },
-  // ],
   fields: [
     {
       name: 'title',
@@ -17,7 +12,6 @@ export default {
       type: 'localeString',
       description: 'Name of the indicator',
       validation: Rule => Rule.required(),
-      // group: 'settings',
     },
     {
       name: 'grades',
@@ -58,8 +52,12 @@ export default {
           
         }
       ],
-      validation: Rule => Rule.min(1)
-      // group: 'settings',
+      validation: Rule => Rule.min(1),
+    },
+    {
+      name: 'media',
+      title: 'Indicator Media',
+      type: 'asset',
     },
     
   ],
