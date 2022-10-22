@@ -7,6 +7,8 @@ import schemaTypes from 'all:part:@sanity/base/schema-type';
 // Document types
 import appBar from './documents/appBar';
 import page from './documents/page';
+import indicator from './documents/indicator';
+import grade from './documents/grade'
 
 // Object types
 import link from './objects/link';
@@ -29,6 +31,8 @@ export default createSchema({
     // Documents
     page,
     appBar,
+    indicator,
+    grade,
     
     // // Objects
     link,
@@ -38,6 +42,6 @@ export default createSchema({
     portableText,
     textSection,
     hero,
-    asset
+    asset,
   ]),
 });
