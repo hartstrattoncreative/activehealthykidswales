@@ -8,9 +8,9 @@
       "packages/*"
     ],
     "nohoist": [
-      "**/react", 
-      "**/react/**", 
-      "**/react-dom", 
+      "**/react",
+      "**/react/**",
+      "**/react-dom",
       "**/react-dom/**",
       "**/@sanity/**"
     ]
@@ -19,17 +19,17 @@
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
-    "lint:fix": "turbo run lint --cache --fix",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
   "devDependencies": {
     "@commitlint/cli": "^17.0.0",
     "@commitlint/config-conventional": "^17.0.0",
+    "eslint": "^8.26.0",
     "eslint-config-custom": "*",
-    "prettier": "latest",
-    "turbo": "latest",
     "husky": "^8.0.1",
-    "lint-staged": ">=10"
+    "lint-staged": ">=10",
+    "prettier": "latest",
+    "turbo": "latest"
   },
   "engines": {
     "node": ">=14.0.0"
@@ -38,7 +38,8 @@
   "packageManager": "yarn@1.22.19",
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx}": [
-      "prettier --write"
+      "prettier --write",
+      "eslint --cache --fix"
     ]
   }
 }

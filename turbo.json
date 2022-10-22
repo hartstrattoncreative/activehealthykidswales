@@ -1,4 +1,12 @@
 {
+  "globalDependencies": [
+    "$SANITY_API_TOKEN", 
+    "$NEXT_PUBLIC_SANITY_DATASET", 
+    "$NEXT_PUBLIC_SANITY_PROJECT_ID", 
+    "$NODE_ENV",
+    "$NEXT_PUBLIC_SITE_URL", 
+    "$ANALYZE"
+  ],
   "$schema": "https://turborepo.org/schema.json",
   "pipeline": {
     "build": {
