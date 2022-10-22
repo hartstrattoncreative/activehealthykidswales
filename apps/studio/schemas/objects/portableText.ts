@@ -1,3 +1,28 @@
+import {
+  Paperclip,
+  Globe,
+  MagicWand,
+  PaintBrush,
+  Headphones,
+  HandPointing,
+} from 'phosphor-react';
+import actionFields from '../partials/action'
+
+const textColorField = {
+  name: 'color',
+  type: 'string',
+  options: {
+    list: [
+      { value: 'text.primary', title: 'text.primary' },
+      { value: 'text.secondary', title: 'text.secondary' },
+      { value: 'primary', title: 'primary.main' },
+      { value: 'secondary', title: 'secondary.main' },
+      { value: 'info.main', title: 'info.main' },
+      { value: 'warning.main', title: 'important (warning)' },
+    ],
+  },
+};
+
 export default {
   title: 'Portable Text',
   name: 'portableText',
@@ -26,10 +51,22 @@ export default {
           { title: 'Emphasis', value: 'em' },
           { title: 'Code', value: 'code' },
         ],
-        annotations: [{ type: 'link' }, { type: 'internalLink' }],
+        annotations: [{
+          name: 'color',
+          type: 'object',
+          title: 'Text Color',
+          blockEditor: { icon: PaintBrush },
+          fields: [textColorField],
+        }, {
+          name: 'portableTextLink',
+          type: 'object',
+          title: 'Action / Link',
+          blockEditor: {
+            icon: HandPointing,
+          },
+          fields: [...actionFields, textColorField],
+        },],
       },
     },
-    { type: 'figure' },
-    { type: 'embedHTML' },
   ],
 };
