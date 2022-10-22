@@ -4,7 +4,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "package.json",
-  "author": "Owain Stratton <owain@hsc.studio>",
   "license": "UNLICENSED",
   "scripts": {
     "dev": "sanity start",
@@ -20,20 +19,19 @@
     "@sanity/default-layout": "^2.34.0",
     "@sanity/default-login": "^2.34.0",
     "@sanity/desk-tool": "^2.34.1",
+    "@sanity/eslint-config-studio": "^2.0.0",
     "@sanity/vision": "^2.34.0",
     "bcp47": "^1.1.2",
+    "eslint": "^8.6.0",
     "phosphor-react": "^1.4.1",
-    "prop-types": "^15.8.1",
+    "prop-types": "^15.7",
     "react": "^17.0",
     "react-dom": "^17.0",
-    "react-icons": "^4.3.1",
-    "styled-components": "^5.3.6"
+    "styled-components": "^5.2.0"
   },
-  "devDependencies": {
-    "@sanity/cli": "^2.34.2"
-  },
+  "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git@github.com:hartstrattoncreative/keys.git"
+    "url": "git@github.com:hartstrattoncreative/activehealthykidswales.git"
   }
 }

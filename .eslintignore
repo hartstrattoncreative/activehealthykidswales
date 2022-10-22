@@ -16,4 +16,5 @@ coverage/
 apps/studio/ 
 
 # TODO: remove once app is deleted
-apps/old_app/
+old_app/
+studio/
