@@ -18,11 +18,13 @@ export default {
   ], 
   preview: {
     select: {
-      title: 'title',
+      // TODO: fix
+      title: 'en.title',
     },
-    prepare() {
+    prepare(props) {
       return {
-        title: 'Accordion', // TODO: read from localeString
+        title: props.title ?? 'Accordion',
+        subtitle: props.title ? 'Accordion' : undefined
       };
     },
   },

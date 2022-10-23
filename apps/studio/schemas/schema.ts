@@ -7,6 +7,8 @@ import schemaTypes from 'all:part:@sanity/base/schema-type';
 // Document types
 import appBar from './documents/appBar';
 import page from './documents/page';
+import indicator from './documents/indicator';
+import grade from './documents/grade'
 
 // Object types
 import link from './objects/link';
@@ -15,6 +17,7 @@ import localeString from './objects/localeString';
 import localePortableText from './objects/localePortableText';
 import portableText from './objects/portableText';
 import textSection from './objects/textSection'
+import indicatorCard from './objects/indicatorCard'
 import hero from './objects/hero'
 import asset from './objects/asset'
 
@@ -29,6 +32,8 @@ export default createSchema({
     // Documents
     page,
     appBar,
+    indicator,
+    grade,
     
     // // Objects
     link,
@@ -38,6 +43,7 @@ export default createSchema({
     portableText,
     textSection,
     hero,
-    asset
+    asset,
+    indicatorCard
   ]),
 });
