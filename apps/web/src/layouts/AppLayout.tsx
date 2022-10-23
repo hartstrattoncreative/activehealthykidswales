@@ -1,7 +1,6 @@
 import * as React from 'react';
 import IconButton from '@mui/material/IconButton';
 import AppBar from '@mui/material/AppBar';
-import { List as MenuIcon } from 'phosphor-react';
 import Toolbar from '@mui/material/Toolbar';
 import Box from '@mui/material/Box';
 import { useRouter } from 'next/router';
@@ -13,6 +12,16 @@ import ListItemText from '@mui/material/ListItemText';
 import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
 import Stack from '@mui/material/Stack';
+import dynamic from 'next/dynamic';
+
+const CookieConsent = dynamic(
+  () =>
+    import(
+      /* webpackChunkName: "components/CookieConsent" */
+      'components/CookieConsent'
+    ),
+  { ssr: false }
+);
 
 export type AppLayoutProps = {
   children?: React.ReactNode;
@@ -45,7 +54,7 @@ export default function AppLayout(props: AppLayoutProps) {
       <AppBar>
         <Toolbar>
           <IconButton edge="start" onClick={handleClick}>
-            <MenuIcon color="#ffffff" />
+            {/* TODO: add hamburger icon */}
           </IconButton>
           <Box flexGrow={1} />
         </Toolbar>
@@ -82,6 +91,8 @@ export default function AppLayout(props: AppLayoutProps) {
           </Typography>
         </Box>
       </Box>
+
+      <CookieConsent />
       <Drawer open={isMenuOpen} onClose={handleClose}>
         <List>
           {locales?.map((l) => (
