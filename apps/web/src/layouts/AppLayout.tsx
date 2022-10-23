@@ -78,7 +78,7 @@ export default function AppLayout(props: AppLayoutProps) {
             </Typography>
             <Divider orientation="vertical" flexItem variant="middle" />
             {locales?.map((l) => (
-              <Link href={asPath} locale={l} variant="caption">
+              <Link key={l} href={asPath} locale={l} variant="caption">
                 {getLocaleString(l)}
               </Link>
             ))}
@@ -97,6 +97,7 @@ export default function AppLayout(props: AppLayoutProps) {
         <List>
           {locales?.map((l) => (
             <ListItemButton
+              key={l}
               selected={locale === l}
               component={Link}
               href={asPath}
