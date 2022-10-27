@@ -6,6 +6,7 @@ export default {
   type: 'object',
   icon: SquaresFour,
   fields: [
+    { title: 'Header', description: 'Heading for the indicator card gallery', name: 'header', type: 'localeString' },
     { title: 'Indicators', name: 'indicators', type: 'array', of: [{ type: 'indicatorCard'}], validation: Rule => Rule.required() },
   ],
   preview: {
