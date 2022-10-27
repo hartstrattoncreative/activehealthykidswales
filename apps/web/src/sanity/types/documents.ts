@@ -1,4 +1,5 @@
 import { SanityBase } from './base';
+import { LocaleString } from './objects';
 
 export type Page = {
   slug: string;
@@ -10,11 +11,10 @@ export type Page = {
 
 export type SiteSettings = SanityBase & {
   title: string;
-  lang: string[];
   logo: any; // TODO: type asset
   cookieConsent: any; // TODO: type notification
-  metaTitle: string;
-  metaDescription: string;
+  metaTitle: LocaleString;
+  metaDescription: LocaleString;
 };
 
 export type Menu = SanityBase & {
