@@ -1,4 +1,4 @@
-import Accordion from 'blocks/Accordion';
+import Accordions from 'blocks/Accordions';
 import CollaboratorList from 'blocks/CollaboratorList';
 import Hero from 'blocks/Hero';
 import IndicatorCard from 'blocks/IndicatorCard';
@@ -25,8 +25,8 @@ export default function RenderContent(props: RenderContentProps) {
             return <IndicatorCardGallery {...block} />;
           case 'textSection':
             return <TextSection {...block} />;
-          case 'accordion':
-            return <Accordion {...block} />;
+          case 'accordions':
+            return <Accordions {...block} />;
           case 'collaboratorList':
             return <CollaboratorList {...block} />;
           case 'hero':

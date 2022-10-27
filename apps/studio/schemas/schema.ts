@@ -26,6 +26,7 @@ import indicatorCardGallery from './objects/indicatorCardGallery'
 import hero from './objects/hero'
 import asset from './objects/asset'
 import collaboratorList from './objects/collaboratorList'
+import accordions from './objects/accordions';
 
 // Then we give our schema to the builder and provide the result to Sanity
 // eslint-disable-next-line @typescript-eslint/no-unsafe-call
@@ -48,6 +49,7 @@ export default createSchema({
     // // Objects
     link,
     accordion,
+    accordions,
     localeString,
     localePortableText,
     portableText,
