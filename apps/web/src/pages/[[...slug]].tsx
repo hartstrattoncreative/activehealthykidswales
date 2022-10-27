@@ -1,10 +1,15 @@
-import { GetStaticProps } from 'next/types';
 import * as React from 'react';
+import { GetStaticProps } from 'next/types';
+import { Page } from 'sanity/types';
+import RenderContent from 'components/RenderContent';
 
-export default function SlugPage(props) {
+export type SlugPageProps = { data: Page };
+
+export default function SlugPage(props: SlugPageProps) {
+  const { data } = props;
   console.log('PROPS', props);
 
-  return <div>SLUG PAGE</div>;
+  return <>{data?.modules && <RenderContent content={data?.modules} />}</>;
 }
 
 export const getStaticProps: GetStaticProps = async ({
