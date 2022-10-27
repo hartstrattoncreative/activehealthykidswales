@@ -1,21 +1,6 @@
 import S from '@sanity/desk-tool/structure-builder';
 import { standardViews } from './previews/standard';
-import { List, BookmarkSimple, Exam, SquareHalfBottom } from 'phosphor-react';
-
- S.listItem()
-  .title('Indicators')
-  .icon(Exam)
-  .child(
-    S.documentTypeList('indicator')
-    .title('Indicators')
-    .filter(`_type == "indicator"`)
-    .child((documentId) =>
-      S.document()
-        .documentId(documentId)
-        .schemaType('indicator')
-        .views(standardViews)
-    )
-  );
+import { BookmarkSimple, Exam } from 'phosphor-react';
 
 export const indicatorsMenu = S.listItem()
   .title('Indicators')

@@ -11,6 +11,8 @@ import indicator from './documents/indicator';
 import grade from './documents/grade';
 import member from './documents/member';
 import organisation from './documents/organisation';
+import notification from './documents/notification';
+import siteConfig from './documents/siteConfig';
 
 // Object types
 import link from './objects/link';
@@ -39,6 +41,8 @@ export default createSchema({
     grade,
     member,
     organisation,
+    notification,
+    siteConfig,
     
     // // Objects
     link,

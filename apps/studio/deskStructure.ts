@@ -4,6 +4,7 @@ import { pagesMenu as pages } from './desk/pages';
 import { menusMenu as menus } from './desk/menus';
 import { indicatorsMenu as indicators } from './desk/indicators';
 import {collaboratorsMenu as collaborators } from './desk/collaborators'
+import {settingsMenu as settings } from './desk/settings'
 
 export default function deskStructure() {
   return S.list()
@@ -11,22 +12,22 @@ export default function deskStructure() {
     .items([
       pages,
       indicators,
-      S.divider(),
       collaborators,
       S.divider(),
       menus,
+      settings,
       ...S.documentTypeListItems()?.filter(
         (item) =>
           ![
-            // 'siteSettings',
-            // 'siteSeo',
+            'siteConfig',
             'page',
             'indicator',
             'menu',
             'grade',
             'member',
             'organisation',
-            'media.tag'
+            'media.tag',
+            'notification',
           ].includes(item.getId() ?? '')
       ),
     ]);

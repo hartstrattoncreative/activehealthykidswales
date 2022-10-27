@@ -22,7 +22,7 @@ export default {
     {
       name: 'buttonLabel',
       title: 'Button Label',
-      type: 'string',
+      type: 'localeString',
       description: 'Optional button to include in the hero'
     },
     ...actionTypeFields

@@ -1,36 +1,21 @@
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/no-unsafe-return */
+import { Gear } from 'phosphor-react';
 import bcp47 from 'bcp47';
 
 export default {
-  name: 'site-config',
+  name: 'siteConfig',
   type: 'document',
-  title: 'Site configuration',
-  // https://www.sanity.io/docs/experimental/ui-affordances-for-actions
-  __experimental_actions: [
-    // 'create',
-    //  "delete",
-    'update',
-    'publish',
+  title: 'Site Configuration',
+  icon: Gear,
+  groups: [
+    { title: 'Settings', name: 'settings', default: true },
+    { title: 'SEO Configuration', name: 'seo' },
   ],
   fields: [
     {
       name: 'title',
       type: 'string',
       title: 'Site title',
-    },
-    {
-      title: 'URL',
-      name: 'url',
-      type: 'url',
-      description: 'The main site url. Used to create canonical url',
-    },
-    {
-      name: 'homepage',
-      type: 'reference',
-      description: 'Choose page to be the homepage',
-      to: { type: 'page' },
+      group: 'settings',
     },
     {
       title: 'Site languages',
@@ -47,6 +32,7 @@ export default {
             ),
         },
       ],
+      group: 'settings',
     },
     {
       title: 'Brand logo',
@@ -65,6 +51,28 @@ export default {
           },
         },
       ],
+      group: 'settings',
+    },
+    {
+      name: 'cookieConsent',
+      title: 'Cookie Consent Notification',
+      type: 'notification'
+    },
+    {
+      name: 'metaTitle',
+      title: 'Site Meta Title',
+      type: 'localeString',
+      validation: Rule => Rule.required(),
+      group: 'seo',
+      description: 'Used as meta title for page'
+    },
+    {
+      name: 'metaDescription',
+      title: 'Site Description',
+      type: 'localeString',
+      group: 'seo',
+      description: 'Used as meta description for page',
+      
     },
   ],
 };
