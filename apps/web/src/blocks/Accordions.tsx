@@ -4,14 +4,7 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import RenderPortableText from 'components/RenderPortableText';
 import { useRouter } from 'next/router';
 import { CaretDown } from 'phosphor-react';
-import { LocaleString, SanityBase } from 'sanity/types/objects';
-
-export type AccordionProps = SanityBase & {
-  body: { en: any[]; cy: any[] };
-  en: string;
-  cy?: string;
-  _key: string;
-};
+import { Accordion as AccordionProps } from 'sanity/types/objects';
 
 export type AccordionsProps = { accordions: AccordionProps[] };
 
@@ -27,11 +20,7 @@ export default function Accordions(props: AccordionsProps) {
             {accordion[locale as keyof Omit<AccordionProps, 'body'>]}
           </AccordionSummary>
           <AccordionDetails>
-            <RenderPortableText
-              value={
-                accordion.body[locale as keyof Omit<LocaleString, '_type'>]
-              }
-            />
+            <RenderPortableText value={accordion.body[locale]} />
           </AccordionDetails>
         </MuiAccordion>
       ))}
