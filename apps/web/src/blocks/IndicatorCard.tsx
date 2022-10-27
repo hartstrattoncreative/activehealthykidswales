@@ -31,7 +31,6 @@ export default function IndicatorCard(props: IndicatorCardProps) {
   const { asLink, path, actionType, grade, gradeRefinement, year, title } =
     props;
   const { locale } = useRouter();
-  console.log(props);
 
   const content = (
     <>
