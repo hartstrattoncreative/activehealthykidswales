@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { GetStaticProps } from 'next/types';
-import { Page } from 'sanity/types';
+import { Page } from 'sanity/types/documents';
 import RenderContent from 'components/RenderContent';
 
 export type SlugPageProps = { data: Page };
