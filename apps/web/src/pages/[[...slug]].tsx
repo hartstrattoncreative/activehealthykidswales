@@ -7,7 +7,6 @@ export type SlugPageProps = { data: Page };
 
 export default function SlugPage(props: SlugPageProps) {
   const { data } = props;
-  // console.log('PROPS', props);
 
   return <>{data?.content && <RenderContent content={data?.content} />}</>;
 }

@@ -12,8 +12,6 @@ export type RenderContentProps = {
 export default function RenderContent(props: RenderContentProps) {
   const { content = [] } = props;
 
-  console.log(content);
-
   return (
     <>
       {content?.map((block, i) => {

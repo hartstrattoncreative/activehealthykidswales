@@ -18,7 +18,8 @@ export const query = groq`
           title,
           "year": grades[0].year,
           "grade": grades[0].gradeType->gradeKey,
-          "gradeRefinement": grades[0].gradeType->keyRefinement
+          "gradeRefinement": grades[0].gradeType->keyRefinement,
+          "gradeLabel": grades[0].gradeType->label
         },
         asLink,
         asLink => {

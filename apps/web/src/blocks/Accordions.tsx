@@ -17,21 +17,19 @@ export type AccordionsProps = { accordions: AccordionProps[] };
 
 export default function Accordions(props: AccordionsProps) {
   const { accordions } = props;
-  const { locale } = useRouter();
+  const { locale = 'en' } = useRouter();
 
   return (
     <>
       {accordions?.map((accordion) => (
         <MuiAccordion>
           <AccordionSummary expandIcon={<CaretDown />}>
-            {accordion[(locale ?? 'en') as keyof Omit<LocaleString, '_type'>]}
+            {accordion[locale as keyof Omit<LocaleString, '_type'>]}
           </AccordionSummary>
           <AccordionDetails>
             <RenderPortableText
               value={
-                accordion.body[
-                  (locale ?? 'en') as keyof Omit<LocaleString, '_type'>
-                ]
+                accordion.body[locale as keyof Omit<LocaleString, '_type'>]
               }
             />
           </AccordionDetails>

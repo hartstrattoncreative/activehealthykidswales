@@ -2,18 +2,12 @@ import { SanityBase } from 'sanity/types/base';
 import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
 import IndicatorCard from './IndicatorCard';
 import Typography from '@mui/material/Typography';
-import { LocaleString } from 'sanity/types/objects';
+import { IndicatorCardGallery as IndicatorCardGalleryProps } from 'sanity/types/documents';
 import { useRouter } from 'next/router';
-
-export type IndicatorCardGalleryProps = SanityBase & {
-  _key: string;
-  indicators: any[];
-  header: LocaleString;
-};
 
 export default function IndicatorCardGallery(props: IndicatorCardGalleryProps) {
   const { indicators, header } = props;
-  const { locale } = useRouter();
+  const { locale = 'en' } = useRouter();
 
   if (!indicators) {
     return null;
@@ -22,7 +16,7 @@ export default function IndicatorCardGallery(props: IndicatorCardGalleryProps) {
   return (
     <>
       <Typography variant="h5" component="h2" textAlign="center" mb={2}>
-        {header?.[(locale ?? 'en') as keyof Omit<LocaleString, '_type'>]}
+        {header?.[locale]}
       </Typography>
       <Grid container spacing={2}>
         {indicators?.map((indicator) => (
