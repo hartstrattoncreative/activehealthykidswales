@@ -1,5 +1,3 @@
-import { Browser, Wallet } from 'phosphor-react';
-
 export default {
   name: 'menu',
   title: 'Menu',
