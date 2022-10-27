@@ -34,7 +34,6 @@ export default {
         type: 'reference',
         description: 'Add members to the list',
         to: { type: 'member' },
-        validation: Rule => Rule.unique()
       }],
       hidden: ({ parent }) => {
         return parent.type !== 'member';
@@ -49,7 +48,6 @@ export default {
         type: 'reference',
         description: 'Add organisations to the list',
         to: { type: 'organisation' },
-        validation: Rule => Rule.unique()
       }],
       hidden: ({ parent }) => {
         return parent.type !== 'organisation';

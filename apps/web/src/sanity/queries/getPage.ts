@@ -1,17 +1,14 @@
 import { groq } from 'next-sanity';
 import { getClient } from 'sanity/server';
+import { Page } from 'sanity/types';
 
-export type PageType = {
-  slug: string;
-};
-
-export const query = groq`{
-  "page": *[_type == "page" && path.current == $slug][0] {
-    _id,
-    ...
-  }
-}`;
+export const query = groq`
+*[_type == "page" && slug.current == $slug][0] {
+  _id,
+  ...
+}
+`;
 
 export default async function getPage(slug: string, preview: boolean = false) {
-  return getClient(preview).fetch(query, { slug });
+  return getClient(preview).fetch<Page>(query, { slug });
 }
