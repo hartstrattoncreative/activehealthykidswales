@@ -2,6 +2,7 @@ import Accordion from 'blocks/Accordion';
 import CollaboratorList from 'blocks/CollaboratorList';
 import Hero from 'blocks/Hero';
 import IndicatorCard from 'blocks/IndicatorCard';
+import IndicatorCardGallery from 'blocks/IndicatorCardGallery';
 import TextSection from 'blocks/TextSection';
 
 export type RenderContentProps = {
@@ -20,6 +21,8 @@ export default function RenderContent(props: RenderContentProps) {
           // NOTE: add cases for content types here
           case 'indicatorCard':
             return <IndicatorCard {...block} />;
+          case 'indicatorCardGallery':
+            return <IndicatorCardGallery {...block} />;
           case 'textSection':
             return <TextSection {...block} />;
           case 'accordion':

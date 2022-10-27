@@ -1,12 +1,13 @@
-export type LocaleString = { _type: string; en: string; cy: string };
+export type SanityBase = { _type: string };
 
-export type Slug = { _type: string; current: string };
+export type LocaleString = SanityBase & { en: string; cy: string };
 
-export type Page = {
+export type Slug = SanityBase & { current: string };
+
+export type Page = SanityBase & {
   _createdAt: string;
   _id: string;
   _rev: string;
-  _type: 'page';
   _updatedAt: string;
   disallowRobots: boolean;
   metaDescription: LocaleString;
@@ -17,3 +18,5 @@ export type Page = {
 };
 
 export type SlugPages = { slug: string }[];
+
+export type ActionType = 'internalPage' | 'file' | 'url';

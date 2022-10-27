@@ -18,7 +18,7 @@ export default [
     title: 'Internal Page',
     name: 'internalPage',
     type: 'reference',
-    to: [{ type: 'string' }],
+    to: [{ type: 'page' }],
     hidden: ({ parent }) => {
       return parent.actionType !== 'internalPage';
     },

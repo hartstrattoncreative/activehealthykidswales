@@ -23,7 +23,14 @@ export default {
       title: 'Page Content',
       name: 'modules',
       type: 'array',
-      of: [{type: 'textSection'}, {type: 'accordion'}, {type: 'hero'}, {type: 'indicatorCard'}, {type: 'collaboratorList'}],
+      of: [
+        {type: 'textSection'}, 
+        {type: 'accordion'}, 
+        {type: 'hero'}, 
+        {type: 'indicatorCard'}, 
+        {type: 'indicatorCardGallery'}, 
+        {type: 'collaboratorList'}
+      ],
       group: 'content',
     },
     {
