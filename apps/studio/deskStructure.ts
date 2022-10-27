@@ -19,7 +19,7 @@ export default function deskStructure() {
       ...S.documentTypeListItems()?.filter(
         (item) =>
           ![
-            'siteConfig',
+            'siteSettings',
             'page',
             'indicator',
             'menu',

@@ -8,6 +8,15 @@ export type Page = {
   disallowRobots?: boolean;
 };
 
+export type SiteSettings = SanityBase & {
+  title: string;
+  lang: string[];
+  logo: any; // TODO: type asset
+  cookieConsent: any; // TODO: type notification
+  metaTitle: string;
+  metaDescription: string;
+};
+
 export type Menu = SanityBase & {
   links: [];
 };

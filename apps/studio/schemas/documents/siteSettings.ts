@@ -2,13 +2,14 @@ import { Gear } from 'phosphor-react';
 import bcp47 from 'bcp47';
 
 export default {
-  name: 'siteConfig',
+  name: 'siteSettings',
   type: 'document',
   title: 'Site Configuration',
   icon: Gear,
   groups: [
     { title: 'Settings', name: 'settings', default: true },
     { title: 'SEO Configuration', name: 'seo' },
+    { title: 'Cookie Consent', name: 'consent' },
   ],
   fields: [
     {
@@ -56,7 +57,8 @@ export default {
     {
       name: 'cookieConsent',
       title: 'Cookie Consent Notification',
-      type: 'notification'
+      type: 'notification',
+      group: 'consent'
     },
     {
       name: 'metaTitle',

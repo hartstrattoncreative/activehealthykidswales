@@ -16,7 +16,7 @@ export const settingsMenu = S.listItem()
           .child(
             S.document()
               .documentId('siteSettings')
-              .schemaType('siteConfig')
+              .schemaType('siteSettings')
               .views(standardViews)
           ),       
       ])
