@@ -52,20 +52,19 @@ export default {
   ],
   preview: {
     select: {
-      title: 'title',
+      title: 'metaTitle',
       slug: 'slug',
     },
     prepare({
       title,
       slug = {},
     }: {
-      title: string;
+      title: { en:string };
       slug: { current?: string };
-    }) {
-      
+    }) {      
       return {
-        title: title ?? slug.current ?? 'Page (missing slug)',
-        subtitle: (title && slug.current) ? slug.current : undefined,
+        title: title.en ?? slug.current ?? 'Page (missing slug)',
+        subtitle: !!(title.en && slug.current) ? slug.current : undefined,
       };
     },
   },
