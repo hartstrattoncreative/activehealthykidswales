@@ -7,7 +7,7 @@ export type SlugPageProps = { data: Page };
 
 export default function SlugPage(props: SlugPageProps) {
   const { data } = props;
-  console.log('PROPS', props);
+  // console.log('PROPS', props);
 
   return <>{data?.content && <RenderContent content={data?.content} />}</>;
 }
@@ -17,7 +17,6 @@ export const getStaticProps: GetStaticProps = async ({
   params,
 }) => {
   const getPage = (await import('sanity/queries/getPage')).default;
-
   // NOTE: if no params then its the index route
   if (!params?.slug) {
     console.warn(
@@ -28,24 +27,23 @@ export const getStaticProps: GetStaticProps = async ({
     if (!page) {
       return { notFound: true };
     }
-
-    return { props: { data: page } };
+    const getSiteContent = (await import('sanity/queries/getSiteContent'))
+      .default;
+    const siteContent = await getSiteContent();
+    return { props: { data: page, ...siteContent } };
   }
 
-  const { slug } = params;
-  if (!slug) {
-    console.error('/pages/[[...slug]]: no slug provided');
-    return { notFound: true };
-  }
-
-  const page = await getPage(`/${(slug as string[]).join('/')}`);
+  const page = await getPage(`/${(params.slug as string[]).join('/')}`);
 
   if (!page) {
     console.error('/pages/[[...slug]]: no page found');
     return { notFound: true };
   }
 
-  return { props: { data: page } };
+  const getSiteContent = (await import('sanity/queries/getSiteContent'))
+    .default;
+  const siteContent = await getSiteContent();
+  return { props: { data: page, ...siteContent } };
 };
 
 // This function gets called at build time on server-side.
@@ -60,12 +58,14 @@ export async function getStaticPaths() {
     return { paths: [], fallback: false };
   }
 
-  const paths = pages.map(({ slug }) => ({
-    params: { slug: slug.split('/').filter(Boolean) },
-  }));
+  const paths = ['en', 'cy'].flatMap((locale) =>
+    pages.map(({ slug }) => ({
+      params: { slug: slug.split('/').filter(Boolean), locale },
+    }))
+  );
 
   return {
     paths,
-    fallback: false,
+    fallback: true, // NOTE: needs to be true for non default locale pages
   };
 }

@@ -1,5 +1,4 @@
 import { Gear } from 'phosphor-react';
-import bcp47 from 'bcp47';
 
 export default {
   name: 'siteSettings',
@@ -16,23 +15,6 @@ export default {
       name: 'title',
       type: 'string',
       title: 'Site title',
-      group: 'settings',
-    },
-    {
-      title: 'Site languages',
-      description:
-        'Should be a valid bcp47 language code like en, en-US, no or nb-NO',
-      name: 'lang',
-      type: 'array',
-      of: [
-        {
-          type: 'string',
-          validation: (Rule: any) =>
-            Rule.custom((lang: string) =>
-              bcp47.parse(lang) ? true : 'Please use a valid bcp47 code'
-            ),
-        },
-      ],
       group: 'settings',
     },
     {
