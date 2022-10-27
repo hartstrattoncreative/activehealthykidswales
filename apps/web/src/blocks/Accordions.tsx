@@ -17,7 +17,7 @@ export default function Accordions(props: AccordionsProps) {
       {accordions?.map((accordion) => (
         <MuiAccordion>
           <AccordionSummary expandIcon={<CaretDown />}>
-            {accordion[locale as keyof Omit<AccordionProps, 'body'>]}
+            {accordion[locale as keyof Omit<LocaleString, '_type'>]}
           </AccordionSummary>
           <AccordionDetails>
             <RenderPortableText value={accordion.body[locale]} />
