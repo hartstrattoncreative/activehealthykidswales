@@ -9,7 +9,6 @@ import {
   Grade,
 } from 'sanity/types/documents';
 import { useRouter } from 'next/router';
-import Chip from '@mui/material/Chip';
 
 function getGradeRefinement(refinement: Grade['keyRefinement']) {
   return refinement === 'minus' ? '-' : '+';

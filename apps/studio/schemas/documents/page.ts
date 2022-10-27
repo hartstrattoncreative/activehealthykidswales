@@ -25,7 +25,7 @@ export default {
       type: 'array',
       of: [
         {type: 'textSection'}, 
-        {type: 'accordion'}, 
+        {type: 'accordions'}, 
         {type: 'hero'}, 
         {type: 'indicatorCard'}, 
         {type: 'indicatorCardGallery'}, 
