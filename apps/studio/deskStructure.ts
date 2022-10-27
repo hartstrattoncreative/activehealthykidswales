@@ -3,10 +3,7 @@ import S from '@sanity/desk-tool/structure-builder';
 import { pagesMenu as pages } from './desk/pages';
 import { menusMenu as menus } from './desk/menus';
 import { indicatorsMenu as indicators } from './desk/indicators';
-// import { settingsMenu as settings } from './desk/settings';
-// import { modalsMenu as modals } from './desk/modals';
-// import { standardViews } from './desk/previews/standard';
-// import { MagnifyingGlass } from 'phosphor-react';
+import {collaboratorsMenu as collaborators } from './desk/collaborators'
 
 export default function deskStructure() {
   return S.list()
@@ -14,6 +11,8 @@ export default function deskStructure() {
     .items([
       pages,
       indicators,
+      S.divider(),
+      collaborators,
       S.divider(),
       menus,
       ...S.documentTypeListItems()?.filter(
@@ -24,7 +23,10 @@ export default function deskStructure() {
             'page',
             'indicator',
             'menu',
-            'grade'
+            'grade',
+            'member',
+            'organisation',
+            'media.tag'
           ].includes(item.getId() ?? '')
       ),
     ]);

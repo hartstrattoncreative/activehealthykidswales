@@ -23,7 +23,7 @@ export default {
       title: 'Page Content',
       name: 'modules',
       type: 'array',
-      of: [{type: 'textSection'}, {type: 'accordion'}, {type: 'hero'}, {type: 'indicatorCard'}],
+      of: [{type: 'textSection'}, {type: 'accordion'}, {type: 'hero'}, {type: 'indicatorCard'}, {type: 'collaboratorList'}],
       group: 'content',
     },
     {
@@ -38,7 +38,6 @@ export default {
       name: 'metaDescription',
       title: 'Page Description',
       type: 'localeString',
-      validation: Rule => Rule.required(),
       group: 'seo',
       description: 'Used as meta description for page'
     },
@@ -57,15 +56,16 @@ export default {
       slug: 'slug',
     },
     prepare({
-      title = 'Untitled',
+      title,
       slug = {},
     }: {
       title: string;
       slug: { current?: string };
     }) {
+      
       return {
-        title,
-        subtitle: slug.current ? `/${slug.current}` : '(missing slug)',
+        title: title ?? slug.current ?? 'Page (missing slug)',
+        subtitle: (title && slug.current) ? slug.current : undefined,
       };
     },
   },

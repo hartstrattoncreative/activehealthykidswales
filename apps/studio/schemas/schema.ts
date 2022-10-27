@@ -8,7 +8,9 @@ import schemaTypes from 'all:part:@sanity/base/schema-type';
 import appBar from './documents/appBar';
 import page from './documents/page';
 import indicator from './documents/indicator';
-import grade from './documents/grade'
+import grade from './documents/grade';
+import member from './documents/member';
+import organisation from './documents/organisation';
 
 // Object types
 import link from './objects/link';
@@ -20,6 +22,7 @@ import textSection from './objects/textSection'
 import indicatorCard from './objects/indicatorCard'
 import hero from './objects/hero'
 import asset from './objects/asset'
+import collaboratorList from './objects/collaboratorList'
 
 // Then we give our schema to the builder and provide the result to Sanity
 // eslint-disable-next-line @typescript-eslint/no-unsafe-call
@@ -34,6 +37,8 @@ export default createSchema({
     appBar,
     indicator,
     grade,
+    member,
+    organisation,
     
     // // Objects
     link,
@@ -44,6 +49,7 @@ export default createSchema({
     textSection,
     hero,
     asset,
-    indicatorCard
+    indicatorCard,
+    collaboratorList
   ]),
 });
