@@ -5,7 +5,7 @@ import createSchema from 'part:@sanity/base/schema-creator';
 import schemaTypes from 'all:part:@sanity/base/schema-type';
 
 // Document types
-import appBar from './documents/appBar';
+import menu from './documents/menu';
 import page from './documents/page';
 import indicator from './documents/indicator';
 import grade from './documents/grade';
@@ -36,7 +36,7 @@ export default createSchema({
   types: schemaTypes.concat([
     // Documents
     page,
-    appBar,
+    menu,
     indicator,
     grade,
     member,

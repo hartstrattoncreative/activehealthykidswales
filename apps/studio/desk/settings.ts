@@ -1,6 +1,6 @@
 import S from '@sanity/desk-tool/structure-builder';
 import { standardViews } from './previews/standard';
-import { Gear, IdentificationCard } from 'phosphor-react';
+import { Gear } from 'phosphor-react';
 
 export const settingsMenu = S.listItem()
   .id('siteSettings')

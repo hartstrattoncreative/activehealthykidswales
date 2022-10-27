@@ -12,23 +12,23 @@ export const menusMenu = S.listItem()
         S.listItem()
           .id('appBar')
           .title('App Bar')
+          .icon(Browser)
           .child(
             S.document()
-              .schemaType('appBar')
-              .documentId('appBar')
+              .schemaType('menu')
+              .documentId('appbar')
               .title('App Bar')
-          )
-          .icon(Browser),
+          ),
        
-        // S.listItem()
-        //   .id('footer')
-        //   .title('Footer')
-        //   .child(
-        //     S.document()
-        //       .schemaType('footer')
-        //       .documentId('footer')
-        //       .title('Footer')
-        //   )
-        //   .icon(SquareHalfBottom),
+        S.listItem()
+          .id('footer')
+          .title('Footer')
+          .child(
+            S.document()
+              .schemaType('menu')
+              .documentId('footer')
+              .title('Footer')
+          )
+          .icon(SquareHalfBottom),
       ])
   );
