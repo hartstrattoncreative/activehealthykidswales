@@ -1,16 +1,19 @@
 import CardActionArea from '@mui/material/CardActionArea';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import { ActionType, SanityBase } from 'sanity/types';
+import { SanityBase } from 'sanity/types/base';
+import { ActionType } from 'types';
 
 export type IndicatorCardProps = SanityBase & {
   _key: string;
   asLink: boolean;
-  openInTab: boolean;
-  actionType: ActionType;
+  openInTab?: boolean;
+  actionType?: ActionType;
+  path?: string;
 };
 
 export default function IndicatorCard(props: IndicatorCardProps) {
+  const { asLink, path, actionType } = props;
   console.log(props);
 
   return (
