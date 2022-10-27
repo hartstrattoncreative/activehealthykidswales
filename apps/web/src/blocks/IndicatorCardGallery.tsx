@@ -22,7 +22,7 @@ export default function IndicatorCardGallery(props: IndicatorCardGalleryProps) {
   return (
     <>
       <Typography variant="h5" component="h2" textAlign="center" mb={2}>
-        {header?.[locale ?? 'en']}
+        {header?.[(locale ?? 'en') as keyof Omit<LocaleString, '_type'>]}
       </Typography>
       <Grid container spacing={2}>
         {indicators?.map((indicator) => (
