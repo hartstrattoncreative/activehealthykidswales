@@ -1,17 +1,15 @@
 {
-  "globalDependencies": [
-    "$SANITY_API_TOKEN", 
-    "$NEXT_PUBLIC_SANITY_DATASET", 
-    "$NEXT_PUBLIC_SANITY_PROJECT_ID", 
-    "$NODE_ENV",
-    "$NEXT_PUBLIC_SITE_URL", 
-    "$ANALYZE"
-  ],
+  "globalDependencies": [],
   "$schema": "https://turborepo.org/schema.json",
   "pipeline": {
     "build": {
-      "dependsOn": ["^build"],
-      "outputs": ["dist/**", ".next/**"]
+      "dependsOn": [
+        "^build"
+      ],
+      "outputs": [
+        "dist/**",
+        ".next/**"
+      ]
     },
     "lint": {
       "outputs": []
@@ -20,8 +18,20 @@
       "cache": false
     },
     "export": {
-      "dependsOn": ["^build"],
-      "outputs": ["out/**"]
+      "dependsOn": [
+        "^build"
+      ],
+      "outputs": [
+        "out/**"
+      ]
     }
-  }
+  },
+  "globalEnv": [
+    "SANITY_API_TOKEN",
+    "NEXT_PUBLIC_SANITY_DATASET",
+    "NEXT_PUBLIC_SANITY_PROJECT_ID",
+    "NODE_ENV",
+    "NEXT_PUBLIC_SITE_URL",
+    "ANALYZE"
+  ]
 }
