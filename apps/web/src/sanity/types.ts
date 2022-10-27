@@ -13,7 +13,7 @@ export type Page = SanityBase & {
   metaDescription: LocaleString;
   metaTitle: LocaleString;
   // TODO: add types
-  modules: any[];
+  content: any[];
   slug: Slug;
 };
 
