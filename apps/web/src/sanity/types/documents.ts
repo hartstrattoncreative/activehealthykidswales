@@ -2,7 +2,7 @@ import { SanityBase } from './base';
 
 export type Page = {
   slug: string;
-  modules: any[]; // TODO: type modules
+  content: any[]; // TODO: update any
   metaTitle: string;
   metaDescription?: string;
   disallowRobots?: boolean;

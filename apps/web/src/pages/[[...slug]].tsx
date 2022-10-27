@@ -9,7 +9,7 @@ export default function SlugPage(props: SlugPageProps) {
   const { data } = props;
   console.log('PROPS', props);
 
-  return <>{data?.modules && <RenderContent content={data?.modules} />}</>;
+  return <>{data?.content && <RenderContent content={data?.content} />}</>;
 }
 
 export const getStaticProps: GetStaticProps = async ({
