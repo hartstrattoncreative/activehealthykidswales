@@ -1,6 +1,6 @@
 import { groq } from 'next-sanity';
 import { getClient } from 'sanity/server';
-import { Page } from 'sanity/types';
+import { Page } from 'sanity/types/documents';
 
 export const query = groq`
 *[_type == "page" && slug.current == $slug][0] {
@@ -9,9 +9,11 @@ export const query = groq`
     ...,
     _type == "indicatorCardGallery" => {
       _type,
+      _key,
       indicators[] {
+        _key,
         _type,
-        indicator-> {
+        ...indicator->{
           _type,
           title,
           "year": grades[0].year,
@@ -19,8 +21,11 @@ export const query = groq`
           "gradeRefinement": grades[0].gradeType->keyRefinement
         },
         asLink,
+        asLink => {
+          actionType
+        },
         actionType == "internalPage" && asLink => {
-          "path": internalPage->slug.current
+          "path": internalPage->slug.current,
         },
       }
     }

@@ -1,4 +1,4 @@
-import { SanityBase } from 'sanity/types';
+import { SanityBase } from 'sanity/types/base';
 import Grid from '@mui/material/Unstable_Grid2'; // Grid version 2
 import IndicatorCard from './IndicatorCard';
 
