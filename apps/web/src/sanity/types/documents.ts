@@ -1,4 +1,5 @@
-import { SanityBase, LocaleString } from './base';
+import { SanityBase } from './base';
+import { LocaleString } from './objects';
 
 export type Page = {
   slug: string;
