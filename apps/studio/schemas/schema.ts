@@ -22,6 +22,7 @@ import localePortableText from './objects/localePortableText';
 import portableText from './objects/portableText';
 import textSection from './objects/textSection'
 import indicatorCard from './objects/indicatorCard'
+import indicatorCardGallery from './objects/indicatorCardGallery'
 import hero from './objects/hero'
 import asset from './objects/asset'
 import collaboratorList from './objects/collaboratorList'
@@ -54,6 +55,7 @@ export default createSchema({
     hero,
     asset,
     indicatorCard,
+    indicatorCardGallery,
     collaboratorList
   ]),
 });

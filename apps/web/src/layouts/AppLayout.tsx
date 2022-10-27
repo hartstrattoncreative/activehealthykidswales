@@ -13,6 +13,7 @@ import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
 import Stack from '@mui/material/Stack';
 import dynamic from 'next/dynamic';
+import Container from '@mui/material/Container';
 
 const CookieConsent = dynamic(
   () =>
@@ -51,17 +52,16 @@ export default function AppLayout(props: AppLayoutProps) {
 
   return (
     <>
-      <AppBar>
+      {/* <AppBar>
         <Toolbar>
           <IconButton edge="start" onClick={handleClick}>
-            {/* TODO: add hamburger icon */}
           </IconButton>
           <Box flexGrow={1} />
         </Toolbar>
-      </AppBar>
-      <Box component="main" minHeight="100vh">
+      </AppBar> */}
+      <Container maxWidth="lg" component="main" sx={{ minHeight: '100vh' }}>
         {children}
-      </Box>
+      </Container>
 
       <Box component="footer">
         <Box p={1}>main footer stuffs here</Box>
