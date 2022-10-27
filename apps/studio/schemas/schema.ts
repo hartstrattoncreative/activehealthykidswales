@@ -12,7 +12,7 @@ import grade from './documents/grade';
 import member from './documents/member';
 import organisation from './documents/organisation';
 import notification from './documents/notification';
-import siteConfig from './documents/siteConfig';
+import siteSettings from './documents/siteSettings';
 
 // Object types
 import link from './objects/link';
@@ -43,7 +43,7 @@ export default createSchema({
     member,
     organisation,
     notification,
-    siteConfig,
+    siteSettings,
     
     // // Objects
     link,

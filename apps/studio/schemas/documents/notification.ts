@@ -7,23 +7,6 @@ export default {
   icon: Megaphone,
   fields: [
     {
-      name: 'notificationNote',
-      type: 'note',
-      options: {
-        headline: 'Note',
-        message:
-          'Notifications will be rendered site-wide meaning they are not optionally included on a per-page-basis. If several notifications are published at a given time, they will be stacked vertically when presented to the user',
-        tone: 'primary',
-      },
-    },
-    {
-      title: 'Title',
-      name: 'title',
-      type: 'localeString',
-      description:
-        'Currently only used in Sanity to give your notification a title',
-    },
-    {
       title: 'Message',
       name: 'message',
       type: 'localePortableText',
