@@ -1,5 +1,5 @@
 import { CaretCircleDown } from 'phosphor-react';
-import {localeStringFields, localeStringFieldsets} from './localeString';
+import { localeStringFieldsets} from './localeString';
 
 export default {
   name: 'accordion',
@@ -8,7 +8,12 @@ export default {
   type: 'object',
   fieldsets: localeStringFieldsets,
   fields: [
-    ...localeStringFields,
+    {
+      name: 'title',
+      title: 'Title',
+      type: 'localeString',
+      validation: Rule => Rule.required()
+    },
     {
       name: 'body',
       title: 'Text',

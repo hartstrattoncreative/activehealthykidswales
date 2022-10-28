@@ -32,8 +32,7 @@ export type TextSection = {
 };
 
 export type Accordion = SanityBase & {
-  body: LocalePortableText;
-  en: string;
-  cy?: string;
   _key: string;
+  body: LocalePortableText;
+  title: LocaleString;
 };
