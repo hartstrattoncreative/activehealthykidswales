@@ -37,11 +37,13 @@ export type Accordion = SanityBase &
   };
 
 export type Member = SanityBase & {
+  _id: string;
   title: string;
   org: LocaleString;
   asset?: Asset;
 };
 export type Organisation = SanityBase & {
+  _id: string;
   media: Asset;
   href: string;
 };
@@ -49,6 +51,6 @@ export type Organisation = SanityBase & {
 export type CollaboratorList = SanityBase & {
   type: 'member' | 'organisation';
   title: LocaleString;
-  memberList?: (Member & Iterable)[];
-  orgList?: (Organisation & Iterable)[];
+  memberList?: Member[];
+  orgList?: Organisation[];
 };
