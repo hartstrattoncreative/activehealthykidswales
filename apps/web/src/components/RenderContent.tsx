@@ -18,15 +18,15 @@ export default function RenderContent(props: RenderContentProps) {
         switch (block._type) {
           // NOTE: add cases for content types here
           case 'indicatorCard':
-            return <IndicatorCard {...block} />;
+            return <IndicatorCard key={block._key} {...block} />;
           case 'indicatorCardGallery':
-            return <IndicatorCardGallery {...block} />;
+            return <IndicatorCardGallery key={block._key} {...block} />;
           case 'textSection':
-            return <TextSection {...block} />;
+            return <TextSection key={block._key} {...block} />;
           case 'accordions':
-            return <Accordions {...block} />;
+            return <Accordions key={block._key} {...block} />;
           case 'collaboratorList':
-            return <CollaboratorList {...block} />;
+            return <CollaboratorList key={block._key} {...block} />;
           case 'hero':
             return <Hero {...block} />;
           default:
