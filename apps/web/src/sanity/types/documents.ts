@@ -1,4 +1,4 @@
-import { SanityBase } from './base';
+import { SanityBase, Asset } from './base';
 import { LocaleString, Action } from './objects';
 
 export type Page = {
@@ -11,7 +11,7 @@ export type Page = {
 
 export type SiteSettings = SanityBase & {
   title: string;
-  logo: any; // TODO: type asset
+  logo: Asset;
   cookieConsent: any; // TODO: type notification
   metaTitle: LocaleString;
   metaDescription: LocaleString;
@@ -34,7 +34,7 @@ export type Indicator = SanityBase & {
   grade: Grade['gradeKey'];
   gradeRefinement: Grade['keyRefinement'];
   gradeLabel: Grade['label'];
-  media?: any; // TODO: type asset
+  media?: Asset;
 };
 
 export type IndicatorCard = SanityBase &
