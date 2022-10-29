@@ -1,5 +1,3 @@
-import { ProjectConfig } from 'next-sanity';
-
 export const config = {
   /**
    * Find your project ID and dataset in `sanity.json` in your studio project.
@@ -24,4 +22,4 @@ export const config = {
    */
   // token: '<sanity access token>',
   // EventSource: /* provide your own event source implementation. Required in browsers to support the above token parameter. */
-} as ProjectConfig;
+};

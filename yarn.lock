@@ -3060,16 +3060,16 @@
   resolved "https://registry.yarnpkg.com/@sanity/generate-help-url/-/generate-help-url-3.0.0.tgz#60e9cba61b82103ea3761730a53cd9310b98892d"
   integrity sha512-wtMYcV5GIDIhVyF/jjmdwq1GdlK07dRL40XMns73VbrFI7FteRltxv48bhYVZPcLkRXb0SHjpDS/icj9/yzbVA==
 
-"@sanity/groq-store@^0.4.1":
-  version "0.4.1"
-  resolved "https://registry.yarnpkg.com/@sanity/groq-store/-/groq-store-0.4.1.tgz#2a1f834b2f53e75f2b1b2d8c8457f345b9d38ecf"
-  integrity sha512-duLH/moE5TxJkUfwDiCCeHzRfltV/vzT4Qle48CdaWqT90CMJ+6m31PC4J3FG1uzNWFc82rOP6SG5nfww9ea4Q==
+"@sanity/groq-store@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@sanity/groq-store/-/groq-store-1.0.3.tgz#8065e486b552aa0133704c6ed535a07e15dfca17"
+  integrity sha512-IUaMzaWYdYYcCAI4zrkWurm/n6AXsJP1hq7EPDmQcCg+n42aawp07lzWmOko9v9LUuUATJSDFhpmZktn9Zacew==
   dependencies:
-    "@sanity/types" "^2.0.1"
-    eventsource "^1.0.7"
+    "@sanity/types" "^2.35.0"
+    eventsource "^2.0.2"
     fast-deep-equal "^3.1.3"
-    groq "^2.0.9"
-    groq-js "^1.0.1"
+    groq "^2.33.2"
+    groq-js "^1.1.1"
     mendoza "^2.1.1"
     simple-get "^4.0.1"
     split2 "^4.1.0"
@@ -3332,7 +3332,7 @@
     "@sanity/client" "^3.3.3"
     "@types/react" "^17.0.42"
 
-"@sanity/types@^2.0.1":
+"@sanity/types@^2.35.0":
   version "2.35.0"
   resolved "https://registry.yarnpkg.com/@sanity/types/-/types-2.35.0.tgz#e74aba391885061188f8a045e37b9d1f0806ff38"
   integrity sha512-hocM0bZVa6ONVjLA50gxRSwIcmsaRPpvhl71MgutHxcnvsGZD55n2LQZb4n7h+J9yEFSkz9lY8HbY8n/bw8tsw==
@@ -6713,11 +6713,6 @@ eventsource@^1.0.6:
   dependencies:
     original "^1.0.0"
 
-eventsource@^1.0.7:
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/eventsource/-/eventsource-1.1.2.tgz#bc75ae1c60209e7cb1541231980460343eaea7c2"
-  integrity sha512-xAH3zWhgO2/3KIniEKYPr8plNSzlGINOUqYj0m0u7AB81iRw8b/3E73W6AuU+6klLbaSFmZnaETQ2lXPfAydrA==
-
 eventsource@^2.0.2:
   version "2.0.2"
   resolved "https://registry.npmjs.org/eventsource/-/eventsource-2.0.2.tgz#76dfcc02930fb2ff339520b6d290da573a9e8508"
@@ -7605,12 +7600,12 @@ groq-js@^0.2.0:
   resolved "https://registry.yarnpkg.com/groq-js/-/groq-js-0.2.0.tgz#abd4870014a1ccdf0936d5d75a78063aff9197c0"
   integrity sha512-qJeuEgziddryH1ClsJvMoZM9aXNQbBViNZZrJwhHKr2wU8HGGM7uNWNVFglWXMX60MMaa2SClX3UohP76Ut68g==
 
-groq-js@^1.0.1:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/groq-js/-/groq-js-1.1.0.tgz#15188fbbd543b282656682d9736459bf6a561b41"
-  integrity sha512-y87W921Jg9IAksKT9LFvDMrYG9KIcgUDyE4ccENV7K26CKvg1V0lOTJbE1UNI8DcSk/bvx/MWFI7j3iUkCe/gA==
+groq-js@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/groq-js/-/groq-js-1.1.1.tgz#2ab132bc8015b0dccfe21adc28490d79e22c6f0d"
+  integrity sha512-qzUfJepffRUcSwjU3x2m30SUrhbssAR1Qs1DUq9+xmT2yeyO/3Il8+AkML8Tc6twWv20bL/KQgE8ig2Sbixu0w==
 
-groq@^2.0.9, groq@^2.29.3, groq@^2.33.2:
+groq@^2.29.3, groq@^2.33.2:
   version "2.33.2"
   resolved "https://registry.yarnpkg.com/groq/-/groq-2.33.2.tgz#3a85c85a1e43e79bba77f171f23997f541d61010"
   integrity sha512-5pf4c91JESCS28IJCgolJq/WBw4Xvf2m8FgZVUlrCig17I+qERosALAHLyyutXu403EYnyCD3DdCLaPb3aGneA==
@@ -9516,13 +9511,13 @@ neo-async@^2.5.0:
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.2.tgz#b4aafb93e3aeb2d8174ca53cf163ab7d7308305f"
   integrity sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==
 
-next-sanity@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/next-sanity/-/next-sanity-1.0.0.tgz#1f45105ad43438be7fdb8842c1837d05938c9195"
-  integrity sha512-J1rqCtrR6ZhFN1yKVl+Is+nLEKZBXHO6vm/TvChU1oiwWuCj5ELigbrLh+mJIYc7F77g7kvmAnS/UAMATjHvbw==
+next-sanity@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/next-sanity/-/next-sanity-1.0.3.tgz#5d32b47015164b976477cd2c7e96bd5637164e8d"
+  integrity sha512-9THbeAUGA3REPeLxEK4x9a4/k5WVK6gXU11kX2+zaP9Z2Q4cc5vcI0SglUrZ4FWeVXquLuULtC/iiO5p67LDhw==
   dependencies:
     "@sanity/client" "^3.4.1"
-    "@sanity/groq-store" "^0.4.1"
+    "@sanity/groq-store" "^1.0.3"
     groq "^2.33.2"
 
 next-sitemap@^3.1.29:
