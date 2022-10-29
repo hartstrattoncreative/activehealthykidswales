@@ -36,7 +36,14 @@ export const query = groq`
       "memberList": memberList[]->{
         title,
         org,
-        profilePicture,
+        profilePicture != null => {"asset": @.profilePicture{
+          alt,
+          ...asset->{
+            url,
+            metadata,
+            _id
+          }
+        }},
         _id
       },
       "orgList": orgList[]->{
