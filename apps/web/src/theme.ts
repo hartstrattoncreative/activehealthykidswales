@@ -2,6 +2,16 @@ import { createTheme } from '@mui/material/styles';
 
 // Create a theme instance.
 const theme = createTheme({
+  palette: {
+    primary: { main: '#0086cb' },
+    background: {
+      paper: '#00679e',
+    },
+    text: {
+      primary: '#000',
+      secondary: '#fff',
+    },
+  },
   typography: {
     fontFamily: [
       // Brand - Google font

@@ -3,7 +3,8 @@ import MuiAccordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import RenderPortableText from 'components/RenderPortableText';
 import { useRouter } from 'next/router';
-import { Accordion, LocaleString } from 'sanity/types/objects';
+import { Accordion } from 'sanity/types/objects';
+import Typography from '@mui/material/Typography';
 
 export type AccordionsProps = { accordions: Accordion[] };
 
@@ -14,9 +15,13 @@ export default function Accordions(props: AccordionsProps) {
   return (
     <>
       {accordions?.map((accordion) => (
-        <MuiAccordion>
-          <AccordionSummary>{accordion.title[locale]}</AccordionSummary>
-          <AccordionDetails>
+        <MuiAccordion key={accordion._key}>
+          <AccordionSummary>
+            <Typography color="text.secondary" variant="h6" fontWeight={600}>
+              {accordion.title[locale]}
+            </Typography>
+          </AccordionSummary>
+          <AccordionDetails sx={{ color: 'text.secondary' }}>
             <RenderPortableText value={accordion.body[locale]} />
           </AccordionDetails>
         </MuiAccordion>
