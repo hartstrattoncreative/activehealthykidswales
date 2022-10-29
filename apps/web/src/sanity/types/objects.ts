@@ -44,7 +44,7 @@ export type Member = SanityBase & {
 };
 export type Organisation = SanityBase & {
   _id: string;
-  media: Asset;
+  logo: Asset;
   href: string;
 };
 

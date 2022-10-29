@@ -1,16 +1,19 @@
-import Container from '@mui/material/Container';
+import Image from 'next/image';
 import Stack from '@mui/material/Stack';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 import { useRouter } from 'next/router';
 import { CollaboratorList as CollaboratorListProps } from 'sanity/types/objects';
+import Link from 'components/Link';
 
 export default function CollaboratorList(props: CollaboratorListProps) {
   const { title, type, memberList, orgList } = props;
   const { locale = 'en' } = useRouter();
-
+  if (type === 'organisation') {
+    console.log(props);
+  }
   return (
-    <Stack sx={{ mt: 2, mb: 8 }} spacing={1}>
+    <Stack sx={{ mt: 2, mb: 12 }} spacing={1}>
       <Typography variant="h6" textAlign="center" gutterBottom>
         {title[locale]}
       </Typography>
@@ -33,8 +36,23 @@ export default function CollaboratorList(props: CollaboratorListProps) {
       {type === 'organisation' && orgList && (
         <Grid container spacing={2}>
           {orgList?.map((org) => (
-            <Grid item key={org._id} xs={12} sm={6}>
-              {org.href}
+            <Grid item key={org._id} xs={6} sm={4}>
+              <Link href={org.href}>
+                <Stack
+                  sx={{
+                    position: 'relative',
+                    width: { xs: 120, sm: 150 },
+                    height: { xs: 120, sm: 150 },
+                  }}
+                >
+                  <Image
+                    alt={org.logo.alt}
+                    src={org.logo.url}
+                    layout="fill"
+                    objectFit="contain"
+                  />
+                </Stack>
+              </Link>
             </Grid>
           ))}
         </Grid>

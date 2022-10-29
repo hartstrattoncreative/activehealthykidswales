@@ -1,5 +1,5 @@
 import { UsersFour } from 'phosphor-react';
-import {localeStringFields, localeStringFieldsets} from './localeString';
+import { localeStringFieldsets} from './localeString';
 
 export default {
   name: 'collaboratorList',

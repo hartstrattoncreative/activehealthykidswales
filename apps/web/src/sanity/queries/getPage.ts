@@ -41,7 +41,14 @@ export const query = groq`
       },
       "orgList": orgList[]->{
         href,
-        logo,
+        logo {
+          alt,
+          ...asset->{
+            url,
+            metadata,
+            _id
+          }
+        },
         _id
       }
     }
