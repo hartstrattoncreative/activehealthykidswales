@@ -23,7 +23,8 @@ const CookieConsent = dynamic(
     import(
       /* webpackChunkName: "components/CookieConsent" */
       'components/CookieConsent'
-    )
+    ),
+  { ssr: false }
 );
 
 export type AppLayoutProps = {
