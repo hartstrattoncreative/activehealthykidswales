@@ -54,8 +54,6 @@ export default function AppLayout(props: AppLayoutProps) {
     setMenuOpen(false);
   };
 
-  console.log(footer, appbar);
-
   return (
     <>
       {/* <AppBar>

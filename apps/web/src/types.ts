@@ -6,6 +6,7 @@ type Reference = {
 enum ActionTypes {
   'internalPage' = 'internalPage',
   'url' = 'url',
+  'file' = 'files',
 }
 
 export type ActionType = keyof typeof ActionTypes;
@@ -17,4 +18,5 @@ export type ActionTypeProps = {
   href?: string;
   url?: string;
   openInTab?: boolean;
+  file?: { url: string };
 };

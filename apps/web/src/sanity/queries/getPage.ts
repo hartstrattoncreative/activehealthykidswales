@@ -2,11 +2,42 @@ import { groq } from 'next-sanity';
 import { getClient } from 'sanity/server';
 import { Page } from 'sanity/types/documents';
 
+// actionType == 'url' => {"url": url, "openInTab": openInTab},
+// actionType == 'internalPage' => {"href": internalPage->path.current},
 export const query = groq`
 *[_type == "page" && slug.current == $slug][0] {
   _id,
   "content": modules[] {
     ...,
+    _type == 'textSection' => {
+      body {
+        ...,
+        "en": en [] {
+          ...,
+          "markDefs": markDefs[] {
+            ...,
+            actionType == 'file' => {"file": @.file{
+              ...asset->{
+                url,
+                _id
+              }
+            }},
+          }
+        },
+        "cy": cy [] {
+          ...,
+          "markDefs": markDefs[] {
+            ...,
+            actionType == 'file' => {"file": @.file{
+              ...asset->{
+                url,
+                _id
+              }
+            }},
+          }
+        }
+      }
+    },
     _type == "indicatorCard" => {
       ...indicator->{
         title,
