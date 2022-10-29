@@ -24,7 +24,8 @@ const CookieConsent = dynamic(
     import(
       /* webpackChunkName: "components/CookieConsent" */
       'components/CookieConsent'
-    )
+    ),
+  { ssr: false }
 );
 
 export type AppLayoutProps = {
@@ -55,8 +56,6 @@ export default function AppLayout(props: AppLayoutProps) {
   const handleClose = () => {
     setMenuOpen(false);
   };
-
-  console.log(settings);
 
   return (
     <>

@@ -25,8 +25,8 @@ export default {
     },
     prepare(props) {
       return {
-        title: props.header['en'] ?? 'Text Section',
-        subtitle: !props.header['en'] ? 'Text Section' : undefined,
+        title: props?.header?.['en'] ?? 'Text Section',
+        subtitle: !props?.header?.['en'] ? 'Text Section' : undefined,
       };
     },
   },

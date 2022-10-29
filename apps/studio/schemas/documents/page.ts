@@ -70,8 +70,8 @@ export default {
       slug: { current?: string };
     }) {      
       return {
-        title: title.en ?? slug.current ?? 'Page (missing slug)',
-        subtitle: !!(title.en && slug.current) ? slug.current : undefined,
+        title: title?.en ?? slug?.current ?? 'Page (missing slug)',
+        subtitle: !!(title?.en && slug?.current) ? slug?.current : undefined,
       };
     },
   },

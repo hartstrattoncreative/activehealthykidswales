@@ -18,8 +18,6 @@ export default function CookieConsent(props: CookieConsentProps) {
   const [isOpen, setOpen] = React.useState(false);
   const { locale = 'en' } = useRouter();
 
-  console.log(props);
-
   const handleClose = React.useCallback(() => {
     Cookies.set('ahkw-cookie-consent', 'accepted', { expires: 365 });
     setOpen(false);
@@ -44,7 +42,12 @@ export default function CookieConsent(props: CookieConsentProps) {
         ),
       })}
     >
-      <Alert sx={{ width: '100%' }} severity="info" onClose={handleClose}>
+      <Alert
+        elevation={4}
+        sx={{ width: '100%' }}
+        severity="info"
+        onClose={handleClose}
+      >
         {message && <RenderPortableText value={message?.[locale]} />}
       </Alert>
     </Snackbar>
