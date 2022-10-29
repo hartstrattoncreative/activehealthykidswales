@@ -17,6 +17,7 @@
     "@emotion/styled": "^11.10.4",
     "@fontsource/cantarell": "^4.5.9",
     "@fontsource/roboto": "^4.5.8",
+    "@mui/icons-material": "^5.10.9",
     "@mui/material": "^5.10.10",
     "@portabletext/react": "^1.0.6",
     "@sanity/image-url": "^1.0.1",

@@ -3,11 +3,11 @@ import MuiAccordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import RenderPortableText from 'components/RenderPortableText';
 import { useRouter } from 'next/router';
-import { CaretDown } from 'phosphor-react';
 import { LocaleString, SanityBase } from 'sanity/types/objects';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 export type AccordionProps = SanityBase & {
-  body: { en: any[]; cy: any[] };
+  body: Record<string, string>;
   en: string;
   cy?: string;
   _key: string;
@@ -23,15 +23,11 @@ export default function Accordions(props: AccordionsProps) {
     <>
       {accordions?.map((accordion) => (
         <MuiAccordion>
-          <AccordionSummary expandIcon={<CaretDown />}>
-            {accordion[locale as keyof Omit<LocaleString, '_type'>]}
+          <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+            {accordion[locale]}
           </AccordionSummary>
           <AccordionDetails>
-            <RenderPortableText
-              value={
-                accordion.body[locale as keyof Omit<LocaleString, '_type'>]
-              }
-            />
+            <RenderPortableText value={accordion.body[locale]} />
           </AccordionDetails>
         </MuiAccordion>
       ))}
