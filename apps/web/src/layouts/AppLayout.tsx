@@ -66,12 +66,17 @@ export default function AppLayout(props: AppLayoutProps) {
       >
         <Toolbar>
           <IconButton edge="start" onClick={handleClick} color="primary">
-            <MenuIcon
-            // sx={{ color: (theme) => theme.palette.text.secondary }}
-            />
+            <MenuIcon />
           </IconButton>
           {settings?.logo && (
-            <Box position="relative" width={100} height={80} minWidth={100}>
+            <Box
+              component={Link}
+              href="/"
+              position="relative"
+              width={100}
+              height={80}
+              minWidth={100}
+            >
               <Image
                 alt={settings.logo.alt}
                 src={settings.logo.url}
