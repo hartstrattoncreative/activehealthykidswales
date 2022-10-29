@@ -55,8 +55,6 @@ export default function AppLayout(props: AppLayoutProps) {
     setMenuOpen(false);
   };
 
-  console.log(settings);
-
   return (
     <>
       <AppBar position="static">
