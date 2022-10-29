@@ -10,10 +10,18 @@ const query = groq`{
     cookieConsent,
     metaTitle,
     metaDescription
-  }
-  // "appbar": ...,
+  },
+  "appbar": *[_id == 'appbar'][0],
   // "sideBar": ...,
-  // "footer": ...,
+  "footer": *[_id == "footer"][0] {
+    ...,
+    links[] {
+      ...,
+      actionType == "internalPage" => {
+        "href": internalPage->slug.current,
+      }
+    }
+  }
 }`;
 
 export default async function getSiteContent(

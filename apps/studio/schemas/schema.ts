@@ -5,7 +5,6 @@ import createSchema from 'part:@sanity/base/schema-creator';
 import schemaTypes from 'all:part:@sanity/base/schema-type';
 
 // Document types
-import menu from './documents/menu';
 import page from './documents/page';
 import indicator from './documents/indicator';
 import grade from './documents/grade';
@@ -15,6 +14,7 @@ import notification from './documents/notification';
 import siteSettings from './documents/siteSettings';
 
 // Object types
+import menu from './objects/menu';
 import link from './objects/link';
 import accordion from './objects/accordion';
 import localeString from './objects/localeString';
@@ -27,6 +27,7 @@ import hero from './objects/hero'
 import asset from './objects/asset'
 import collaboratorList from './objects/collaboratorList'
 import accordions from './objects/accordions';
+import footer from './documents/footer';
 
 // Then we give our schema to the builder and provide the result to Sanity
 // eslint-disable-next-line @typescript-eslint/no-unsafe-call
@@ -45,6 +46,7 @@ export default createSchema({
     organisation,
     notification,
     siteSettings,
+    footer,
     
     // // Objects
     link,

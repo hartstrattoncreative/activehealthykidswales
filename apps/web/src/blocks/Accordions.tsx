@@ -2,6 +2,7 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import MuiAccordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import RenderPortableText from 'components/RenderPortableText';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { useRouter } from 'next/router';
 import { Accordion } from 'sanity/types/objects';
 import Typography from '@mui/material/Typography';
@@ -16,7 +17,13 @@ export default function Accordions(props: AccordionsProps) {
     <>
       {accordions?.map((accordion) => (
         <MuiAccordion key={accordion._key}>
-          <AccordionSummary>
+          <AccordionSummary
+            expandIcon={
+              <ExpandMoreIcon
+                sx={{ color: (theme) => theme.palette.text.secondary }}
+              />
+            }
+          >
             <Typography color="text.secondary" variant="h6" fontWeight={600}>
               {accordion.title[locale]}
             </Typography>
