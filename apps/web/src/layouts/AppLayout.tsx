@@ -193,7 +193,7 @@ export default function AppLayout(props: AppLayoutProps) {
             color="textSecondary"
             sx={{ p: 1 }}
           >
-            {settings.title}
+            {settings?.title}
           </Typography>
         </Stack>
       </Drawer>
