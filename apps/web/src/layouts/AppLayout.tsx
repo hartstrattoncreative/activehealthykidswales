@@ -1,5 +1,6 @@
 import * as React from 'react';
 import IconButton from '@mui/material/IconButton';
+import Image from 'next/image';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Box from '@mui/material/Box';
@@ -58,11 +59,27 @@ export default function AppLayout(props: AppLayoutProps) {
 
   return (
     <>
-      <AppBar position="static">
+      <AppBar
+        position="static"
+        sx={{ backgroundColor: '#fff' }}
+        variant="outlined"
+      >
         <Toolbar>
-          <IconButton edge="start" onClick={handleClick}>
-            <MenuIcon sx={{ color: (theme) => theme.palette.text.secondary }} />
+          <IconButton edge="start" onClick={handleClick} color="primary">
+            <MenuIcon
+            // sx={{ color: (theme) => theme.palette.text.secondary }}
+            />
           </IconButton>
+          {settings?.logo && (
+            <Box position="relative" width={100} height={80} minWidth={100}>
+              <Image
+                alt={settings.logo.alt}
+                src={settings.logo.url}
+                layout="fill"
+                objectFit="contain"
+              />
+            </Box>
+          )}
           <Box flexGrow={1} />
         </Toolbar>
       </AppBar>
@@ -73,8 +90,18 @@ export default function AppLayout(props: AppLayoutProps) {
       <Divider variant="fullWidth" sx={{ py: 2 }} />
       <Box component="footer">
         <Container maxWidth="md">
-          <Grid2 py={4} container spacing={2}>
-            <Grid2 xs={6}>
+          <Grid2 py={4} container spacing={4}>
+            <Grid2 xs={12} sm={6} spacing={2}>
+              {settings?.logo && (
+                <Box position="relative" width={80} height={50} minWidth={50}>
+                  <Image
+                    alt={settings.logo.alt}
+                    src={settings.logo.url}
+                    layout="fill"
+                    objectFit="contain"
+                  />
+                </Box>
+              )}
               {footer?.footerText && (
                 <RenderPortableText value={footer?.footerText[locale]} />
               )}
@@ -146,12 +173,28 @@ export default function AppLayout(props: AppLayoutProps) {
                   href={asPath}
                   locale={l}
                   onClick={handleClose}
+                  dense
                 >
                   <ListItemText>{getLocaleString(l)}</ListItemText>
                 </ListItemButton>
               ))}
             </List>
           </Stack>
+          <Divider
+            orientation="horizontal"
+            flexItem
+            variant="middle"
+            color="#299ad6"
+            sx={{ mt: 2 }}
+          />
+          <Typography
+            variant="caption"
+            textAlign="center"
+            color="textSecondary"
+            sx={{ p: 1 }}
+          >
+            {settings.title}
+          </Typography>
         </Stack>
       </Drawer>
     </>
