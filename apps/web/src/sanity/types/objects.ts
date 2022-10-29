@@ -1,13 +1,12 @@
-export type SanityBase = { _type: string };
+import { SanityBase, Iterable, Asset } from './base';
 
 export type LocaleString = SanityBase & Record<string, string>;
 
-type PortableText = {
-  _key: string;
-  _type: string;
-  marks: string[];
-  text: string;
-};
+type PortableText = Iterable &
+  SanityBase & {
+    marks: string[];
+    text: string;
+  };
 
 export type LocalePortableText = SanityBase & Record<string, PortableText>;
 
@@ -29,4 +28,29 @@ export type Action = {
 export type TextSection = {
   body: LocalePortableText;
   header: LocaleString;
+};
+
+export type Accordion = SanityBase &
+  Iterable & {
+    body: LocalePortableText;
+    title: LocaleString;
+  };
+
+export type Member = SanityBase & {
+  _id: string;
+  title: string;
+  org: LocaleString;
+  asset?: Asset;
+};
+export type Organisation = SanityBase & {
+  _id: string;
+  logo: Asset;
+  href: string;
+};
+
+export type CollaboratorList = SanityBase & {
+  type: 'member' | 'organisation';
+  title: LocaleString;
+  memberList?: Member[];
+  orgList?: Organisation[];
 };

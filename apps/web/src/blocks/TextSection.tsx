@@ -1,4 +1,4 @@
-import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
 import RenderPortableText from 'components/RenderPortableText';
 import { useRouter } from 'next/router';
@@ -9,11 +9,11 @@ export default function TextSection(props: TextSectionProps) {
   const { locale = 'en' } = useRouter();
 
   return (
-    <Box>
+    <Container maxWidth="sm" sx={{ my: 4 }}>
       <Typography variant="h6" textAlign="center" gutterBottom>
         {header[locale]}
       </Typography>
       <RenderPortableText value={body[locale]} />
-    </Box>
+    </Container>
   );
 }

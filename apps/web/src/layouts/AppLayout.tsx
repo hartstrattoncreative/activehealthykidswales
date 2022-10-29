@@ -59,7 +59,7 @@ export default function AppLayout(props: AppLayoutProps) {
           <Box flexGrow={1} />
         </Toolbar>
       </AppBar> */}
-      <Container maxWidth="lg" component="main" sx={{ minHeight: '100vh' }}>
+      <Container maxWidth="md" component="main" sx={{ minHeight: '100vh' }}>
         {children}
       </Container>
 

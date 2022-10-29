@@ -29,6 +29,28 @@ export const query = groq`
           "path": internalPage->slug.current,
         },
       }
+    },
+    _type == "collaboratorList" => {
+      _type,
+      _key,
+      "memberList": memberList[]->{
+        title,
+        org,
+        profilePicture,
+        _id
+      },
+      "orgList": orgList[]->{
+        href,
+        logo {
+          alt,
+          ...asset->{
+            url,
+            metadata,
+            _id
+          }
+        },
+        _id
+      }
     }
   },
   ...
