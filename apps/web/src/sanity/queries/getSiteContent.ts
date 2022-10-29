@@ -6,7 +6,14 @@ const query = groq`{
   "settings": *[_type == "siteSettings"][0] {
     title,
     lang,
-    logo,
+    logo {
+      alt,
+      ...asset->{
+        url,
+        metadata,
+        _id
+      }
+    },
     cookieConsent,
     metaTitle,
     metaDescription
@@ -28,8 +35,7 @@ const query = groq`{
         "href": internalPage->slug.current,
       }
     }
-  },
-  "settings": *[_id == 'siteSettings'][0]
+  }
 }`;
 
 export default async function getSiteContent(
