@@ -2,8 +2,6 @@ import { groq } from 'next-sanity';
 import { getClient } from 'sanity/server';
 import { Page } from 'sanity/types/documents';
 
-// actionType == 'url' => {"url": url, "openInTab": openInTab},
-// actionType == 'internalPage' => {"href": internalPage->path.current},
 export const query = groq`
 *[_type == "page" && slug.current == $slug][0] {
   _id,
@@ -16,6 +14,8 @@ export const query = groq`
           ...,
           "markDefs": markDefs[] {
             ...,
+            actionType == 'url' => {"url": url, "openInTab": openInTab},
+            actionType == 'internalPage' => {"href": internalPage->path.current},
             actionType == 'file' => {"file": @.file{
               ...asset->{
                 url,
@@ -28,6 +28,8 @@ export const query = groq`
           ...,
           "markDefs": markDefs[] {
             ...,
+            actionType == 'url' => {"url": url, "openInTab": openInTab},
+            actionType == 'internalPage' => {"href": internalPage->path.current},
             actionType == 'file' => {"file": @.file{
               ...asset->{
                 url,
