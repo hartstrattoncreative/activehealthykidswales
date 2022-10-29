@@ -23,14 +23,14 @@ const CookieConsent = dynamic(
     import(
       /* webpackChunkName: "components/CookieConsent" */
       'components/CookieConsent'
-    ),
-  { ssr: false }
+    )
 );
 
 export type AppLayoutProps = {
   children?: React.ReactNode;
   footer?: any;
   appbar?: any;
+  settings?: any;
 };
 
 const localeStrings = {
@@ -43,7 +43,7 @@ function getLocaleString(locale: string) {
 }
 
 export default function AppLayout(props: AppLayoutProps) {
-  const { children, footer, appbar } = props;
+  const { children, footer, appbar, settings } = props;
   const { locale = 'en', locales, asPath } = useRouter();
   const [isMenuOpen, setMenuOpen] = React.useState(false);
 
@@ -54,6 +54,8 @@ export default function AppLayout(props: AppLayoutProps) {
   const handleClose = () => {
     setMenuOpen(false);
   };
+
+  console.log(settings);
 
   return (
     <>
@@ -98,7 +100,7 @@ export default function AppLayout(props: AppLayoutProps) {
         >
           <Stack direction="row" spacing={1}>
             <Typography variant="caption">
-              Copyright © {new Date().getFullYear()}
+              {footer?.copyright} © {new Date().getFullYear()}
             </Typography>
             <Divider orientation="vertical" flexItem variant="middle" />
             {locales?.map((l) => (
@@ -116,7 +118,8 @@ export default function AppLayout(props: AppLayoutProps) {
         </Box>
       </Box>
 
-      <CookieConsent />
+      <CookieConsent {...settings?.cookieConsent} />
+
       <Drawer open={isMenuOpen} onClose={handleClose}>
         <Stack width={250} height="100%">
           <Toolbar />
@@ -125,7 +128,7 @@ export default function AppLayout(props: AppLayoutProps) {
             sx={{ flexGrow: 1, color: 'text.secondary' }}
           >
             <List>
-              {footer?.links?.map((link: any) => (
+              {appbar?.links?.map((link: any) => (
                 <ListItemButton
                   key={link._key}
                   component={Link}

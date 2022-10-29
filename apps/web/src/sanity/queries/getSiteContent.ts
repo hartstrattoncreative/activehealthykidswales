@@ -11,8 +11,15 @@ const query = groq`{
     metaTitle,
     metaDescription
   },
-  "appbar": *[_id == 'appbar'][0],
-  // "sideBar": ...,
+  "appbar": *[_id == 'appbar'][0] {
+    ...,
+    links[] {
+      ...,
+      actionType == "internalPage" => {
+        "href": internalPage->slug.current,
+      }
+    }
+  },
   "footer": *[_id == "footer"][0] {
     ...,
     links[] {
@@ -21,7 +28,8 @@ const query = groq`{
         "href": internalPage->slug.current,
       }
     }
-  }
+  },
+  "settings": *[_id == 'siteSettings'][0]
 }`;
 
 export default async function getSiteContent(
