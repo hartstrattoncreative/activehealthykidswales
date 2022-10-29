@@ -16,6 +16,7 @@ import dynamic from 'next/dynamic';
 import Container from '@mui/material/Container';
 import Grid2 from '@mui/material/Unstable_Grid2';
 import RenderPortableText from 'components/RenderPortableText';
+import MenuIcon from '@mui/icons-material/Menu';
 
 const CookieConsent = dynamic(
   () =>
@@ -56,13 +57,14 @@ export default function AppLayout(props: AppLayoutProps) {
 
   return (
     <>
-      {/* <AppBar>
+      <AppBar position="static">
         <Toolbar>
           <IconButton edge="start" onClick={handleClick}>
+            <MenuIcon sx={{ color: (theme) => theme.palette.text.secondary }} />
           </IconButton>
           <Box flexGrow={1} />
         </Toolbar>
-      </AppBar> */}
+      </AppBar>
       <Container maxWidth="md" component="main" sx={{ minHeight: '100vh' }}>
         {children}
       </Container>
@@ -116,20 +118,39 @@ export default function AppLayout(props: AppLayoutProps) {
 
       <CookieConsent />
       <Drawer open={isMenuOpen} onClose={handleClose}>
-        <List>
-          {locales?.map((l) => (
-            <ListItemButton
-              key={l}
-              selected={locale === l}
-              component={Link}
-              href={asPath}
-              locale={l}
-              onClick={handleClose}
-            >
-              <ListItemText>{getLocaleString(l)}</ListItemText>
-            </ListItemButton>
-          ))}
-        </List>
+        <Stack width={250} height="100%">
+          <Toolbar />
+          <Stack
+            justifyContent="space-between"
+            sx={{ flexGrow: 1, color: 'text.secondary' }}
+          >
+            <List>
+              {footer?.links?.map((link: any) => (
+                <ListItemButton
+                  key={link._key}
+                  component={Link}
+                  href={link?.href ?? link?.url}
+                  onClick={handleClose}
+                >
+                  {link[locale]}
+                </ListItemButton>
+              ))}
+            </List>
+            <List>
+              {locales?.map((l) => (
+                <ListItemButton
+                  key={l}
+                  component={Link}
+                  href={asPath}
+                  locale={l}
+                  onClick={handleClose}
+                >
+                  <ListItemText>{getLocaleString(l)}</ListItemText>
+                </ListItemButton>
+              ))}
+            </List>
+          </Stack>
+        </Stack>
       </Drawer>
     </>
   );
