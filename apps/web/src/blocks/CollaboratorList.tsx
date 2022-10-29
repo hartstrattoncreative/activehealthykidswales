@@ -65,7 +65,7 @@ export default function CollaboratorList(props: CollaboratorListProps) {
       {type === 'organisation' && orgList && (
         <Grid container spacing={2}>
           {orgList?.map((org) => (
-            <Grid item key={org._id} xs={6} sm={4}>
+            <Grid key={org._id} xs={6} sm={4}>
               <Link href={org.href}>
                 <Stack
                   sx={{
