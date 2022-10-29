@@ -21,7 +21,7 @@ export default function IndicatorCardGallery(props: IndicatorCardGalleryProps) {
       <Grid container spacing={2}>
         {indicators?.map((indicator) => (
           <Grid key={indicator._key} xs={12} sm={6}>
-            <IndicatorCard {...indicator} />
+            <IndicatorCard {...indicator} featured={false} />
           </Grid>
         ))}
       </Grid>

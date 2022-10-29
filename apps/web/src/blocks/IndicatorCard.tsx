@@ -1,11 +1,12 @@
 import * as React from 'react';
 import CardActionArea from '@mui/material/CardActionArea';
+import CardContent from '@mui/material/CardContent';
 import Card from '@mui/material/Card';
 import Link from 'components/Link';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import {
-  IndicatorCard as IndicatorCardProps,
+  IndicatorCard as IndicatorCardSchema,
   Grade,
 } from 'sanity/types/documents';
 import { useRouter } from 'next/router';
@@ -32,6 +33,10 @@ function getGradeColor(grade?: string) {
   return colormap[grade] ?? '#000';
 }
 
+export type IndicatorCardProps = IndicatorCardSchema & {
+  featured?: boolean;
+};
+
 export default function IndicatorCard(props: IndicatorCardProps) {
   const {
     asLink,
@@ -41,34 +46,57 @@ export default function IndicatorCard(props: IndicatorCardProps) {
     grade,
     gradeLabel,
     gradeRefinement,
+    featured = true,
   } = props;
   const { locale = 'en' } = useRouter();
-
   const color = React.useMemo(() => getGradeColor(grade), [grade]);
 
   const content = (
-    <>
+    <CardContent
+      sx={{
+        display: 'flex',
+        alignItems: 'center',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        textAlign: 'center',
+        alignContent: 'space-between',
+        minHeight: 200,
+      }}
+    >
       {grade && (
-        <Box p={4} display="flex" alignItems="center" justifyContent="center">
-          <Typography variant="h3" component="span" sx={{ color: '#fff' }}>
+        <Box>
+          <Typography
+            variant={featured ? 'h2' : 'h4'}
+            component="p"
+            color="text.secondary"
+            fontWeight="bold"
+            gutterBottom
+          >
             {(gradeLabel?.[locale] ?? grade)?.toUpperCase()}
             {gradeRefinement && getGradeRefinement(gradeRefinement)}
           </Typography>
         </Box>
       )}
-      <Box p={2}>
-        <Typography variant="h6" color="#fff">
-          {title?.[locale]}
-        </Typography>
-      </Box>
-    </>
+      <Typography
+        variant={featured ? 'h4' : 'h5'}
+        component={featured ? 'h1' : 'p'}
+        color="text.secondary"
+        gutterBottom
+      >
+        {title?.[locale]}
+      </Typography>
+    </CardContent>
   );
 
   return (
     <Card
       variant="outlined"
-      sx={{ border: `1px solid ${color}`, backgroundColor: color }}
-      // color={color}
+      sx={{
+        border: `1px solid ${color}`,
+        backgroundColor: color,
+        ...(featured && { my: 2, textAlign: 'center' }),
+        minWidth: 250,
+      }}
     >
       {asLink && actionType === 'internalPage' ? (
         <CardActionArea component={Link} href={path as string}>

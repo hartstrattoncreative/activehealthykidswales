@@ -7,6 +7,15 @@ export const query = groq`
   _id,
   "content": modules[] {
     ...,
+    _type == "indicatorCard" => {
+      ...indicator->{
+        title,
+        "year": grades[0].year,
+        "grade": grades[0].gradeType->gradeKey,
+        "gradeRefinement": grades[0].gradeType->keyRefinement,
+        "gradeLabel": grades[0].gradeType->label
+      },
+    },
     _type == "indicatorCardGallery" => {
       _type,
       _key,
