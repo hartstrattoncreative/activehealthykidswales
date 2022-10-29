@@ -15,7 +15,7 @@ export default function Accordions(props: AccordionsProps) {
   return (
     <>
       {accordions?.map((accordion) => (
-        <MuiAccordion>
+        <MuiAccordion key={accordion._key}>
           <AccordionSummary expandIcon={<ExpandMoreIcon />}>
             {accordion.title[locale]}
           </AccordionSummary>

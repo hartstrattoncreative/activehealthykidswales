@@ -14,6 +14,8 @@ import Typography from '@mui/material/Typography';
 import Stack from '@mui/material/Stack';
 import dynamic from 'next/dynamic';
 import Container from '@mui/material/Container';
+import Grid2 from '@mui/material/Unstable_Grid2';
+import RenderPortableText from 'components/RenderPortableText';
 
 const CookieConsent = dynamic(
   () =>
@@ -26,6 +28,8 @@ const CookieConsent = dynamic(
 
 export type AppLayoutProps = {
   children?: React.ReactNode;
+  footer?: any;
+  appbar?: any;
 };
 
 const localeStrings = {
@@ -38,8 +42,8 @@ function getLocaleString(locale: string) {
 }
 
 export default function AppLayout(props: AppLayoutProps) {
-  const { children } = props;
-  const { locale, locales, asPath } = useRouter();
+  const { children, footer, appbar } = props;
+  const { locale = 'en', locales, asPath } = useRouter();
   const [isMenuOpen, setMenuOpen] = React.useState(false);
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -49,6 +53,8 @@ export default function AppLayout(props: AppLayoutProps) {
   const handleClose = () => {
     setMenuOpen(false);
   };
+
+  console.log(footer, appbar);
 
   return (
     <>
@@ -63,8 +69,26 @@ export default function AppLayout(props: AppLayoutProps) {
         {children}
       </Container>
 
+      <Divider variant="fullWidth" sx={{ py: 2 }} />
       <Box component="footer">
-        <Box p={1}>main footer stuffs here</Box>
+        <Container maxWidth="md">
+          <Grid2 py={4} container spacing={2}>
+            <Grid2 xs={6}>
+              {footer?.footerText && (
+                <RenderPortableText value={footer?.footerText[locale]} />
+              )}
+            </Grid2>
+            <Grid2 xs={6}>
+              <Stack spacing={1}>
+                {footer?.links?.map((link: any) => (
+                  <Link key={link._key} href={link.href ?? link.url}>
+                    {link[locale]}
+                  </Link>
+                ))}
+              </Stack>
+            </Grid2>
+          </Grid2>
+        </Container>
         <Divider variant="fullWidth" />
         <Box
           display="flex"

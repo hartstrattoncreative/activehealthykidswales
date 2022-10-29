@@ -29,7 +29,7 @@ export default function AHKWApp(props: AHKWAppProps) {
       <ThemeProvider theme={theme}>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
-        <AppLayout>
+        <AppLayout {...pageProps}>
           <Component {...pageProps} />
         </AppLayout>
       </ThemeProvider>

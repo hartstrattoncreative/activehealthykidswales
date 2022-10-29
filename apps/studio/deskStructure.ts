@@ -28,6 +28,7 @@ export default function deskStructure() {
             'organisation',
             'media.tag',
             'notification',
+            'footer'
           ].includes(item.getId() ?? '')
       ),
     ]);

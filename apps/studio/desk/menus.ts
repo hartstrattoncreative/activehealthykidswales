@@ -1,6 +1,6 @@
 import S from '@sanity/desk-tool/structure-builder';
 
-import { List, Browser, SidebarSimple, SquareHalfBottom } from 'phosphor-react';
+import { List, Browser, SquareHalfBottom } from 'phosphor-react';
 
 export const menusMenu = S.listItem()
   .title('Menus')
@@ -10,7 +10,7 @@ export const menusMenu = S.listItem()
       .title('Menus')
       .items([
         S.listItem()
-          .id('appBar')
+          .id('appbar')
           .title('App Bar')
           .icon(Browser)
           .child(
@@ -23,12 +23,12 @@ export const menusMenu = S.listItem()
         S.listItem()
           .id('footer')
           .title('Footer')
+          .icon(SquareHalfBottom)
           .child(
             S.document()
-              .schemaType('menu')
+              .schemaType('footer')
               .documentId('footer')
               .title('Footer')
           )
-          .icon(SquareHalfBottom),
       ])
   );

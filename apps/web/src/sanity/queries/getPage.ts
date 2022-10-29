@@ -25,7 +25,7 @@ export const query = groq`
         asLink => {
           actionType
         },
-        actionType == "internalPage" && asLink => {
+        asLink && actionType == "internalPage" => {
           "path": internalPage->slug.current,
         },
       }
