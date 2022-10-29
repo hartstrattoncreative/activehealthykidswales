@@ -18,12 +18,16 @@ export default function useHref(args?: ActionTypeProps): {
         case 'internalPage':
           hrefFromActionType = args.href ?? '';
           break;
+        case 'file':
+          hrefFromActionType = args.file?.url ?? '';
+          break;
         default:
           break;
       }
     }
+
     return prependSlash(hrefFromActionType) as string;
-  }, [args?.actionType, args?.href, args?.url]);
+  }, [args]);
 
   return { href, asPath };
 }

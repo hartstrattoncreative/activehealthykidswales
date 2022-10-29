@@ -7,6 +7,39 @@ export const query = groq`
   _id,
   "content": modules[] {
     ...,
+    _type == 'textSection' => {
+      body {
+        ...,
+        "en": en [] {
+          ...,
+          "markDefs": markDefs[] {
+            ...,
+            actionType == 'url' => {"url": url, "openInTab": openInTab},
+            actionType == 'internalPage' => {"href": internalPage->path.current},
+            actionType == 'file' => {"file": @.file{
+              ...asset->{
+                url,
+                _id
+              }
+            }},
+          }
+        },
+        "cy": cy [] {
+          ...,
+          "markDefs": markDefs[] {
+            ...,
+            actionType == 'url' => {"url": url, "openInTab": openInTab},
+            actionType == 'internalPage' => {"href": internalPage->path.current},
+            actionType == 'file' => {"file": @.file{
+              ...asset->{
+                url,
+                _id
+              }
+            }},
+          }
+        }
+      }
+    },
     _type == "indicatorCard" => {
       ...indicator->{
         title,
