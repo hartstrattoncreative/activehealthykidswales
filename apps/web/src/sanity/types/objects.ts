@@ -27,7 +27,7 @@ export type Action = {
 
 export type TextSection = {
   body: LocalePortableText;
-  header: LocaleString;
+  header?: LocaleString;
 };
 
 export type Accordion = SanityBase &

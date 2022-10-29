@@ -10,9 +10,11 @@ export default function TextSection(props: TextSectionProps) {
 
   return (
     <Container maxWidth="sm" sx={{ my: 4 }}>
-      <Typography variant="h6" textAlign="center" gutterBottom>
-        {header[locale]}
-      </Typography>
+      {header && (
+        <Typography variant="h6" textAlign="center" gutterBottom>
+          {header[locale]}
+        </Typography>
+      )}
       <RenderPortableText value={body[locale]} />
     </Container>
   );
