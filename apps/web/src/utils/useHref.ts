@@ -16,9 +16,10 @@ export default function useHref(args?: ActionTypeProps): {
           hrefFromActionType = args.url ?? '';
           break;
         case 'internalPage':
-          hrefFromActionType = args.href ?? '';
+          hrefFromActionType = args.url ?? '';
           break;
         case 'file':
+          // TODO: consolidate and remove need for this hook
           hrefFromActionType = args.file?.url ?? '';
           break;
         default:

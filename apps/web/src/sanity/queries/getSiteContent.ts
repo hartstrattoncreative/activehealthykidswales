@@ -2,6 +2,37 @@ import { groq } from 'next-sanity';
 import { getClient } from 'sanity/server';
 import { SiteSettings } from 'sanity/types/documents';
 
+const actionFragment = groq`
+"en": en [] {
+  ...,
+  "markDefs": markDefs[] {
+    ...,
+    actionType == 'url' => {"url": url, "openInTab": openInTab},
+    actionType == 'internalPage' => {"url": internalPage->slug.current},
+    actionType == 'file' => {"file": @.file{
+      ...asset->{
+        url,
+        _id
+      }
+    }},
+  }
+},
+"cy": cy [] {
+  ...,
+  "markDefs": markDefs[] {
+    ...,
+    actionType == 'url' => {"url": @.url, "openInTab": @.openInTab},
+    actionType == 'internalPage' => {"url": @.internalPage->slug.current},
+    actionType == 'file' => {"file": @.file{
+      ...asset->{
+        url,
+        _id
+      }
+    }},
+  }
+}
+`;
+
 const query = groq`{
   "settings": *[_type == "siteSettings"][0] {
     title,
@@ -14,7 +45,14 @@ const query = groq`{
         _id
       }
     },
-    cookieConsent,
+    cookieConsent {
+      _type,
+      buttonText,
+      message {
+        ...,
+        ${actionFragment}
+      }
+    },
     metaTitle,
     metaDescription
   },
@@ -23,7 +61,7 @@ const query = groq`{
     links[] {
       ...,
       actionType == "internalPage" => {
-        "href": internalPage->slug.current,
+        "url": internalPage->slug.current,
       }
     }
   },
@@ -32,7 +70,7 @@ const query = groq`{
     links[] {
       ...,
       actionType == "internalPage" => {
-        "href": internalPage->slug.current,
+        "url": internalPage->slug.current,
       }
     }
   }
