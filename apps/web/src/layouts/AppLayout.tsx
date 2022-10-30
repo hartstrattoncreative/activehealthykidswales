@@ -111,9 +111,23 @@ export default function AppLayout(props: AppLayoutProps) {
                 <RenderPortableText value={footer?.footerText[locale]} />
               )}
             </Grid2>
-            <Grid2 xs={6}>
+            <Grid2 xs={12} sm={3}>
               <Stack spacing={1}>
                 {footer?.links?.map((link: any) => (
+                  <Link key={link._key} href={link.href ?? link.url}>
+                    {link[locale]}
+                  </Link>
+                ))}
+              </Stack>
+            </Grid2>
+            <Grid2 xs={12} sm={3}>
+              {footer?.indicators?.header && (
+                <Typography variant="subtitle1">
+                  {footer?.indicators?.header[locale]}
+                </Typography>
+              )}
+              <Stack spacing={1}>
+                {footer?.indicators?.indicatorLinks?.map((link: any) => (
                   <Link key={link._key} href={link.href ?? link.url}>
                     {link[locale]}
                   </Link>

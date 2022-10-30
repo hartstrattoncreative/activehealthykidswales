@@ -95,7 +95,6 @@ export default function IndicatorCard(props: IndicatorCardProps) {
         border: `1px solid ${color}`,
         backgroundColor: color,
         ...(featured && { my: 2, textAlign: 'center' }),
-        minWidth: 250,
       }}
     >
       {asLink && actionType === 'internalPage' ? (

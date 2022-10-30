@@ -14,6 +14,17 @@ export default {
       of: [{type: 'link'}]
     },
     {
+      name: 'indicators', type: 'object', title:'Indicators', fields: [
+        { name: 'header', title: 'Header', type: 'localeString' },
+        {
+          name: 'indicatorLinks',
+          title: 'Links',
+          type: 'array',
+          of: [{type: 'link'}]
+        },
+      ]
+    },
+    {
       type: 'string',
       name: 'copyright',
       title: 'Copyright',
