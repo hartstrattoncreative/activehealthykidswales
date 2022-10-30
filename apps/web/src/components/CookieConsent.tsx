@@ -42,12 +42,7 @@ export default function CookieConsent(props: CookieConsentProps) {
         ),
       })}
     >
-      <Alert
-        elevation={4}
-        sx={{ width: '100%' }}
-        severity="info"
-        onClose={handleClose}
-      >
+      <Alert sx={{ width: '100%' }} severity="info" onClose={handleClose}>
         {message && <RenderPortableText value={message?.[locale]} />}
       </Alert>
     </Snackbar>
