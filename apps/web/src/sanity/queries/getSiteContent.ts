@@ -72,6 +72,15 @@ const query = groq`{
       actionType == "internalPage" => {
         "url": internalPage->slug.current,
       }
+    },
+    indicators {
+      ...,
+      indicatorLinks[] {
+        ...,
+        actionType == "internalPage" => {
+          "href": internalPage->slug.current,
+        }
+      }
     }
   }
 }`;
