@@ -16,13 +16,12 @@ export default {
   ], 
   preview: {
     select: {
-      // TODO: fix
-      title: 'en.title',
+      accordions: 'accordions',
     },
-    prepare(props) {
+    prepare(props) {      
       return {
-        title: props.title ?? 'Accordions',
-        subtitle: props.title ? 'Accordions' : undefined
+        title: 'Accordions',
+        subtitle: `${props.accordions.length ?? undefined} accordions configured: ${props.accordions.map(acc => acc.title.en).join(', ')}`
       };
     },
   },

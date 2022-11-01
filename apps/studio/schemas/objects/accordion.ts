@@ -23,8 +23,7 @@ export default {
   ], 
   preview: {
     select: {
-      // TODO: fix
-      title: 'en.title',
+      title: 'title.en',
     },
     prepare(props) {
       return {
