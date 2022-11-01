@@ -1,30 +1,35 @@
-/* eslint-disable @typescript-eslint/no-unsafe-call */
-/* eslint-disable @typescript-eslint/no-unsafe-member-access */
-/* eslint-disable @typescript-eslint/no-unsafe-return */
 import { CaretCircleDown } from 'phosphor-react';
+import { localeStringFieldsets} from './localeString';
 
 export default {
   name: 'accordion',
   title: 'Accordion',
   icon: CaretCircleDown,
   type: 'object',
+  fieldsets: localeStringFieldsets,
   fields: [
     {
-      title: 'Title',
       name: 'title',
-      type: 'string',
-      validation: (Rule: any) => Rule.required(),
-      description: 'The main title for the accordion',
+      title: 'Title',
+      type: 'localeString',
+      validation: Rule => Rule.required()
     },
     {
-      type: 'portableText',
-      name: 'content',
-      title: 'Content',
+      name: 'body',
+      title: 'Text',
+      type: 'localePortableText',
+      validation: Rule => Rule.required()
     },
-  ],
+  ], 
   preview: {
     select: {
-      title: 'title',
+      title: 'title.en',
+    },
+    prepare(props) {
+      return {
+        title: props.title ?? 'Accordion',
+        subtitle: props.title ? 'Accordion' : undefined
+      };
     },
   },
 };

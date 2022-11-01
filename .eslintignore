@@ -18,3 +18,4 @@ apps/studio/
 # TODO: remove once app is deleted
 old_app/
 studio/
+old.eslintrc

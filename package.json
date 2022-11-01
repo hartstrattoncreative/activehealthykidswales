@@ -8,11 +8,17 @@
       "packages/*"
     ],
     "nohoist": [
-      "**/react", 
-      "**/react/**", 
-      "**/react-dom", 
+      "**/react",
+      "**/react/**",
+      "**/react-dom",
       "**/react-dom/**",
-      "**/@sanity/**"
+      "**/@types/react",
+      "**/@types/react/**",
+      "**/@types/react-dom",
+      "**/@types/react-dom/**",
+      "**/@sanity/**",
+      "**/next",
+      "**/next/**"
     ]
   },
   "scripts": {
@@ -24,11 +30,12 @@
   "devDependencies": {
     "@commitlint/cli": "^17.0.0",
     "@commitlint/config-conventional": "^17.0.0",
+    "eslint": "^8.26.0",
     "eslint-config-custom": "*",
-    "prettier": "latest",
-    "turbo": "latest",
     "husky": "^8.0.1",
-    "lint-staged": ">=10"
+    "lint-staged": ">=10",
+    "prettier": "latest",
+    "turbo": "latest"
   },
   "engines": {
     "node": ">=14.0.0"
