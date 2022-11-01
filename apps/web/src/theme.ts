@@ -29,7 +29,7 @@ const theme = createTheme({
       '"Segoe UI Symbol"',
     ].join(','),
     h1: {
-      fontSize: '3.8rem',
+      fontSize: '2.3rem',
     },
   },
 });
