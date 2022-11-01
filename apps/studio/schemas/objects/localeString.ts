@@ -5,8 +5,9 @@ import { supportedLanguages } from '../../supportedLanguages';
 export const localeStringFieldsets = [{
   title: 'Translations',
   name: 'translations',
-  options: { collapsible: true },
+  options: { collapsible: true, collapsed: false },
 }]
+
 export const localeStringFields = supportedLanguages.map(({ title, id, isDefault = false }) => ({
   title,
   name: id,

@@ -73,9 +73,9 @@ export default function AppLayout(props: AppLayoutProps) {
               component={Link}
               href="/"
               position="relative"
-              width={100}
-              height={80}
-              minWidth={100}
+              width={80}
+              height={60}
+              minWidth={80}
             >
               <Image
                 alt={settings.logo.alt}
@@ -122,7 +122,7 @@ export default function AppLayout(props: AppLayoutProps) {
             </Grid2>
             <Grid2 xs={12} sm={3}>
               {footer?.indicators?.header && (
-                <Typography variant="subtitle1">
+                <Typography variant="subtitle1" fontWeight={700}>
                   {footer?.indicators?.header[locale]}
                 </Typography>
               )}

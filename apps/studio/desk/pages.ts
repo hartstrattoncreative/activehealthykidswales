@@ -135,6 +135,16 @@ export const pagesMenu = S.listItem()
                       .schemaType('page')
                       .documentId('physicalLiteracy')
                       .views(standardViews)
+                  ),
+                S.listItem()
+                  .id('physicalFitness')
+                  .title('Physical Fitness')
+                  .icon(Exam)
+                  .child(
+                    S.document()
+                      .schemaType('page')
+                      .documentId('physicalFitness')
+                      .views(standardViews)
                   )
               ])
           ),

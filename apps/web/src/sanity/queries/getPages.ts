@@ -3,9 +3,7 @@ import { getClient } from 'sanity/server';
 import { Page } from 'sanity/types/documents';
 
 const query = groq`
-*[_type == "page" && defined(slug) && !(_id in path('drafts.**')) && !(_id in [
-  // document ignore list
-  ]) ] {
+*[_type == "page" && defined(slug)] {
   "slug": slug.current,
 }
 `;

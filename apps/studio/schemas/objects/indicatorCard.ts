@@ -17,7 +17,7 @@ export default {
       description: 'If true, the indicator can be used to link to an internal or external page',
       
     },
-    ...actionFields.map(field => ({...field, fieldset: 'linkConfig', readOnly: ({parent}) => !parent.asLink}))
+    ...actionFields.map(field => ({...field, fieldset: 'linkConfig', readOnly: ({parent}) => !parent.asLink }))
   ],
   preview: {
     select: {
