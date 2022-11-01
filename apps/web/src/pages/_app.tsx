@@ -26,15 +26,20 @@ export default function AHKWApp(props: AHKWAppProps) {
   const { locales, asPath, locale = 'en' } = useRouter();
   const { data, settings } = pageProps;
 
+  console.log('Settings', settings);
+
   return (
     <CacheProvider value={emotionCache}>
       <Head>
-        <title>{data?.metaTitle[locale] ?? settings?.metaTitle[locale]}</title>
-        {(data?.metaDescription || settings?.metaDescription[locale]) && (
+        <title>
+          {data?.metaTitle?.[locale] ?? settings?.metaTitle?.[locale]}
+        </title>
+        {(data?.metaDescription || settings?.metaDescription) && (
           <meta
             name="description"
             content={
-              data?.metaDescription[locale] ?? settings?.metaDescription[locale]
+              data?.metaDescription?.[locale] ??
+              settings?.metaDescription?.[locale]
             }
           />
         )}
