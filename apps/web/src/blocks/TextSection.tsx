@@ -5,13 +5,15 @@ import { useRouter } from 'next/router';
 import { TextSection as TextSectionProps } from 'sanity/types/objects';
 
 export default function TextSection(props: TextSectionProps) {
-  const { body, header } = props;
+  const { body, header, headerVariant = 'h5' } = props;
   const { locale = 'en' } = useRouter();
+
+  console.log(props);
 
   return (
     <Container maxWidth="sm" sx={{ my: 4 }}>
       {header && (
-        <Typography variant="h6" textAlign="center" gutterBottom>
+        <Typography variant={headerVariant} textAlign="center" gutterBottom>
           {header[locale]}
         </Typography>
       )}

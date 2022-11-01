@@ -1,3 +1,4 @@
+import { TypographyProps } from '@mui/material/Typography';
 import { SanityBase, Iterable, Asset } from './base';
 
 export type LocaleString = SanityBase & Record<string, string>;
@@ -28,6 +29,7 @@ export type Action = {
 export type TextSection = {
   body: LocalePortableText;
   header?: LocaleString;
+  headerVariant?: TypographyProps['variant'];
 };
 
 export type Accordion = SanityBase &
