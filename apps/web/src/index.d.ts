@@ -8,6 +8,7 @@ declare global {
       SANITY_REVALIDATE_SECRET: string;
       NEXT_PUBLIC_SITE_URL: string;
       ANALYZE: string;
+      SITE_URL: string;
     }
   }
 }
