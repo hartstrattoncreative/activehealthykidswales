@@ -58,6 +58,7 @@ export default {
       name: 'media',
       title: 'Indicator Media',
       type: 'asset',
+      hidden: true // NOTE: enable if we want to add support for this
     },
     
   ],
