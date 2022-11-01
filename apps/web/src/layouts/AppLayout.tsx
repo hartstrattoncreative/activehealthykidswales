@@ -33,6 +33,7 @@ export type AppLayoutProps = {
   footer?: any;
   appbar?: any;
   settings?: any;
+  preview?: boolean;
 };
 
 const localeStrings = {
@@ -45,7 +46,7 @@ function getLocaleString(locale: string) {
 }
 
 export default function AppLayout(props: AppLayoutProps) {
-  const { children, footer, appbar, settings } = props;
+  const { children, footer, appbar, settings, preview = false } = props;
   const { locale = 'en', locales, asPath } = useRouter();
   const [isMenuOpen, setMenuOpen] = React.useState(false);
 
@@ -59,6 +60,27 @@ export default function AppLayout(props: AppLayoutProps) {
 
   return (
     <>
+      {preview && (
+        <Stack
+          spacing={1}
+          direction="row"
+          alignItems="baseline"
+          justifyContent="center"
+          bgcolor="#009943"
+          color="text.secondary"
+        >
+          <Typography>
+            Website is in <i>live preview</i> mode.
+          </Typography>
+          <Link
+            href="/api/exit-preview"
+            color="text.secondary"
+            prefetch={false}
+          >
+            disconnect
+          </Link>
+        </Stack>
+      )}
       <AppBar
         position="static"
         sx={{ backgroundColor: '#fff' }}
