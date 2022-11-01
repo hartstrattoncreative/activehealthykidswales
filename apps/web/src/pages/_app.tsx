@@ -29,6 +29,7 @@ export default function AHKWApp(props: AHKWAppProps) {
         <meta name="viewport" content="initial-scale=1, width=device-width" />
         {locales?.map((locale) => (
           <link
+            key={locale}
             rel="alternate"
             hrefLang={locale}
             href={getAbsoluteAsPath(locale, asPath)}
