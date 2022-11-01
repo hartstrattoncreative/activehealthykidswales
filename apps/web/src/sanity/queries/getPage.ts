@@ -3,7 +3,7 @@ import { getClient } from 'sanity/server';
 import { Page } from 'sanity/types/documents';
 
 export const query = groq`
-*[_type == "page" && slug.current == $slug][0] {
+*[_type == "page" && slug.current == $slug] {
   _id,
   "content": modules[] {
     ...,
@@ -107,5 +107,5 @@ export const query = groq`
 `;
 
 export default async function getPage(slug: string, preview: boolean = false) {
-  return getClient(preview).fetch<Page>(query, { slug });
+  return getClient(preview).fetch<Page[]>(query, { slug });
 }
