@@ -1,3 +1,4 @@
+import * as React from 'react';
 import Head from 'next/head';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -8,11 +9,12 @@ import { AppProps } from 'next/app';
 import AppLayout from 'layouts/AppLayout';
 import { useRouter } from 'next/router';
 import getAbsoluteAsPath from 'utils/getAbsoluteAsPath';
+import { SiteSettings } from 'sanity/types/documents';
 
 import '@fontsource/cantarell';
 import '@fontsource/roboto';
 
-interface AHKWAppProps extends AppProps {
+interface AHKWAppProps extends AppProps<{ settings: SiteSettings; data: any }> {
   emotionCache?: EmotionCache;
 }
 
@@ -21,18 +23,33 @@ const clientSideEmotionCache = createEmotionCache();
 
 export default function AHKWApp(props: AHKWAppProps) {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
-  const { locales, asPath } = useRouter();
+  const { locales, asPath, locale = 'en' } = useRouter();
+  const { data, settings } = pageProps;
+
+  console.log(pageProps);
 
   return (
     <CacheProvider value={emotionCache}>
       <Head>
+        <title>{data?.metaTitle[locale] ?? settings?.metaTitle[locale]}</title>
+        {(data?.metaDescription || settings?.metaDescription[locale]) && (
+          <meta
+            name="description"
+            content={
+              data?.metaDescription[locale] ?? settings?.metaDescription[locale]
+            }
+          />
+        )}
         <meta name="viewport" content="initial-scale=1, width=device-width" />
         {locales?.map((locale) => (
-          <link
-            rel="alternate"
-            hrefLang={locale}
-            href={getAbsoluteAsPath(locale, asPath)}
-          />
+          <React.Fragment key={locale}>
+            <link rel="canonical" href={getAbsoluteAsPath(locale, asPath)} />
+            <link
+              rel="alternate"
+              hrefLang={locale}
+              href={getAbsoluteAsPath(locale, asPath)}
+            />
+          </React.Fragment>
         ))}
       </Head>
       <ThemeProvider theme={theme}>
