@@ -16,7 +16,23 @@ export default {
       name: 'slug',
       type: 'slug',
       description: 'Path for the page, e.g about => domain.com/about',
-      validation: Rule => Rule.required(),
+      validation: (Rule) =>
+        Rule.required().custom((path?: { current?: string }) => {
+          if (typeof path === 'undefined') {
+            return true;
+          }
+
+          if (!path?.current?.startsWith?.('/')) {
+            return 'Ensure to begin the slug with "/"';
+          }
+
+          const regex = /(^[a-z0-9-/[\]]+$)/;
+          if (!regex.test(path.current as string)) {
+            return 'Invalid slug: Only numbers, lowercase letters, slashes, brackets and dashes are permitted.';
+          }
+
+          return true;
+        }).error(),
       group: 'settings',
     },
     {

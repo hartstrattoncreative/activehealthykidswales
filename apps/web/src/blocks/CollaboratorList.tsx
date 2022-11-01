@@ -5,6 +5,7 @@ import Typography from '@mui/material/Typography';
 import { useRouter } from 'next/router';
 import { CollaboratorList as CollaboratorListProps } from 'sanity/types/objects';
 import Link from 'components/Link';
+import BlockHeader from 'components/BlockHeader';
 
 export default function CollaboratorList(props: CollaboratorListProps) {
   const { title, type, memberList, orgList } = props;
@@ -12,14 +13,12 @@ export default function CollaboratorList(props: CollaboratorListProps) {
 
   return (
     <Stack
-      sx={{ mt: 2, mb: 12 }}
+      sx={{ mt: 2, mb: 10 }}
       spacing={1}
       display="flex"
       alignItems="center"
     >
-      <Typography variant="h6" textAlign="center" gutterBottom>
-        {title[locale]}
-      </Typography>
+      <BlockHeader text={title[locale]} />
       {type === 'member' && memberList && (
         <Grid container spacing={2} maxWidth="sm" gap={1}>
           {memberList?.map((member) => (

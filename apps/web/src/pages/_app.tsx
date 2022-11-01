@@ -26,8 +26,6 @@ export default function AHKWApp(props: AHKWAppProps) {
   const { locales, asPath, locale = 'en' } = useRouter();
   const { data, settings } = pageProps;
 
-  console.log(pageProps);
-
   return (
     <CacheProvider value={emotionCache}>
       <Head>
